@@ -1,0 +1,455 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+$category = Mage::registry('current_category');
+?>
+<? if( $category ) { ?>
+<div class="return-link">
+  <a href="<?php if ($category) { echo $category->getUrl(); } ?> ">&larr; All <?php echo $category->getName(); ?></a>
+</div><!-- end .return-link -->
+ <? } ?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+
+<div class="product clearfix">
+
+  <div class="product-view clearfix">
+      
+      <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?> class="size-atc">
+          <div class="no-display">
+              <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+              <input type="hidden" name="related_product" id="related-products-field" value="" />
+          </div>
+          
+          
+          <div class="images">
+              <?php echo $this->getChildHtml('media') ?>
+          </div>
+          
+  
+          <div class="information">
+              <h1 class="title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+              <div class="left">
+              
+              <?php echo $this->getChildHtml('alert_urls') ?>
+              
+              <?php echo $this->getChildHtml('product_type_data') ?>
+              
+              
+              <!--WHAT IS THIS?<?php echo $this->getChildHtml('extrahint') ?>-->
+  
+              
+              <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<?
+$color =   $_product->getAttributeText('color');
+/**** Custom Image Attribute ****/
+$imgWidth = 20;
+$imgHeight = 20;
+$attrId = 'swatch';
+
+$product=$this->getProduct();
+$customImg = '';
+try {
+    $customImg = $this->helper('catalog/image')->init($product, $attrId)->resize($imgWidth,$imgHeight);
+} catch( Exception $e ) /* Catch for no custom image */ {
+}
+if( $customImg || $color )
+    {
+?>
+              <div class="swatches current">
+              	<ul>
+                	<li><?php if ($rollover !== '') :
+						?><img src="<?php echo $customImg ?>" class="swatch" title="<?php echo $this->htmlEscape($_product->getAttributeText('color')) ?>" /><?php
+						else:
+						 ?><img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(20) ?>" width="20" height="20" alt="<?php echo $this->htmlEscape($_product->getAttributeText('color')) ?>" title="<?php echo $this->htmlEscape($_link->getAttributeText('color')) ?>" /><?php
+						endif;
+			/**** End Custom Image Attribute ****/ ?></li>
+                </ul>
+			<span class="colorname"><?php echo $color; ?></span>
+                <div class="clear"></div>
+              </div>
+ <? }?>									   
+                           
+              <div class="add-to-cart">
+<!-- RC                  <input type="hidden" name="product" value="<? echo $_product->getId(); ?>" />
+                  
+                  <input type="hidden" name="qty" value="1" /> removed by rc??? -->
+              
+                  <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                       
+                       
+                       <?php if($_product->isSaleable()): ?>
+                      
+                       <fieldset class="qty">
+                       		<label for="qty"><?php echo $this->__('Qty:') ?></label>
+        					<input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() + 1  * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+                            <a href="javascript:void(0);" class="increment increase"><?php echo $this->__('+') ?></a>
+                            <a href="javascript:void(0);" class="increment decrease"><?php echo $this->__('-') ?></a>
+        				</fieldset>
+                        
+                        <fieldset class="sz">
+                        
+                        <?php /***** IF THIS IS AN ACCESSORY *****/ if ($this->htmlEscape($_product->getAttributeText('add_to_bag')) == 'Yes'): ?>
+
+                            <? $configurableAttributeCollection=$_product->getTypeInstance()->getConfigurableAttributes(); ?>
+                            
+                            
+                              <? foreach($configurableAttributeCollection as $attribute): ?>
+                  <input type="hidden" id="att<?php echo $attribute->getAttributeId() ?>" name="super_attribute[<?php echo $attribute->getAttributeId() ?>]" value="" >
+                                <?
+                                $childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds($_product->getId());
+                                // var_dump( $childIds );
+                                
+                                $childProducts = Mage::getModel('catalog/product_type_configurable')->getUsedProducts(null,$_product);
+                                // var_dump( $childProducts );
+                                
+                                // Get the product
+                                // $product = Mage::getModel('catalog/product')->loadByAttribute('id',$_product->getId());
+                                // echo Mage::getModel('catalog/product')->$_product->getId();
+                                
+                                foreach( $childProducts as $childProduct ) {
+					    if( $childProduct->getStatus()  ==   Mage_Catalog_Model_Product_Status::STATUS_DISABLED )
+						continue;
+					    if( !$childProduct->getIsInStock() )
+						continue;
+				    ?>
+                        <button type="button" class="button btn-cart accessory" <? if( $childProduct->getIsSalable() ) { ?> onclick="document.getElementById( 'att<?php echo $attribute->getAttributeId() ?>' ).value = '<? echo $childProduct->_getData('size'); ?>'; productAddToCartForm.submit(this)" <? } ?>><span><? echo $this->__('Add to Bag'); ?></span></button>
+                                  
+                                <? } ?>
+                              
+                              
+                              <? endforeach; ?>
+                              
+						<?php /***** IF THIS IS NOT AN ACCESSORY *****/ else: ?>
+						
+                            <h3 class="header">Add Your Size To Bag:</h3>
+                            
+                            <? $configurableAttributeCollection=$_product->getTypeInstance()->getConfigurableAttributes(); ?>
+                            
+                            
+                              <? foreach($configurableAttributeCollection as $attribute): ?>
+                  <input type="hidden" id="att<?php echo $attribute->getAttributeId() ?>" name="super_attribute[<?php echo $attribute->getAttributeId() ?>]" value="" >
+                                <?
+                                $childIds = Mage::getModel('catalog/product_type_configurable')->getChildrenIds($_product->getId());
+                                // var_dump( $childIds );
+                                
+                                $childProducts = Mage::getModel('catalog/product_type_configurable')->getUsedProducts(null,$_product);
+                                // var_dump( $childProducts );
+                                
+                                // Get the product
+                                // $product = Mage::getModel('catalog/product')->loadByAttribute('id',$_product->getId());
+                                // echo Mage::getModel('catalog/product')->$_product->getId();
+                                
+                                foreach( $childProducts as $childProduct ) {
+					    if( $childProduct->getStatus()  ==   Mage_Catalog_Model_Product_Status::STATUS_DISABLED )
+						continue;
+					    if( !$childProduct->getIsInStock() )
+						continue;
+				    ?>
+                        <button type="button" class="button btn-cart" <? if( $childProduct->getIsSalable() ) { ?> onclick="document.getElementById( 'att<?php echo $attribute->getAttributeId() ?>' ).value = '<? echo $childProduct->_getData('size'); ?>'; productAddToCartForm.submit(this)" <? } ?>><span><? echo $childProduct->getAttributeText('size'); ?></span></button>
+                                  
+                                <? } ?>
+                              
+                              
+                              <? endforeach; ?>
+                          
+                          <?php /***** END IF ACCESSORY *****/ endif; ?>
+                          </fieldset>
+
+                    
+					<?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>
+                       
+                       <!--< ?php echo $this->getChildChildHtml('container1', '', true, true) ?>-->
+                       
+                  <?php endif;?>
+                  
+				<?php $h = $this->getChildHtml('upsell_products'); ?>
+				<? if( $h ) { ?>
+                  		<div class="swatches available">
+				    <?=$h?>
+                        </div>
+				    <? } ?>
+                   
+                  </div>
+                  
+                  		<?php $_specialLinks = $this->getProduct()->getProductSpecialLinks(); ?>
+                            <?php if ($_specialLinks): ?>
+                                <div class="meta desc special-links">
+                                    <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_specialLinks, 'product_special_links') ?>
+                                </div>
+                        <?php endif; ?>
+                  
+                  </div>
+                  <?php /***** End Of .left *****/ ?>
+                    
+                   
+                   <div class="product-info right">
+                    
+						<div class="actions">
+							<?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                <p class="add-to-favorites left"><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>"><?php echo $this->__('Add to Favorites') ?></a></p>
+                            <?php endif; ?>
+                            
+                            <p class="share right">
+                            
+                              <a class="addthis_button" href="http://www.addthis.com/bookmark.php">Share</a>
+                              <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+                              <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4da76b2a59bee778"></script>
+                               
+                            </p>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="accordion_container">
+                        <a class="open trg"><h2><?php echo $this->__('Notes') ?></h2></a>
+                        <?php $_description = $this->getProduct()->getDescription(); ?>
+                            <?php if ($_description): ?>
+                                <div class="meta desc">
+                                    <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+                                </div>
+                        <?php endif; ?>
+<? $size = $_product->getSizeAndFit();
+if( $size )
+    {
+?>
+
+                        <a class="trg"><h2><?php echo $this->__('Size + Fit') ?></h2></a>
+<div class="meta"><?php echo $size; ?><br/><a id="sizechart_link" class="<?php if ($category): echo $category->getName(); endif; ?>" href="#">View sizing chart</a></div>
+
+					   <? } ?>
+<? $material = $_product->getData('material_description');
+if( $_product->getData('composition') )
+    $material .= "<br />".$_product->getData('composition');
+if( $material )
+    {
+?>
+                        <a class="trg"><h2><?php echo $this->__('Material') ?></h2></a>
+                        <div class="meta">
+                        	<?php echo $material ?>
+                        </div>
+	    <? } ?>
+	    <? $delivery = $_product->getDeliveryAndReturns();
+if( $delivery )
+    {
+?>
+	    
+                        <a class="trg"><h2><?php echo $this->__('Delivery + Returns') ?></h2></a>
+                        <div class="meta"><?php echo $_product->getDeliveryAndReturns(); ?><br /><br /><a href="<?php echo $this->getUrl('customer-service'); ?>"><?php echo 'View more information on returns' ?></a></p>
+                        </div>
+<? } ?>                       		
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                   
+                    
+              </div>
+              
+              <!--WHAT IS THIS?<?php echo $this->getChildHtml('other');?>-->
+  
+  
+          <div class="clearer"></div>
+          
+      </form>
+      <script type="text/javascript">
+      //<![CDATA[
+          var productAddToCartForm = new VarienForm('product_addtocart_form');
+          productAddToCartForm.submit = function(button, url) {
+              if (this.validator.validate()) {
+                  var form = this.form;
+                  var oldUrl = form.action;
+  
+                  if (url) {
+                     form.action = url;
+                  }
+                  var e = null;
+                  try {
+                      this.form.submit();
+                  } catch (e) {
+                  }
+                  this.form.action = oldUrl;
+                  if (e) {
+                      throw e;
+                  }
+  
+                  if (button && button != 'undefined') {
+                      button.disabled = true;
+                  }
+              }
+          }.bind(productAddToCartForm);
+  
+          productAddToCartForm.submitLight = function(button, url){
+              if(this.validator) {
+                  var nv = Validation.methods;
+                  delete Validation.methods['required-entry'];
+                  delete Validation.methods['validate-one-required'];
+                  delete Validation.methods['validate-one-required-by-name'];
+                  if (this.validator.validate()) {
+                      if (url) {
+                          this.form.action = url;
+                      }
+                      this.form.submit();
+                  }
+                  Object.extend(Validation.methods, nv);
+              }
+          }.bind(productAddToCartForm);
+      //]]>
+      </script>
+      </div><!-- end product-view-->
+		
+    
+</div><!-- end product -->
+
+
+<div class="even-more clearfix">
+
+    <?php echo $this->getChildHtml('sizefit') ?>
+    <!-- for now place size code here, to be placed in cms block later -->  
+    <div class="tempoverlay">
+      <div class="tab_container">
+        <div class="close">X</div>
+        <ul class="tabs">
+          <li class="selected">Mens</li>
+          <li>Womens</li>
+          <li>Kids</li>
+          <li>Baby</li>
+        </ul>
+      </div>
+      <div class="mens chart active">
+        <table>
+          <tr><th class="title" colspan="5">Mens Underwear</th></tr>
+          <tr><th></th><th>S</th><th>M</th><th>L</th><th>XL</th></tr>
+          <tr><th class="side">EU</th><td>46</td><td>48</td><td>50</td><td>52</td></tr>
+          <tr><th class="side">Waist In</th><td>28 - 30</td><td>32 - 24</td><td>36 - 38</td><td>40 - 42</td></tr>
+          <tr><th class="side last">Waist Cm</th><td class="last">71 - 76</td><td class="last">81 - 86</td><td class="last">91 - 97</td><td class="last">102 - 107</td></tr>
+        </table>
+
+        <table class="right">
+          <tr><th class="title" colspan="3">Mens Sockwear</th></tr>
+          <tr><th></th><th>S-M</th><th>M-L</th></tr>
+          <tr><th class="side">Eur</th><td>36 - 40</td><td>41 - 46</td></tr>
+          <tr><th class="side">UK</th><td>4 - 7</td><td>7.5 - 11.5</td></tr>
+          <tr><th class="side">Jpn</th><td>21 - 24.5</td><td>25 - 29</td></tr>
+          <tr><th class="side last">US</th><td class="last">4.5 - 7.5</td><td class="last">8 - 12</td></tr>
+        </table>
+
+        <table>
+          <tr><th class="title" colspan="5">Mens Shirtwear</th></tr>
+          <tr><th></th><th>S</th><th>M</th><th>L</th><th>XL</th></tr>
+          <tr><th class="side">Chest In</th><td>37.75</td><td>39.75</td><td>41.75</td><td>44.75</td></tr>
+          <tr><th class="side last">Chest Cm</th><td class="last">97</td><td class="last">101</td><td class="last">106</td><td class="last">114</td></tr>
+        </table>
+      </div>
+      <div class="womens chart">
+        <table>
+          <tr><th class="title" colspan="4">Womens Underwear</th></tr>
+          <tr><th></th><th>S</th><th>M</th><th>L</th></tr>
+          <tr><th class="side">US Size</th><td>4 - 6</td><td>8 - 10</td><td>10 - 12</td></tr>
+          <tr><th class="side">Waist In</th><td>23 - 25</td><td>26 - 28</td><td>28 - 31</td></tr>
+          <tr><th class="side last">Waist Cm</th><td class="last">59 - 64</td><td class="last">66 - 71</td><td class="last">71 - 79</td></tr>
+        </table>
+
+        <table class="right">
+          <tr><th class="title" colspan="3">Womens Sockwear</th></tr>
+          <tr><th></th><th>S-M</th><th>M-L</th></tr>
+          <tr><th class="side">Eur</th><td>36 - 40</td><td>41 - 46</td></tr>
+          <tr><th class="side">UK</th><td>3 - 6.5</td><td>7 - 11</td></tr>
+          <tr><th class="side">Jpn</th><td>21 - 24.5</td><td>25 - 29</td></tr>
+          <tr><th class="side last">US</th><td class="last">5.5 - 9.5</td><td class="last">10 - 12.5</td></tr>
+        </table>
+
+        <table>
+          <tr><th class="title" colspan="4">Womens Shirtwear</th></tr>
+          <tr><th></th><th>S</th><th>M</th><th>L</th></tr>
+          <tr><th class="side">US Size</th><td>4 - 6</td><td>8 - 10</td><td>12 - 14</td></tr>
+          <tr><th class="side">Chest In</th><td>34 - 35</td><td>36 - 37</td><td>39 - 40</td></tr>
+          <tr><th class="side last">Chest Cm</th><td class="last">86 - 89</td><td class="last">92 - 94</td><td class="last">99 - 102</td></tr>
+        </table>
+      </div>
+      <div class="kids chart">
+
+        <table>
+            <tr><th class="title" colspan="4">Kids Underwear</th></tr>
+            <tr><th></th><th>S</th><th>M</th><th>L</th><th>XL</th></tr>
+            <tr><th class="side">Age</th><td>2 - 4 yrs</td><td>4 - 6 yrs</td><td>6 - 8 yrs</td><td>8 - 10 yrs</td></tr>
+            <tr><th class="side">Waist In</th><td>20 - 21</td><td>21 - 22</td><td>22 - 23</td><td>23 - 25</td></tr>
+            <tr><th class="side last">Waist Cm</th><td class="last">50 - 53</td><td class="last">53 - 56</td><td class="last">56 - 58</td><td class="last">58 - 64</td></tr>
+        </table>
+
+        <table class="right">
+          <tr><th class="title" colspan="4">Kids Sockwear</th></tr>
+          <tr><th></th><th>S</th><th>M</th><th>L</th></tr>
+          <tr><th class="side">Age</th><td>2 - 4 yrs</td><td>4 - 6 yrs</td><td>6 - 8 yrs</td></tr>
+          <tr><th class="side">US Shoe</th><td>7 - 11</td><td>11.5 - 13</td><td>1 - 3.5</td></tr>
+          <tr><th class="side last">EU Shoe</th><td class="last">25 - 28</td><td class="last">29 - 32</td><td class="last">33 - 36</td></tr>
+        </table>
+
+        <table>
+          <tr><th class="title" colspan="4">Kids Shirtwear</th></tr>
+          <tr><th></th><th>S</th><th>M</th><th>L</th><th>XL</th></tr>
+          <tr><th class="side">Age</th><td>2 - 4 yrs</td><td>4 - 6 yrs</td><td>6 - 8 yrs</td><td>8 - 10 yrs</td></tr>
+          <tr><th class="side">Height In</th><td>34 - 40</td><td>40 - 45</td><td>45 - 49</td><td>49 - 54</td></tr>
+          <tr><th class="side">Height Cm</th><td>86 - 102</td><td>102 - 114</td><td>114 - 126</td><td>126 - 138</td></tr>
+          <tr><th class="side last">Chest In</th><td class="last">21 - 23</td><td class="last">23 - 25</td><td class="last">25 - 27</td><td class="last">27 - 29</td></tr>
+        </table>
+
+      </div>
+      <div class="baby chart">
+
+       <table>
+          <tr><th class="title" colspan="3">Baby Bodysuit</th></tr>
+          <tr><th></th><th>S/M</th><th>M/L</th></tr>
+          <tr><th class="side">Age</th><td>3 - 6 yrs</td><td>6 - 12 yrs</td></tr>
+          <tr><th class="side">Weight</th><td>up to 17 lbs</td><td>17 - 22 lbs</td></tr>
+          <tr><th class="side">Length In</th><td>up to 27</td><td>27 - 30</td></tr>
+          <tr><th class="side last">Length Cm</th><td class="last">up to 69</td><td class="last">69-76</td></tr>
+      </table>
+
+      <table class="right">
+        <tr><th class="title" colspan="2">Baby Sockwear</th></tr>
+        <tr><th></th><th>One Size</th></tr>
+        <tr><th class="side last">Average Age</th><td class="last">0 - 12 months</td></tr>
+      </table>
+
+      </div>
+    </div>
+    <script type="text/javascript">
+      
+    </script>
+	
+    <div class="section more-like-this">
+    	<?php echo $this->getChildHtml('related_products') ?>
+    </div>
+        
+</div>

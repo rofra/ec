@@ -1,0 +1,44 @@
+<config>
+<modules>
+<Sweden_SPS>
+<version>0.0.2</version>
+</Sweden_SPS>
+</modules>
+
+<frontend>
+ <events>
+  <core_block_abstract_to_html_before>
+   <observers>
+    <cacheBlock>
+     <type>singleton</type>
+<class>sps/observer</class>
+     <method>customBlockCache</method>
+    </cacheBlock>
+   </observers>
+  </core_block_abstract_to_html_before>
+ </events>
+</frontend>
+
+    <global>
+    <models>
+      <sps>
+        <class>Sweden_SPS_Model</class>
+      </sps>
+          <catalog>
+	                  <rewrite>
+                      <product>Sweden_SPS_Model_Product</product>
+                        </rewrite>
+	    </catalog>
+    </models>
+
+
+<blocks>
+        <catalog>
+                <rewrite>
+                    <product_view_type_simple>Sweden_SPS_Block_Product_View_Type_Simple</product_view_type_simple>
+                    
+                </rewrite>
+            </catalog>
+</blocks>
+</global>
+</config>

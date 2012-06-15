@@ -1,0 +1,34 @@
+[11-Nov-2011 22:32:39] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/lib/Zend/Cache/Backend/File.php on line 897
+[15-Nov-2011 18:04:39] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/app/code/local/Sweden/SPS/NewProductImportScript.php on line 250
+[15-Nov-2011 18:05:40] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/app/code/core/Mage/Eav/Model/Entity/Attribute/Abstract.php on line 342
+[15-Nov-2011 20:57:41] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/app/Mage.php on line 0
+[16-Nov-2011 17:05:41] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/lib/Zend/Cache/Backend/File.php on line 655
+[16-Nov-2011 21:04:41] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/app/code/core/Mage/Catalog/Model/Product.php on line 221
+[16-Nov-2011 21:47:44] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/lib/Zend/Db/Statement.php on line 300
+[16-Nov-2011 21:52:44] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/lib/Zend/Cache/Backend/File.php on line 896
+[16-Nov-2011 22:12:41] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/app/code/core/Mage/Catalog/Model/Resource/Eav/Mysql4/Product/Indexer/Price/Default.php on line 431
+[16-Nov-2011 22:21:41] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/app/code/local/Sweden/SPS/NewProductImportScript.php on line 250
+[17-Nov-2011 17:05:42] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/lib/Zend/Db/Adapter/Abstract.php on line 1018
+[17-Nov-2011 17:06:40] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/app/code/core/Mage/Catalog/Model/Product.php on line 324
+[17-Nov-2011 17:56:41] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/lib/Zend/Db/Select.php on line 803
+[17-Nov-2011 18:36:39] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/lib/Zend/Cache/Backend/File.php on line 1003
+[17-Nov-2011 19:37:40] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/etiquett/public_html/lib/Zend/Db/Adapter/Abstract.php on line 928
+[16-Dec-2011 22:27:01] PHP Fatal error:  Uncaught exception 'Mage_Core_Model_Store_Exception' in /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php:1284
+Stack trace:
+#0 /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php(797): Mage_Core_Model_App->throwStoreException()
+#1 /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php(454): Mage_Core_Model_App->getStore()
+#2 /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php(262): Mage_Core_Model_App->_initCurrentStore('default', 'store')
+#3 /home/etiquett/public_html/app/Mage.php(570): Mage_Core_Model_App->init('default', 'store', Array)
+#4 /home/etiquett/public_html/app/code/local/Sweden/SPS/NewProductImportScript.php(645): Mage::app('default')
+#5 {main}
+  thrown in /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php on line 1284
+[16-Dec-2011 23:12:01] PHP Fatal error:  Uncaught exception 'Mage_Core_Model_Store_Exception' in /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php:1284
+Stack trace:
+#0 /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php(797): Mage_Core_Model_App->throwStoreException()
+#1 /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php(454): Mage_Core_Model_App->getStore()
+#2 /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php(262): Mage_Core_Model_App->_initCurrentStore('default', 'store')
+#3 /home/etiquett/public_html/app/Mage.php(570): Mage_Core_Model_App->init('default', 'store', Array)
+#4 /home/etiquett/public_html/app/code/local/Sweden/SPS/NewProductImportScript.php(645): Mage::app('default')
+#5 {main}
+  thrown in /home/etiquett/public_html/app/code/core/Mage/Core/Model/App.php on line 1284
+[04-Jan-2012 21:17:43] PHP Fatal error:  Call to undefined method Mage_Catalog_Model_Product_Type_Simple::getConfigurableAttributesAsArray() in /home/etiquett/public_html/app/code/local/Sweden/SPS/NewProductImportScript.php on line 488

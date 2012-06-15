@@ -1,0 +1,62 @@
+/*
+ *  Sweden Unlimited
+ *  presents:
+ *  Browser Enhancements
+ * 
+ *  
+ */
+
+.ie6 .cms-home .main-container .new-arrivals .slides {
+  top: 0px;
+  left: 0px;
+}
+
+.ie6 .cms-home .main-container .new-arrivals .previous,
+.ie6 .cms-home .main-container .new-arrivals .next {
+  height: 213px;
+}
+
+.ie7 .cms-home .main-container .new-arrivals .inside .previous,
+.ie7 .cms-home .main-container .new-arrivals .inside .next,
+
+.ie7 .catalog-product-view .product .images .previous,
+.ie7 .catalog-product-view .product .images .next {
+  top: 50%;
+  margin-top: -16px;
+}
+
+.ie7 .cms-catalog .main-container .product-listing .product .tooltip,
+.ie8 .cms-catalog .main-container .product-listing .product .tooltip {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='includes/css/images/catalog-item-overlay.png',sizingMethod='scale');
+}
+
+.ie7 .cms-catalog .main-container .product-listing,
+.ie8 .cms-catalog .main-container .product-listing {
+  padding-bottom: 100px;
+}
+
+.ie7 .cms-catalog .main-container .product-listing .product .title,
+.ie8 .cms-catalog .main-container .product-listing .product .title {
+  background: white;
+}
+
+.ie7 .catalog-product-view .product .also-available .column .item {
+  z-index: 1;
+}
+
+.ie7 .catalog-product-view .product .also-available .column .item a,
+.ie7 .catalog-product-view .product .also-available .column .item a img {
+  z-index: 1;
+}
+
+.ie7 .catalog-product-view .product .also-available .column .item {
+  z-index: 1;
+}
+
+.ie7 .catalog-product-view .product .also-available .column .item .tooltip {
+  position: absolute;
+  z-index: 1000000;
+  left: 50%;
+  top: 50%;
+}

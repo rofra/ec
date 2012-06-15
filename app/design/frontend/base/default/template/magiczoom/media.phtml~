@@ -1,0 +1,186 @@
+<?php
+
+/**
+ * Magictoolbox product media template for Magento store.
+ * Allow use MagicTools on product detailes page.
+ * @mail support@magictoolbox.com
+ */
+
+
+    $magic360ClassName = Mage::registry('magic360ClassName');
+    if($magic360ClassName) {
+        //require(dirname(__FILE__).'/../'.$magic360ClassName.'/media.phtml');
+        require(Mage::getSingleton('core/design_package')->getTemplateFilename($magic360ClassName.'/media.phtml'));
+        //Mage::unregister('magic360ClassName');
+        return;
+    }
+
+
+    $magicToolboxHelper = Mage::helper('magiczoom/settings');
+    $tool = $magicToolboxHelper->loadTool('product');
+
+    $_product = $this->getProduct();
+    $id = $_product->getId();
+
+    $allowedPage = !$tool->params->checkValue('use-effect-on-product-page', 'No');
+    $main = '';
+
+    if ($allowedPage && $_product->getImage() != 'no_selection' && $_product->getImage() && $tool->type == 'standard') {
+        // we have main image. parce it and print out with Magic Zoom settings.
+        $title = $this->htmlEscape($_product->getName());
+        //$description = $this->htmlEscape($_product->getDescription());
+        //$shortDescription = $this->htmlEscape($_product->getShortDescription());
+        $output_helper = $this->helper('catalog/output');
+        $description = $this->htmlEscape($output_helper->productAttribute($_product, $_product->getDescription(), 'description'));
+        $shortDescription = $this->htmlEscape($output_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description'));
+
+        //$thumb = $magicToolboxHelper->magicToolboxResizer($_product, 'small_image', 'thumb');
+        //$img = $magicToolboxHelper->magicToolboxResizer($_product, 'image');
+        $_image_file = $_product->getImage();
+        $img = $this->helper('catalog/image')->init($_product, 'image',$_image_file)->__toString();
+        list($w, $h) = $magicToolboxHelper->magicToolboxGetSizes('thumb', $this->helper('catalog/image')->getOriginalSizeArray());
+        $thumb = $this->helper('catalog/image')->init($_product, 'small_image', $_image_file)->resize($w, $h)->__toString();
+
+        $main = $tool->template(compact("id", "title", "description", "shortDescription", "img", "thumb"));
+
+        if($_product->getTypeId() == "configurable") {
+            $associatedImages = array();
+            if($tool->params->checkValue('load-associated-product-images', 'Yes')) {
+                $associatedProducts = $_product->loadByAttribute('sku', $_product->getSku())->getTypeInstance()->getUsedProducts();
+                foreach($associatedProducts as $associatedProduct) {
+                    $associatedProductId = $associatedProduct->getId();
+                    if($associatedProduct->image == "no_selection" || $associatedProduct->image == "") {
+                        $associatedImages[] = "'img".$associatedProductId."' : '".$img."'";
+                        $associatedImages[] = "'thumb".$associatedProductId."' : '".$thumb."'";
+                    } else {
+                        $associatedImages[] = "'img".$associatedProductId."' : '".$this->helper('catalog/image')->init($associatedProduct, 'image', $associatedProduct->getImage())->__toString()."'";
+                        list($w, $h) = $magicToolboxHelper->magicToolboxGetSizes('thumb', $this->helper('catalog/image')->getOriginalSizeArray());
+                        $associatedImages[] = "'thumb".$associatedProductId."' : '".$this->helper('catalog/image')->init($associatedProduct, 'small_image', $associatedProduct->getImage())->resize($w, $h)->__toString()."'";
+                    }
+                }
+            }
+?>
+<script type="text/javascript">
+    var associatedImages = {<?php echo implode(',', $associatedImages); ?>};
+    var associatedImagesCount = <?php echo count($associatedImages); ?>;
+    var choosedOptions = {};
+</script>
+<?php
+        }
+
+    } elseif($tool->type == 'standard') {
+        //product has no main image. print magento default image
+        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(265).'" alt="'.$this->htmlEscape($_product->getName()).'" />';
+        $main = $this->helper('catalog/output')->productAttribute($_product, $_img, 'image');
+?>
+<script type="text/javascript">
+    function MagicToolboxChangeOptionConfigurable(element, optionTitle) {
+        return;
+    }
+</script>
+<?php
+        $tool->params->set('template', 'original');
+    }
+
+    if($tool->type == 'category' || $tool->type == 'circle') {
+        $images = array();
+    }
+
+    $thumbs = array();
+
+    if (!$this->_isGalleryDisabled && count($this->getGalleryImages()->getItems()) > ($tool->type == 'standard' ? 1 : 0)) {
+        $title = $this->htmlEscape($_product->getName());
+        foreach( array( "image", "alt1","alt2","alt3","alt4" ) as $type )
+			{
+			    
+			    $file = $_product->getData( $type );
+//        foreach($this->getGalleryImages() as $_image) {
+			    if( !$file || strpos( $file, "placeholder" ) !== false || strpos( $file, "no_selection" ) !== false )
+				continue;
+                
+                
+            if($allowedPage) {
+                //$medium = $magicToolboxHelper->magicToolboxResizer($_product, 'small_image', 'thumb', $_image->getFile());
+                //$thumb = $magicToolboxHelper->magicToolboxResizer($_product, 'thumbnail', 'selector', $_image->getFile());
+                //$img = $magicToolboxHelper->magicToolboxResizer($_product, 'image', null, $_image->getFile());
+                $_image_file = $file; // $_image->getFile();
+                $_image_path  = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .DS.'catalog'.DS.'product' . $file;
+                list($w, $h) = $magicToolboxHelper->magicToolboxGetSizes('thumb', getimagesize($_image_path));
+		if( !$w ) $w = $h;
+                $medium = $this->helper('catalog/image')->init($_product, 'small_image', $_image_file)->resize($w, $h)->__toString();
+                list($w, $h) = $magicToolboxHelper->magicToolboxGetSizes('selector', getimagesize($_image_path));
+		if( !$w ) $w = $h;
+                $thumb = $this->helper('catalog/image')->init($_product, 'thumbnail', $_image_file)->resize($w, $h)->__toString();
+                $img = $this->helper('catalog/image')->init($_product, 'image', $_image_file)->__toString();
+///home/etiquett/public_html/media/catalog/product/M/W/MWCB11-01_25_1.jpg
+///M/W/MWCB11-01_25_1.jpg
+//http://etiquette.swedenunlimited.com/media/catalog/product/cache/1/thumbnail/56x56/9df78eab33525d08d6e5fb8d27136e95/M/W/MWCB11-01_25_1.jpg
+//http://etiquette.swedenunlimited.com/media/catalog/product/cache/1/small_image/250x250/9df78eab33525d08d6e5fb8d27136e95/M/W/MWCB11-01_25_1.jpg
+//http://etiquette.swedenunlimited.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/M/W/MWCB11-01_25_1.jpg
+//                echo( "$_image_path \n $_image_file \n $thumb \n $medium \n $img \n\n" );
+                if($tool->params->checkValue('use-individual-titles', 'Yes')) {
+//                    $title = $this->htmlEscape($_image->getLabel());
+                    $title = $this->htmlEscape($_product->getName());
+                }
+                if(empty($title)) {
+                    $title = $this->htmlEscape($_product->getName());
+                }
+
+                $alt = $this->htmlEscape($_product->getName());
+//                $alt = $this->htmlEscape($_image->getLabel());
+                if($tool->type == 'circle') {
+                    $images[] = compact("id", "img", "thumb", "medium", "title", "alt");
+                } else if($tool->type == 'category') {
+
+                    $thumb = $medium;
+                    $images[] = compact("id", "thumb", "title", "alt");
+
+
+                } else {
+                    $a = $tool->subTemplate(compact("id", "img", "thumb", "medium", "title", "alt"));
+                    $event = 'click';
+                    $event = strtolower($tool->params->getValue('selectors-change'));
+
+
+                    $a = str_replace('<a ', '<a on' . $event . '="MagicToolboxChangeSelector(this);" ', $a);
+
+                    if($tool->params->checkValue('ignore-magento-css', 'Yes')) {
+                        $a = str_replace("<a ", "<a style=\"width:auto !important; height:auto !important; margin: 0 !important;\" ", $a);
+                        $a = str_replace("<img ", "<img style=\"width:auto !important; height:auto !important; margin: 0 !important;\" ", $a);
+                    }
+
+                    $thumbs[] = $a;
+                }
+            } else {
+                $thumbs[] = '<a href="#" onclick="popWin(\'' . $this->getGalleryUrl($_image) . '\', \'gallery\', \'width=300,height=300,left=50,top=50,location=no,status=yes,scrollbars=yes,resizable=yes\'); return false;"><img src="' . $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(56) . '" alt="' . $this->htmlEscape($_image->getLabel()) . '" title="' . $this->htmlEscape($_image->getLabel()) . '" /></a>';
+            }
+        }
+        if($tool->type == 'category') {
+            $main = $tool->template($images);
+        } elseif($tool->type == 'circle') {
+            if($tool->enabled($images, $id)) {
+                $main = $tool->template($images);
+            } else {
+                $main = 'original';
+                require($magicToolboxHelper->getProductViewMediaTemplateFilename());
+            }
+        }
+    }
+
+    if(!$tool->params->exists('template')) {
+        $tool->params->set('template', 'original');
+    }
+    //because of issue when not standard type tool's (scroll) params replace standard type tool's params (magiczoomplus)
+    //'template' option not present there
+    MagicToolboxTemplateHelper::setOptions($tool->params);
+
+    if($main !== 'original') {
+        echo MagicToolboxTemplateHelper::render(array(
+            'main' => $main,
+            'thumbs' => $thumbs,
+            'pid' => $id,
+            'moviews' => $this->__('More Views')
+        ));
+    }
+
+?>

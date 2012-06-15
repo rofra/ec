@@ -1,0 +1,1236 @@
+/*
+Theme Name: Etiquette Blog
+Theme URI: http://swedenunlimited.com/
+Description: Custom theme for Etiquette Clothiers.
+Version: 1.0
+Author: Sweden Unlimited
+Author URI: http://swedenunlimited.com/
+Tags: custom
+
+
+*/
+
+
+
+/* Begin Typography & Colors */
+body {
+	background: none repeat scroll 0 0 #F2EFEA;
+    color: #2F2F2F;
+    font: 12px/1.55 Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+	}
+
+#page {
+	background-color: white;
+	margin:0 auto;
+	text-align: left;
+	}
+	
+.nav-container {
+    border-top: 6px solid black;
+	width:980px;
+	margin:0 auto;
+}
+
+.entry p {
+	font:normal 11px/18px Georgia, "Times New Roman", Times, serif;
+	color:#000;
+	}
+
+.entry p a {
+	color: #666;
+	text-decoration: none;
+	}
+
+.entry p a:hover {
+	color: #000;
+	text-decoration: underline;
+	}
+
+.small .entry a {
+	float:right;	
+}
+
+.thread-alt {
+	background-color: #f8f8f8;
+}
+.thread-even {
+	background-color: white;
+}
+.depth-1 {
+border: 1px solid #ddd;
+}
+
+.even, .alt {
+
+	border-left: 1px solid #ddd;
+}
+
+small {
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 0.9em;
+	line-height: 1.5em;
+	}
+
+h1, h2, h3 {
+	font-weight:normal;
+	}
+
+h1 {
+	font-size: 4em;
+	text-align: center;
+	}
+
+#header { text-align:center; padding:13px 0 35px; }
+#header .logo { display:block; width:192px; height:61px; overflow:hidden; text-indent:-9999px; background:url(assets/img/logo.png) 0 0 no-repeat; margin:0 auto 13px; }
+#header .header-nav { border-top:6px solid #000; padding-top:3px; }
+#header .header-nav .inner { border:1px solid #000; border-width:1px 0; }
+#header .header-nav .inner #nav { margin:6px auto; padding:0 17px; list-style-type:none; width:452px; height:22px; border:1px solid #000; border-width:0 1px; }
+#header .header-nav .inner #nav li { float:left; }
+#header .header-nav .inner #nav li a { color:#000; font:normal 14px/22px Georgia, "Times New Roman", Times, serif; margin:0 16px; text-decoration:none; }
+
+#content h2 {
+	font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 35px;
+    text-align: left;
+	text-transform:uppercase;
+	}
+
+#content .small h2 {
+	font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 15px;
+    text-align: left;
+	text-transform:uppercase;
+	padding:6px 0;
+	}
+
+	
+#sidebar h2 {
+	font-family: 'BaskervilleItalic';
+	font-size: 24px;
+	line-height:26px;
+	text-align:center;
+	font-weight:100;
+	}	
+
+h2.pagetitle {
+	font-size: 1.6em;
+	}
+
+h3 {
+	font-size: 1.3em;
+	}
+
+h1, h1 a, h1 a:hover, h1 a:visited, #headerimg .description {
+	text-decoration: none;
+	color: white;
+	}
+
+h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
+	color: #333;
+	}
+
+h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar h2, #wp-calendar caption, cite {
+	text-decoration: none;
+	}
+
+.entry p a:visited {
+	color: #b85b5a;
+	}
+
+.sticky {
+	background: #f7f7f7;
+	padding: 0 10px 10px;
+	}
+.sticky h2 {
+	padding-top: 10px;
+	}
+
+.commentlist li, #commentform input, #commentform textarea {
+	font: 0.9em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	}
+.commentlist li ul li {
+	font-size: 1em;
+}
+
+.commentlist li {
+	font-weight: bold;
+}
+
+.commentlist li .avatar { 
+	float: right;
+	border: 1px solid #eee;
+	padding: 2px;
+	background: #fff;
+	}
+
+.commentlist cite, .commentlist cite a {
+	font-weight: bold;
+	font-style: normal;
+	font-size: 1.1em;
+	}
+
+.commentlist p {
+	font-weight: normal;
+	line-height: 1.5em;
+	text-transform: none;
+	}
+
+#commentform p {
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	}
+
+.commentmetadata {
+	font-weight: normal;
+	}
+
+#sidebar {
+	font: 1em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	}
+
+small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockquote, strike {
+	color: #777;
+	}
+
+code {
+	font: 1.1em 'Courier New', Courier, Fixed;
+	}
+
+acronym, abbr, span.caps
+{
+	font-size: 0.9em;
+	letter-spacing: .07em;
+	}
+
+a {
+	color: #000;
+	text-decoration: none;
+	}
+
+a:hover {
+	color: #666;
+	text-decoration: underline;
+	}
+
+#wp-calendar #prev a, #wp-calendar #next a {
+	font-size: 9pt;
+	}
+
+#wp-calendar a {
+	text-decoration: none;
+	}
+
+#wp-calendar caption {
+	font: bold 1.3em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	text-align: center;
+	}
+
+#wp-calendar th {
+	font-style: normal;
+	text-transform: capitalize;
+	}
+	
+.post-date {
+	display:block;
+	width:61px;
+	height:61px;
+	background:url('assets/img/date-bg.png') 0 0 no-repeat;
+	color:#000;
+	float:left;	
+}
+
+.small .post-date {
+	background:none;
+	width:100px;
+	color:#999;
+	float:left;	
+}
+
+.post-date .day {
+	font-size:30px;
+	font-weight:normal;
+	line-height:30px;
+	float:left;
+	text-align:center;
+	width:61px;
+	margin:6px 0 0;
+	font-family: "NarzissUltraboldDrops";
+}
+
+.post-date .month {
+	font:normal 10px/14px Georgia, "Times New Roman", Times, serif;
+	text-transform:uppercase;
+	letter-spacing:.15em;	
+	text-align:center;
+	width:61px;
+	display:block;
+}
+
+.auth {
+	color:#adadad;
+	font:bold 11px/14px Arial, Helvetica, sans-serif;	
+}
+/* End Typography & Colors */
+
+
+
+/* Begin Structure */
+body {
+	margin: 0;
+	padding: 0;
+	}
+
+#blog-wrap {
+	width:100%;
+	height:100%;
+	background:#fff;	
+}
+
+#page {
+	background-color: white;
+	margin: 27px auto;
+	padding: 0 0 35px;
+	width: 980px;
+	}
+
+#content {
+	width:586px;
+	float:left;
+	padding: 20px 0 60px;
+	}
+
+.post-body {
+	width:515px;
+	float:left;
+	margin:0 0 0 10px;
+}
+
+.small .post-body {
+	width:242px;
+	float:left;
+	margin:0 31px 0 71px;
+}
+
+.small .post-body.right {
+	margin: 0;
+}
+
+.small.last .post-body {
+	width:242px;
+	float:left;
+	margin:0;
+}
+
+.post {
+	margin: 0 0 40px;
+	text-align: left;
+	}
+
+.post hr {
+	display: block;
+	}
+
+.postmetadata {
+	padding-top: 5px;
+	margin: 20px 0 50px;
+	clear: both;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+.postmetadata img {
+	padding:0 5px 0 0;	
+}	
+
+.clear {
+	clear: both;
+}
+
+.main-img {
+	margin:15px 0 21px;	
+}
+
+.small .main-img {
+	margin:6px 0 7px;	
+}
+
+
+
+/* End Structure */
+
+
+
+/*	Begin Headers */
+h1 {
+	padding-top: 70px;
+	margin: 0;
+	}
+
+#content h2 {
+	display:block;
+	width:516px;
+	border-top:3px solid #000;
+	border-bottom:1px solid #dbdbdb;
+	line-height:34px;
+	min-height:34px;
+	margin:12px 0 12px;
+	padding-top:1px;
+	}
+	
+#content .small h2 {
+	display:block;
+	width:241px;
+	border-top:3px solid #000;
+	border-bottom:1px solid #dbdbdb;
+	line-height:15px;
+	min-height:15px;
+	margin:12px 0 6px;
+	}	
+
+#content h2.pagetitle.tags {
+	display:block;
+	width:516px;
+	border-top:3px solid #000;
+	border-bottom:1px solid #dbdbdb;
+	line-height:34px;
+	min-height:34px;
+	margin:12px 0 12px;
+	padding-top:1px;
+}
+
+#sidebar h2 {
+	margin: 5px 0 0;
+	padding: 0;
+	
+	}
+
+#sidebar h2.culture {
+	clear: both;
+	font:100 20px/35px "Avant Garde Gothic ITCW01Bk";
+	text-transform:uppercase;
+	margin:20px 0;
+	padding-top: 20px;
+}
+
+h3 {
+	padding: 0;
+	margin: 30px 0 0;
+	}
+
+h3.comments {
+	padding: 0;
+	margin: 40px auto 20px ;
+	}
+/* End Headers */
+
+
+
+/* Begin Images */
+p img {
+	padding: 0;
+	max-width: 100%;
+	}
+
+/*	Using 'class="alignright"' on an image will (who would've
+	thought?!) align the image to the right. And using 'class="centered',
+	will of course center the image. This is much better than using
+	align="center", being much more futureproof (and valid) */
+
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+
+.alignright {
+	float: right;
+	}
+
+.alignleft {
+	float: left;
+	}
+/* End Images */
+
+
+
+/* Begin Lists
+
+	Special stylized non-IE bullets
+	Do not work in Internet Explorer, which merely default to normal bullets. */
+
+html>body .entry ul {
+	margin-left: 0px;
+	padding: 0 0 0 30px;
+	list-style: none;
+	padding-left: 10px;
+	text-indent: -10px;
+	}
+
+html>body .entry li {
+	margin: 7px 0 8px 10px;
+	}
+
+.entry ul li:before, #sidebar ul ul li {
+	min-height:21px;
+	padding:11px 0 10px !important;
+	text-align:center;
+	display:block;
+	}
+
+#recent-posts-3 ul li {
+	width:240px;
+	margin:0 auto!important;
+	display:block;	
+}
+
+#sidebar ul ul li + li {
+	background:url(assets/img/sidebar-recent.png) center 0 no-repeat;
+}
+
+#sidebar ul ul li a {
+	font:normal 11px/15px Georgia, "Times New Roman", Times, serif;
+	padding:3px 0;
+	display:block;
+	color:#8e8e8e;
+	text-decoration:none;
+}
+
+#sidebar ul ul li a:hover {
+	color:#404040;
+}
+
+.entry ol {
+	padding: 0 0 0 35px;
+	margin: 0;
+	}
+
+.entry ol li {
+	margin: 0;
+	padding: 0;
+	}
+
+.postmetadata ul, .postmetadata li {
+	display: inline;
+	list-style-type: none;
+	list-style-image: none;
+	}
+
+#sidebar ul, #sidebar ul ol {
+	margin: 0;
+	padding: 0;
+	}
+
+#sidebar ul li {
+	list-style-type: none;
+	list-style-image: none;
+	margin-bottom: 15px;
+	}
+
+#sidebar .culture-wrap > ul > li {
+	border-top:1px solid #aaa;
+	display: block;
+	padding:21px 0 32px;
+}
+
+#sidebar ul p, #sidebar ul select {
+	margin: 5px 0 8px;
+	}
+
+#sidebar ul ul, #sidebar ul ol {
+	margin: 5px auto 0;
+	}
+
+#sidebar ul ul ul, #sidebar ul ol {
+	margin: 0 0 0 10px;
+	}
+
+ol li, #sidebar ul ol li {
+	list-style: decimal outside;
+	}
+
+#sidebar ul ul li, #sidebar ul ol li {
+	margin: 3px 0 0;
+	padding: 0;
+	}
+
+#sidebar #tag_cloud-3 { padding-bottom:20px; }
+#sidebar #tag_cloud-3 h2 { margin:8px 0 0; }
+
+#sidebar .tagcloud {
+	text-align:center;
+	padding-top:20px;
+}
+
+#sidebar .tagcloud a {
+	font:normal 11px Georgia, "Times New Roman", Times, serif !important;
+	color:#8e8e8e;
+	padding:8px 0.35em;
+	display:inline-block;
+}
+/* End Entry Lists */
+
+
+
+/* Begin Form Elements */
+#searchform {
+	margin: 10px auto;
+	padding: 5px 3px;
+	text-align: center;
+	}
+
+#sidebar #searchform #s {
+	width: 108px;
+	padding: 2px;
+	}
+
+#sidebar #searchsubmit {
+	padding: 1px;
+	}
+
+.entry form { /* This is mainly for password protected posts, makes them look better. */
+	text-align:center;
+	}
+
+#sidebar #etiqSearch { display: block; text-align:center; margin-top:18px; }
+#sidebar #etiqSearch fieldset { margin:0; padding:0; border:0 none; box-shadow:none; }
+#sidebar #etiqSearch label { font:normal 11px Georgia, "Times New Roman", Times, serif; color:#8e8e8e; }
+#sidebar #etiqSearch input { width:256px; height:23px; padding:3px; margin:13px 0 15px; border:0 none; background:#efebe5; box-shadow:none; line-height:23px; }
+#sidebar #etiqSearch button { font:100 13px/15px 'Avant Garde Gothic ITCW01Bk'; letter-spacing:0.1em; text-transform:uppercase; color:#fff; background:#000; border:0 none; padding:6px 4px 4px; cursor:pointer; }
+
+select {
+	width: 130px;
+	}
+
+#commentform input {
+	width: 170px;
+	padding: 2px;
+	margin: 5px 5px 1px 0;
+	}
+
+#commentform {
+	margin: 5px 10px 0 0;
+	}
+#commentform textarea {
+	width: 100%;
+	padding: 2px;
+	}
+#respond:after {
+		content: "."; 
+	    display: block; 
+	    height: 0; 
+	    clear: both; 
+	    visibility: hidden;
+	}
+#commentform #submit {
+	margin: 0 0 5px auto;
+	float: right;
+	}
+/* End Form Elements */
+
+
+
+/* Begin Comments*/
+.alt {
+	margin: 0;
+	padding: 10px;
+	}
+
+.commentlist {
+	padding: 0;
+	text-align: justify;
+	}
+
+.commentlist li {
+	margin: 15px 0 10px;
+	padding: 5px 5px 10px 10px;
+	list-style: none;
+
+	}
+.commentlist li ul li { 
+	margin-right: -5px;
+	margin-left: 10px;
+}
+
+.commentlist p {
+	margin: 10px 5px 10px 0;
+}
+.children { padding: 0; }
+
+#commentform p {
+	margin: 5px 0;
+	}
+
+.nocomments {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	}
+
+.commentmetadata {
+	margin: 0;
+	display: block;
+	}
+/* End Comments */
+
+
+
+/* Begin Sidebar */
+#sidebar {
+	float:right;
+	width: 355px;
+	padding: 0 0 10px 0;
+	margin:31px 0 0;
+	position:relative;	
+	}
+
+#sidebar .culture-wrap {
+	border-left:6px solid #f2efea;
+	padding:0 33px 0 25px;
+	margin-bottom:32px;
+}
+	
+#sidebar h2.logo {
+	display:block;
+	width:49px;
+	height:49px;
+	background:url('assets/img/sb-logo.png') 0 0 no-repeat;
+	text-indent:-9999em;
+	overflow:hidden;
+	line-height:0;
+	margin-left:120px;	
+}
+
+#sidebar form {
+	margin: 0;
+	}
+
+#sidebar .section {
+	padding:15px 0 40px 0;
+	border-top:3px solid #000;
+}
+
+	#sidebar .section.iframe { border:0; }
+
+#sidebar .section.collections { padding-bottom:0 }
+
+#sidebar .section.shop .shop-list { margin:0; padding:0 10px; list-style-type:none; }
+#sidebar .section.shop .shop-list li { padding:25px 10px 0; margin:0; display:block; float:left; width:147px; text-align:center; }
+#sidebar .section.shop .shop-list li:first-child,
+#sidebar .section.shop .shop-list li:first-child + li { padding-top:13px; }
+#sidebar .section.shop .shop-list li .shop-image { margin:0; }
+#sidebar .section.shop .shop-list li .title { border-bottom:1px solid #d1d1d1; font:normal 10px Georgia, "Times New Roman", Times, serif; letter-spacing:0.02em; text-transform:uppercase; margin:0; padding:3px 0 6px; color:#adadad; }
+#sidebar .section.shop .shop-list li .description { font:normal 11px Helvetica, Arial, sans-serif; margin:0; padding:7px 0 0; color:#adadad; }
+#sidebar .section.shop .shop-list li a { color:#adadad; text-decoration:none; }
+#sidebar .section.shop .shop-list li a:hover { color:#404040; }
+
+#sidebar .section.collections { padding-top:12px; }
+#sidebar .section.collections .category-links { margin:21px 0 0; padding:0; list-style-type:none; }
+#sidebar .section.collections .category-links li { margin:0; padding:0; float:left; width:115px; text-align:center; font:100 13px/35px "Avant Garde Gothic ITCW01Bk"; text-transform:uppercase; border-bottom:1px solid #dbdbdb; }
+#sidebar .section.collections .category-links li + li { margin-left:5px; }
+#sidebar .section.collections .category-links li a { text-decoration:none; display:block; }
+/* End Sidebar */
+
+
+
+/* Begin Calendar */
+#wp-calendar {
+	empty-cells: show;
+	margin: 10px auto 0;
+	width: 155px;
+	}
+
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+	}
+
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+	}
+
+#wp-calendar a {
+	display: block;
+	}
+
+#wp-calendar caption {
+	text-align: center;
+	width: 100%;
+	}
+
+#wp-calendar td {
+	padding: 3px 0;
+	text-align: center;
+	}
+
+#wp-calendar td.pad:hover { /* Doesn't work in IE */
+	background-color: #fff; }
+/* End Calendar */
+
+
+
+/* Begin Various Tags & Classes */
+acronym, abbr, span.caps {
+	cursor: help;
+	}
+
+acronym, abbr {
+	border-bottom: 1px dashed #999;
+	}
+
+blockquote {
+	margin: 15px 30px 0 10px;
+	padding-left: 20px;
+	border-left: 5px solid #ddd;
+	}
+
+blockquote cite {
+	margin: 5px 0 0;
+	display: block;
+	}
+
+.center {
+	text-align: center;
+	}
+
+.hidden {
+	display: none;
+	}
+	
+.screen-reader-text {
+     position: absolute;
+     left: -1000em;
+}
+
+hr {
+	display: none;
+	}
+
+a img {
+	border: none;
+	}
+
+.posts.navigation {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 60px;
+	float:left;
+	width:586px;
+	padding:0;
+	}
+	
+		.posts.navigation .alignleft { margin-left:70px; }
+/* End Various Tags & Classes*/
+
+
+
+/* Captions */
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+/* End captions */
+
+
+/* "Daisy, Daisy, give me your answer do. I'm half crazy all for the love of you.
+	It won't be a stylish marriage, I can't afford a carriage.
+	But you'll look sweet upon the seat of a bicycle built for two." */
+
+/*****
+***** Standard WP blog *****
+*****/
+
+.header {
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.header .text {
+	color: #ababab;
+}
+
+.header h1.logo {
+	padding: 0;
+}
+
+.cms-page-view .nav-container #nav li.culture a,
+.cms-page-view .footer-container .footer .nav li.culture a {
+	font-style: italic;
+}
+
+.cms-page-view .col1-layout .main {
+	margin: 0 auto;
+	width: 980px;
+	padding: 0 10px;
+	z-index:1;
+}
+
+.cms-page-view .col1-layout .footer-container { z-index:2 }
+
+.cms-page-view .col1-layout .footer-container .footer {background:#F2EFEA;}
+	
+.cms-page-view .col1-layout .main .clear {
+	height: auto;
+	visibility: visible;
+}
+
+.cms-page-view .col1-layout .wp-page {
+	margin-top: 35px;
+}
+
+.footer {
+	color: #ababab;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size: 11px;	
+}
+
+#sidebar iframe {
+	height: 502px !important;
+	overflow: hidden;
+	width: 100% !important;
+}
+
+#sidebar.iframe {
+	background: #fff;
+	height: 502px;
+	margin-top: 0;
+	padding-bottom: 0;
+	width: 355px;
+}
+
+#sidebar.iframe .section {
+	padding-bottom: 0;
+}
+
+#sidebar.iframe .shop-list li {
+	clear: left;
+}
+
+#sidebar.iframe .shop-list li.right {
+	clear: none;
+}
+	
+
+/*****
+***** Special Edition *****
+*****/
+
+.cms-special-edition .nav-container #nav li.culture a,
+.cms-special-edition .footer-container .footer .nav li.culture a {
+	font-style: normal;
+}
+
+.cms-special-edition .nav-container #nav li.special a,
+.cms-special-edition .footer-container .footer .nav li.special a {
+	font-style: italic;
+}
+
+#content.special-edition { 
+	padding: 20px 0;
+	width:100%; 
+}
+#content.special-edition h2 { 
+	width:100%; 
+}
+
+#content.special-edition .post {
+	border-bottom: 1px solid #a9a9a9;	
+	clear: both;
+	position: relative;
+}
+
+#content.special-edition .post .header {
+	background: url(assets/img/et-specialheader.png) 0 0 no-repeat;
+	display: block;
+	height: 56px;
+	position: absolute;
+	width: 87px;
+}
+
+#content.special-edition .entry, #content.special-edition .gallery_container {
+	display: block;
+	float: left;
+	margin: 0 0 40px;
+}
+
+#content.special-edition .entry {
+	margin-left: 51px;
+	margin-right: 31px;
+	margin-top: 20px;
+	width: 323px;
+}	
+
+#content.special-edition .entry .header_img {
+	display: block;
+	margin: 51px auto 25px;
+}
+
+#content.special-edition .entry p {
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+#content.special-edition .entry p a {
+	color: #626669;
+}
+
+#content.special-edition .gallery_main {
+	height: 430px;
+	margin: 0;
+	padding: 0;
+	width: 575px;
+}
+
+#content.special-edition .gallery_main li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#content.special-edition .gallery_nav {
+	float: right;
+}
+
+#content.special-edition .gallery_nav a {
+	border-right: 1px solid #b9b9b9;
+	color: #97999C;
+	font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+	font-size: 11px;
+	float: left;
+	line-height: 11px;
+	padding: 0 7px;
+}
+
+#content.special-edition .gallery_nav a.last {
+	border-right: 0;
+	padding-right: 0;
+}
+
+#content.special-edition .shop_link {
+	background: url(assets/img/shop_link_arrow.png) right center no-repeat;
+	color: #97999C;
+	font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+	font-size: 11px;
+	bottom: 40px;
+	left: 330px;
+	display: block;
+	padding-right: 10px;
+	position: absolute;
+	text-transform: uppercase;
+}
+
+.single-specialedition .navigation {
+	color: #97999C;
+	font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+	font-size: 11px;
+	margin-top: 0;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.rsswidget img {
+	width:24px;
+	height:24px;	
+}
+
+.widget_rss ul { display:none; }
+
+.addthis_button img { padding:4px 3px 0 0; }special-edition .gallery_nav {
+	float: right;
+}
+
+#content.special-edition .gallery_nav a {
+	border-right: 1px solid #b9b9b9;
+	color: #97999C;
+	font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+	font-size: 11px;
+	float: left;
+	line-height: 11px;
+	padding: 0 7px;
+}
+
+#content.special-edition .gallery_nav a.last {
+	border-right: 0;
+	padding-right: 0;
+}
+
+#content.special-edition .shop_link {
+	background: url(assets/img/shop_link_arrow.png) right center no-repeat;
+	color: #97999C;
+	font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+	font-size: 11px;
+	bottom: 40px;
+	left: 330px;
+	display: block;
+	padding-right: 10px;
+	position: absolute;
+	text-transform: uppercase;
+}
+
+.single-specialedition .navigation {
+	color: #97999C;
+	font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+	font-size: 11px;
+	margin-top: 0;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.rsswidget img {
+	width:24px;
+	height:24px;	
+}
+
+.widget_rss ul { display:none; }
+
+.addthis_button img { padding:4px 3px 0 0; }
+
+/* Social Media */
+
+.blog-social {
+	text-align: center;
+	width: 114px;
+	height:28px;
+	margin:0 auto;
+}
+
+.blog-social li {
+	float:left;
+	margin:0 5px!important;
+	background:none!important;	
+}
+
+.blog-social .twitter a {
+	background: url('assets/img/twitter.png') no-repeat 0 0;
+	display: block;
+	height: 22px;
+	overflow: hidden;
+	text-indent: -9999px;
+	width: 28px;
+			}
+	.blog-social .twitter a:hover {
+		background: url('assets/img/twitter.png') no-repeat 0 -28px;
+	}
+
+.blog-social .facebook a {
+	background: url('assets/img/facebook.png') no-repeat 0 0;
+	display: block;
+	height: 22px;
+	overflow: hidden;
+	text-indent: -9999px;
+	width: 28px;
+}
+	.blog-social .facebook a:hover {
+		background: url('assets/img/facebook.png') no-repeat 0 -28px;
+	}
+	
+.blog-social .pinterest a {
+	background: url('assets/img/pinterest.png') no-repeat 0 0;
+	display: block;
+	height: 22px;
+	overflow: hidden;
+	text-indent: -9999px;
+	width: 28px;
+}
+	.blog-social .pinterest a:hover {
+		background: url('assets/img/pinterest.png') no-repeat 0 -28px;
+	}
+
+
+
+/* Blog Post Gallery */
+
+
+.gallery-wrap div {
+	margin: 4px auto;
+	text-align: center;
+	width: 100%;
+}
+	.gallery-wrap div a {
+		color: #8E8E8E;
+		padding: 0 4px;
+	}
+		.gallery-wrap div a.activeSlide,
+		.gallery-wrap div a:hover {
+			color: #000;
+			text-decoration: none;
+		}
+
+
+#iframe-wrap {
+	padding:50px 0 0;
+	
+}
+
+#iframe-wrap.fixed {
+	position:fixed;
+	top: 0px;
+		}
+		
+		#iframe-wrap.fixed #shopgrid{
+			margin-left:55px;
+		}
+		
+#shopgrid {
+	float:right;
+	}
+
+
+
+
+
+/*
+#shopgrid.rela { 
+	position:relative;
+}
+
+#shopgrid.fixed { 
+	position:fixed;
+	top:30px;
+	width:400px!important;
+	}
+	
+	*/
+	

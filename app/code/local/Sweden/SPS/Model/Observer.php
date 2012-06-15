@@ -1,0 +1,53 @@
+<?php
+class Sweden_SPS_Model_Observer{
+    //you can make this to be configurable at Admin Panel
+    const CUSTOM_CACHE_LIFETIME = 3600;
+    //the non-CMS Block you want to cache
+    private $cacheableBlocks = array(
+				     'Sweden_SPS_Block_Catalog_Navigation',
+				     //				     'Mage_Catalog_Block_Product_View',
+ 				     'Mage_Catalog_Block_Product_View_Media',
+ 				     'Sweden_SPS_Block_Product_View_Type_Simple',
+				     // 				     'Mage_Catalog_Block_Product_Price',
+ 				     'Mage_Catalog_Block_Product_List_Upsell',
+ 				     'Mage_Catalog_Block_Product_List_Related',
+ 				     'Mage_Catalog_Block_Category_View',
+				     );
+    public function customBlockCache(Varien_Event_Observer $observer){
+	try {
+	    $pageURL = 'http';
+	    if (isset( $_SERVER["HTTPS"] ) && $_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+	    $pageURL .= "://";
+	    if ($_SERVER["SERVER_PORT"] != "80") {
+		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	    } else {
+		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	    }
+
+//	     $h = fopen( "/tmp/rc", "a+" );
+//	     fwrite( $h, "hit this\n" );
+	    $event = $observer->getEvent();
+	    $block = $event->getBlock();
+	    $class = get_class($block);
+//	     fwrite( $h, "clasS: $class\n" );
+//	     fclose( $h );
+	    if (('Mage_Cms_Block_Block' == $class) && $block->getBlockId()) {
+		$block->setData('cache_lifetime', self::CUSTOM_CACHE_LIFETIME);
+		$block->setData('cache_key', 'cms_block_' . $block->getBlockId(). $pageURL);
+		$block->setData('cache_tags', array(Mage_Core_Model_Store::CACHE_TAG, $block->getBlockId()));
+	    } elseif (('Mage_Cms_Block_Page' == $class) && $block->getPage()->getIdentifier()) {
+		$block->setData('cache_lifetime', self::CUSTOM_CACHE_LIFETIME);
+		$block->setData('cache_key', 'cms_page_' . $block->getPage()->getIdentifier(). $pageURL);
+		$block->setData('cache_tags', array(Mage_Core_Model_Store::CACHE_TAG,
+						    $block->getPage()->getIdentifier()));
+	    } elseif (in_array($class, $this->cacheableBlocks)) {
+		$block->setData('cache_lifetime', self::CUSTOM_CACHE_LIFETIME);
+		$block->setData('cache_key', 'block_' . $class. $pageURL);
+		$block->setData('cache_tags', array(Mage_Core_Model_Store::CACHE_TAG, $class));
+	    }
+	} catch (Exception $e) {
+	    Mage::logException(e);
+	}
+    }
+}
+?>

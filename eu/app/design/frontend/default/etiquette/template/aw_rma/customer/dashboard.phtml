@@ -1,0 +1,50 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Rma
+ * @copyright  Copyright (c) 2010 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+
+<div class="awrma-account">
+    <div class="page-title title-buttons">
+        <h1><?php echo $this->__('Returns') ?></h1>
+    </div>
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php if($this->getRmaEntitiesCollection()->getSize()) : ?>
+    <?php $this->getRmaEntitiesCollection()->setPageSize($this->getRmaEntitiesCollection()->getSize()); ?>
+    <table class="data-table" id="my-rmas-table">
+		<tr><td>
+        <?php foreach($this->getRmaEntitiesCollection() as $item) : ?>
+                <p><span class="label">Date: </span><?php echo $this->formatDate($item->getCreatedAt()) ?><br>
+                <span class="label">ID: </span><?php echo $item->getTextId() ?><br>
+                <span class="label">Order N&ordm; </span><?php echo $item->getOrderId() ?><br>
+                <span class="label">Status: </span><?php echo $item->getStatusName() ?><br>
+                    <span class="nobr">
+                        <a href="<?php echo $this->getUrl('awrma/customer_rma/view', array('id' => $item->getId())) ?>" class="link-awrma-bold"><?php echo $this->__('View Request') ?></a>
+                        <?php if($item->getIsActive()) : ?>
+                        <span class="separator">|</span>
+                        <a class="link-awrma" href="<?php echo $this->getUrl('awrma/customer_rma/cancel', array('id' => $item->getId())) ?>" onclick="return confirm('<?php echo $this->__('Are you sure you would like to cancel this RMA?') ?>')" class="link-awrma-cancel"><?php echo $this->__('Cancel') ?></a>
+                        <?php endif; ?>
+                    </span>
+                </p>
+        <?php endforeach; ?>
+        </td></tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">decorateTable('my-rmas-table')</script>
+    <?php else : ?>
+    <p><?php echo $this->__('You have no return requests'); ?></p>
+    <?php endif; ?>
+    <a class="link-awrma-newrma button" href="<?php echo $this->getUrl('awrma/customer_rma/new') ?>"><?php echo $this->__('Request A New Return') ?></a>
+</div>

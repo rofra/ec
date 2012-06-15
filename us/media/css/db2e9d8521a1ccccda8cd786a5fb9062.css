@@ -1,0 +1,5181 @@
+/*--------------------------------------------------------------
+                         ETIQUETTE
+----------------------------------------------------------------
+                 SITE BY SWEDEN UNLIMITED
+       Design by Elizabeth Cordingley & Richard Agerbeek
+Developed by Naz Hassan, Rachel O'Connor, Dionis Loire & Jonah Birns
+            * Chrome plated sign included *
+--------------------------------------------------------------*/
+
+
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/* Reset ================================================================================= */
+* { margin:0; padding:0; }
+
+body          { background:#F2EFEA; font:12px/1.55 Helvetica, Arial, sans-serif; color:#2f2f2f; text-align:center; }
+
+img           { border:0; vertical-align:top; }
+
+a             { color:#000; text-decoration:underline; }
+a:hover       { text-decoration:none; }
+:focus        { outline:0; }
+
+/*
+ * lib-clearfix.css
+ */
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}
+
+/* Headings */
+h1,h2,h3,
+h4,h5,h6      { margin:0 0 5px; line-height:1.35; color:#000; }
+h1            { font-size:20px; font-weight:normal; }
+h2            { font-size:18px; font-weight:normal; }
+h3            { font-size:16px; font-weight:bold; }
+h4            { font-size:14px; font-weight:bold; }
+h5            { font-size:12px; font-weight:bold; }
+h6            { font-size:11px; font-weight:bold; }
+
+/* Forms */
+form          { display:inline; }
+fieldset      { border:0; }
+legend        { display:none; }
+
+/* Table */
+table         { border:0; /*border-collapse:collapse;*/ border-spacing:0; empty-cells:show; font-size:100%; }
+caption,th,td { vertical-align:top; text-align:left; font-weight:normal; }
+
+/* Content */
+p             { margin:0 0 10px; }
+strong        { font-weight:bold; }
+address       { font-style:normal; line-height:1.35; }
+cite          { font-style:normal; }
+q,
+blockquote    { quotes:none; }
+q:before,
+q:after       { content:''; }
+small,big     { font-size:1em; }
+/*sup           { font-size:1em; vertical-align:top; }*/
+
+/* Lists */
+ul,ol         { list-style:none; }
+
+/* Tools */
+.hidden       { display:block !important; border:0 !important; margin:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important; width:0 !important; height:0 !important; overflow:hidden !important; }
+.nobr         { white-space:nowrap !important; }
+.wrap         { white-space:normal !important; }
+.a-left       { text-align:left !important; }
+.a-center     { text-align:center !important; }
+.a-right      { text-align:right !important; }
+.v-top        { vertical-align:top; }
+.v-middle     { vertical-align:middle; }
+.f-left,
+.left         { float:left !important; }
+.f-right,
+.right        { float:right !important; }
+.f-none       { float:none !important; }
+.f-fix        { float:left; width:100%; }
+.no-display   { display:none; }
+.no-margin    { margin:0 !important; }
+.no-padding   { padding:0 !important; }
+.no-bg        { background:none !important; }
+.beginning    { margin-left: 0 !important; padding-left: 0 !important; }
+.ending       { margin-right: 0 !important; padding-right: 0 !important }
+/* ======================================================================================= */
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+body { font-size: 11px; font-family: Helvetica, Arial, sans-serif; color: #ababab; }
+
+/*--------*/
+
+/* Layout ================================================================================ */
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.wrapper { 
+min-width: 980px;
+}
+/*--------*/
+
+.page { background:#fff;}
+.page-print { background:#fff; padding:25px 30px; text-align:left; }
+.page-empty { background:#fff; padding:20px; text-align:left; }
+.page-popup { background:#fff; padding:25px 30px; text-align:left; }
+.main-container { background:#fff; min-height:600px; }
+.main { width:100%; margin:0 auto; min-height:400px; /*padding:25px 25px 80px; background:#fffffe url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_main2.gif) 0 0 no-repeat; text-align:left;*/ }
+
+/* Base Columns */
+.col-left { float:left; width:195px; padding:0 0 1px; }
+.col-main { float:left; width:685px; padding:0 0 1px; }
+.col-right { float:right; width:195px; padding:0 45px 1px 0; }
+
+/* 1 Column Layout */
+.col1-layout .col-main { float:none; width:auto; }
+
+/* 2 Columns Layout */
+.col2-left-layout .col-main { float:right; }
+.col2-right-layout .col-main {}
+.col2-left-layout .main { width: 980px; }
+
+/* 3 Columns Layout */
+.col3-layout .col-main { width:475px; margin-left:17px; }
+.col3-layout .col-wrapper { float:left; width:687px; }
+.col3-layout .col-wrapper .col-main { float:right; }
+
+/* Content Columns */
+.col2-set .col-1 { float:left; width:48.5%; }
+.col2-set .col-2 { float:right; width:48.5%; }
+.col2-set .col-narrow { width:32%; }
+.col2-set .col-wide { width:65%; }
+
+.col3-set .col-1 { float:left; width:32%; }
+.col3-set .col-2 { float:left; width:32%; margin-left:2%; }
+.col3-set .col-3 { float:right; width:32%; }
+
+.col4-set .col-1 { float:left; width:23.5%; }
+.col4-set .col-2 { float:left; width:23.5%; margin:0 2%; }
+.col4-set .col-3 { float:left; width:23.5%; }
+.col4-set .col-4 { float:right; width:23.5%; }
+
+/* Static page columns */
+.cms-page-view .col1-layout .col-main, .cms-page-view .col1-layout .std, .rss-index-index .col1-layout .col-main { float: none; margin: 0 auto; width: 687px; }
+.cms-page-view .col1-layout .col-main,
+.rss-index-index .col1-layout .col-main { margin-top: 20px; margin-bottom: 20px; }
+.cms-page-view .col1-layout .std { text-align: left; }
+.cms-page-view .col1-layout .page-title,
+.rss-index-index .col1-layout .page-title { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.cms-page-view .col1-layout .page-title h1,
+.rss-index-index .col1-layout .page-title h1,
+.cms-page-view .col1-layout .page-title h2 { color: #0A263C; text-transform: uppercase; font-family: "Avant Garde Gothic ITCW01Bk"; text-align:center; font-size: 15px !important; font-weight:100 !important; line-height:34px; }
+.cms-page-view .col1-layout .std p, .cms-page-view .col1-layout .std { color: #97999C; font: 13px/18px Georgia,"Times New Roman",Times,serif; line-height: 1.5; margin-top: 1em; margin-bottom: 1em; }
+
+.cms-page-view .col3-layout .col-main, .cms-page-view .col3-layout .std { float: none; margin: 0 auto; width: 687px; }
+.cms-page-view .col3-layout .col-wrapper { float: none; margin: 0 auto; }
+.cms-page-view .col3-layout .col-main { float: none; margin: 0 auto; margin-top: 20px; margin-bottom: 20px;  }
+.cms-page-view .col3-layout .std { text-align: left; }
+.cms-page-view .col3-layout .page-title { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.cms-page-view .col3-layout .page-title h1,
+.cms-page-view .col3-layout .page-title h2 { color: #0A263C; text-transform: uppercase; font-family: "Avant Garde Gothic ITCW01Bk"; text-align:center; font-size: 15px !important; font-weight:100 !important; line-height:34px; }
+.cms-page-view .col3-layout .std p, .cms-page-view .col3-layout .std dd, .cms-page-view .col3-layout .std dt, .cms-page-view .col3-layout .std ul { color: #97999C; font: 13px/18px Georgia,"Times New Roman",Times,serif; line-height: 1.5; margin-top: 1em; margin-bottom: 1em; }
+.cms-page-view .col3-layout .std dt { font: 18px/20px; }
+
+.cms-special-edition .col1-layout .col-main, .cms-special-edition .col1-layout .std { float: none; margin: 0 auto; width: 980px; }
+.cms-special-edition .nav-container #nav { width: 456px; }
+
+
+/* ======================================================================================= */
+
+
+/* Global Styles ========================================================================= */
+/* Form Elements */
+input,select,textarea,button { font:12px/15px Arial, Helvetica, sans-serif; vertical-align:middle; color:#2f2f2f; }
+input.input-text { background:#e3e3e3; border:0; }
+select,textarea { background:#fff; border:1px solid #b6b6b6; }
+input.input-text,textarea { padding:2px; }
+select { padding:1px; }
+select option { padding-right:10px; }
+select.multiselect option { border-bottom:1px solid #b6b6b6; padding:2px 5px; }
+select.multiselect option:last-child { border-bottom:0; }
+textarea { overflow:auto; }
+input.radio { margin-right:3px; }
+input.checkbox { margin-right:3px; }
+input.qty { width:2.5em !important; }
+button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
+button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
+button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
+/* DEFAULT BUTTON STYLE CUSTOM*/
+button.button span { 
+	display:block;
+	height:20px;
+	background:#000;
+	padding:4px 15px; 
+	font:normal 11px/20px "Times New Roman", Times, serif; 
+	text-align:center;
+	white-space:nowrap;
+	color:#fff;
+	text-transform:uppercase;
+	letter-spacing:.05em;
+}
+button.button span span { border:0; padding:0; }
+button.disabled span { border-color:#bbb !important; background:#bbb !important; }
+
+button.btn-checkout span { height:28px; border:0; background:#000; padding:0 0 0 2px; color:#fff; }
+button.btn-checkout span span { padding:4px 14px 0; height:14px; }
+button.btn-checkout.no-checkout span { background-position:0 100%; color:#b8baba; }
+button.btn-checkout.no-checkout span span { background-position:100% 100%; }
+
+p.control input.checkbox,
+p.control input.radio { margin-right:6px; }
+/* Form Highlight */
+input.input-text:focus,select:focus,textarea:focus { background-color:#eaeaea; }
+/*.highlight { background:#efefef; }*/
+
+/* Form lists */
+/* Grouped fields */
+/*.form-list { width:535px; margin:0 auto; overflow:hidden; }*/
+.form-list li { margin:0 0 12px; }
+.form-list label { float:left; color:#717171; position:relative; z-index:0; font:100 11px/13px Helvetica, Arial, sans-serif; letter-spacing:0.1em; text-transform: uppercase; height:13px; vertical-align:middle; }
+.form-list label.required {}
+.form-list label.required em { float:right; font-style:normal; color:#eb340a; position:absolute; top:0; right:-8px; }
+.form-list li.control { text-align:left }
+.form-list li.control.checkout { float:left; padding-right:20px; }
+.form-list li.control label { float:none; }
+.form-list li.control.checkout label { float:none; text-transform:none!important; letter-spacing:normal; text-transform:capitalize !important; }
+.form-list li.control input.radio,
+.form-list li.control input.checkbox { margin-right:6px; }
+.form-list li.control .input-box { clear:none; display:inline; width:auto; }
+/*.form-list li.fields { margin-right:-15px; }*/
+.form-list .input-box { display:block; clear:both; width:260px; }
+.form-list .field { float:left; width:275px; }
+.form-list input.input-text { /*width:254px;*/ width:300px;padding:5px; line-height:13px; height:13px; }
+.form-list textarea { width:254px; height:10em; }
+.form-list select { width:310px; height:24px; float:left; border:0; background:#e3e3e3; padding:4px 4px 4px 2px; }
+.form-list li.wide .input-box { width:535px; }
+.form-list li.wide input.input-text { width:636px; }
+.form-list li.wide textarea { width:529px; }
+.form-list li.wide select { width:535px; }
+.form-list li.additional-row { border-top:1px solid #ccc; margin-top:10px; padding-top:7px; }
+.form-list li.additional-row .btn-remove { float:right; margin:5px 0 0; }
+.form-list .input-range input.input-text { width:74px; }
+/* Customer */
+.form-list .customer-name-prefix .input-box,
+.form-list .customer-name-suffix .input-box,
+.form-list .customer-name-prefix-suffix .input-box,
+.form-list .customer-name-prefix-middlename .input-box,
+.form-list .customer-name-middlename-suffix .input-box,
+.form-list .customer-name-prefix-middlename-suffix .input-box { width:auto; }
+
+.form-list .name-prefix { width:65px; }
+.form-list .name-prefix select { width:55px; }
+.form-list .name-prefix input.input-text { width:49px; }
+
+.form-list .name-suffix { width:65px; }
+.form-list .name-suffix select { width:55px; }
+.form-list .name-suffix input.input-text { width:49px; }
+
+.form-list .name-middlename { width:70px; }
+.form-list .name-middlename input.input-text { width:49px; }
+
+.form-list .customer-name-prefix-middlename-suffix .name-firstname,
+.form-list .customer-name-prefix-middlename .name-firstname { width:140px; }
+.form-list .customer-name-prefix-middlename-suffix .name-firstname input.input-text,
+.form-list .customer-name-prefix-middlename .name-firstname input.input-text { width:124px; }
+.form-list .customer-name-prefix-middlename-suffix .name-lastname { width:205px; }
+.form-list .customer-name-prefix-middlename-suffix .name-lastname input.input-text { width:189px; }
+
+.form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
+.form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
+.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
+.form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
+
+.form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
+.form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
+.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
+.form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
+
+.form-list .customer-name-prefix .name-firstname,
+.form-list .customer-name-middlename .name-firstname { width:210px; }
+
+.form-list .customer-name-suffix .name-lastname,
+.form-list .customer-name-middlename .name-firstname,
+.form-list .customer-name-middlename-suffix .name-firstname,
+.form-list .customer-name-middlename-suffix .name-lastname { width:205px; }
+
+.form-list .customer-name-prefix .name-firstname input.input-text,
+.form-list .customer-name-suffix .name-lastname input.input-text,
+.form-list .customer-name-middlename .name-firstname input.input-text,
+.form-list .customer-name-middlename-suffix .name-firstname input.input-text,
+.form-list .customer-name-middlename-suffix .name-lastname input.input-text { width:189px; }
+
+.form-list .customer-dob .dob-month,
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-year { float:left; width:85px; }
+.form-list .customer-dob input.input-text { display:block; width:74px; }
+.form-list .customer-dob label { font-size:10px; font-weight:normal; color:#888; }
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-month { width:60px; }
+.form-list .customer-dob .dob-day input.input-text,
+.form-list .customer-dob .dob-month input.input-text { width:46px; }
+.form-list .customer-dob .dob-year { width:140px; }
+.form-list .customer-dob .dob-year input.input-text { width:134px; }
+
+/* Independent fields */
+/*.form-list li { margin:0 0 8px; }
+.form-list li.fields { margin:0; }
+.form-list .field { display:block; margin:0 0 8px; }
+.form-list li.control {}
+.form-list label { float:left; width:150px; padding:2px 10px 0 0; text-align:right; }
+.form-list label.required { font-weight:bold; }
+.form-list label.required em { font-variant:normal; color:#eb340a; margin-right:3px; }
+.form-list .input-box { float:left; width:260px; }
+.form-list input.input-text,
+.form-list textarea { width:254px; }
+.form-list select { width:260px; }
+.form-list li.additional-row { border-top:1px solid #ddd; margin-top:10px; }
+.form-list li.additional-row .btn-remove { float:right; margin:5px 5px 0 0; }
+.form-list .input-range input.input-text { width:96px; }*/
+/* Customer */
+/*.form-list .customer-dob .dob-month,
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-year { float:left; width:85px; }
+.form-list .customer-dob input.input-text { display:block; width:74px; }
+.form-list .customer-dob label { font-size:11px; font-weight:normal; color:#777; text-align:left; }
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-month { width:60px; }
+.form-list .customer-dob .dob-day input.input-text,
+.form-list .customer-dob .dob-month input.input-text { width:46px; }
+.form-list .customer-dob .dob-year { width:140px; }
+.form-list .customer-dob .dob-year input.input-text { width:134px; }*/
+
+.buttons-set { clear:both; margin:4px 0 0; padding:10px 0 0; border-top:1px solid #e4e4e4; text-align:right; }
+.buttons-set p.required { margin:0 0 10px; }
+.buttons-set .back-link { float:left; margin:0; color:#7f7f7f; text-decoration:none; text-indent:8px; }
+.buttons-set .back-link a.back-link { background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/back-arrow.gif') left center no-repeat; }
+
+.back-link a { background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/back-arrow.gif') left center no-repeat;color:#7f7f7f; text-decoration:none;padding-left:8px;}
+
+.buttons-set .back-link small { display:none; visibility:hidden;}
+.buttons-set button.button { float:right; margin-left:5px; }
+
+
+
+.buttons-set-order { margin:10px 0 0; }
+.buttons-set-order .please-wait { padding:12px 7px 0 0; }
+
+.fieldset { padding:0 0 12px 0; margin:34px 0 0; }
+.fieldset .legend { float:left; font-weight:bold; font-size:13px;color:#000; margin:0 0 22px; padding:0 0; position:relative; }
+
+.fieldset .form-list {
+	clear:left	
+}
+
+/* Form Validation */
+.validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:9px; font-size:11px; font-weight:normal; line-height:13px; /*background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/validation_advice_bg.gif) 2px 0 no-repeat;*/ color:#eb340a; }
+.validation-failed { border:1px solid #ff0000 !important; background:#ffe5e5 !important;}
+.validation-passed {}
+p.required { font-size:11px; text-align:right; color:#EB340A; padding-top:10px; }
+/* Expiration date and CVV number validation fix */
+.v-fix { float:left; }
+.v-fix .validation-advice { display:block; width:12em; margin-right:-12em; position:relative; }
+
+/* Global Messages  */
+.success { color:#3d6611; font-weight:bold; }
+.error { color:#df280a; font-weight:bold; }
+.notice { color:#e26703; }
+
+.messages,
+.messages ul { list-style:none !important; margin:0 !important; padding:0 !important; }
+.messages { width:100%; overflow:hidden; }
+.messages li { margin:0 0 10px !important; }
+.messages li li { margin:0 0 3px !important; }
+.error-msg,
+.success-msg,
+.note-msg,
+.notice-msg { font-size:11px !important; font-weight:bold !important; margin:0!important;  }
+.error-msg { border-color:#f16048; background-color:#faebe7; background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_msg-error.gif); color:#df280a; }
+.success-msg { border-color:#446423; background-color:transparent; background-image: none; color:#000; }
+.note-msg,
+.notice-msg { color:#F00;; }
+
+/* BreadCrumbs */
+.breadcrumbs { font-size:11px; line-height:1.25; margin:0 0 13px; }
+.breadcrumbs li { display:inline; }
+.breadcrumbs li strong { font-weight:bold; }
+
+/* Page Heading */
+.page-title { width:100%; overflow:hidden; border-bottom:1px solid #ccc; margin:0 0 25px; }
+.page-title h1,
+.page-title h2 { margin:0; font-size:20px; color:#000; }
+.page-title .separator { margin:0 3px; }
+.page-title .link-rss { float:right; margin:7px 0 0; }
+.title-buttons { text-align:right; }
+.title-buttons h1,
+.title-buttons h2,
+.title-buttons h3,
+.title-buttons h4,
+.title-buttons h5,
+.title-buttons h6 { float:left; }
+
+.subtitle,
+.sub-title { clear:both; padding:15px 0 0; font-size:15px; font-weight:bold; margin:0 0 6px; color:#000; }
+
+/* Pager */
+.pager { font-size:11px; background:#fff; padding:4px 8px; text-align:center; }
+.pager .amount { float:left; margin:0; }
+.pager .limiter { float:right; }
+.pager .limiter label { vertical-align:middle; }
+.pager .limiter select { padding:0; margin:0 0 1px; vertical-align:middle; }
+.pager .pages { margin:0 140px; }
+.pager .pages ol { display:inline; }
+.pager .pages li { display:inline; margin:0 2px; }
+.pager .pages li .previous.i-previous { width: 6px; height: 7px; background: #fff url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/pager_arrow_grey_left.gif) no-repeat center center; display: inline-block; cursor: pointer; }
+.pager .pages li .next.i-next { width: 6px; height: 7px; background: #fff url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/pager_arrow_grey_right.gif) no-repeat center center; display: inline-block; cursor: pointer; }
+.pager .pages .current {}
+
+/* Sorter */
+.sorter { font-size:11px; background:#fff; padding:3px 8px; border-top:1px solid #e2e2e2; }
+.sorter .view-mode { float:left; margin:0; }
+.sorter .sort-by { float:right; padding-right:36px; }
+.sorter .sort-by label { vertical-align:middle; }
+.sorter .sort-by select { padding:0; margin:0 0 1px; vertical-align:middle; }
+.sorter .link-feed {}
+
+/* Toolbar */
+.toolbar { clear:both; padding-bottom:30px; }
+.toolbar .pager { padding:3px 8px; border-bottom:1px solid #e2e2e2; }
+.toolbar .sorter { border-bottom:1px solid #fff; }
+.toolbar-bottom {}
+
+/* Data Table */
+.data-table { width:100%;  }
+.data-table .odd  {  }
+.data-table .even {   }
+/*.data-table tr.odd:hover,
+.data-table tr.even:hover { background:#ebf1f6; }*/
+.data-table td.last,
+.data-table th.last { border-right:0; padding-right:22px; }
+.data-table tr.last th,
+.data-table tr.last td {  }
+.data-table th { padding:3px 8px; font-weight:bold; }
+.data-table td { padding:3px 8px; }
+
+.data-table thead th { font-weight:100; font-family:'Lucida Sans Unicode', 'Lucida Grande', Helvetica, Arial, sans-serif; text-transform:uppercase; line-height:18px; padding:2px 8px; color:#7f7f7f; white-space:nowrap; vertical-align:middle; border-bottom:2px solid #b3b3b3!important; letter-spacing:0.1em; }
+.data-table thead th.wrap { white-space:normal; }
+.data-table thead th a,
+.data-table thead th a:hover { color:#fff; }
+.data-table thead th { background:#fff; }
+.data-table thead th .tax-flag { font-size:11px; white-space:nowrap; }
+
+.data-table tfoot {  }
+.data-table tfoot tr.first td {  }
+.data-table tfoot tr {  }
+.data-table tfoot td { padding-top:1px; padding-bottom:1px; border-bottom:0; }
+.data-table tfoot strong { font-size:16px; }
+
+.data-table tbody th,
+.data-table tbody td {   }
+/* Bundle products tables */
+.data-table tbody.odd tr { background:#fff !important; }
+.data-table tbody.even tr { background:#efefef !important; }
+.data-table tbody.odd tr td,
+.data-table tbody.even tr td { border-bottom:0; }
+.data-table tbody.odd tr.border td,
+.data-table tbody.even tr.border td { border-bottom:1px solid #d9dde3; }
+
+.data-table tbody td .option-label { font-weight:bold; font-style:italic; }
+.data-table tbody td .option-value { padding-left:10px; }
+
+/* Generic Info Box */
+.info-box { background:#fff; border:1px solid #d0cbc1; padding:12px 15px; margin:0 0 15px; }
+.info-box h2 { font-weight:bold; font-size:13px; }
+
+.info-table th { font-weight:bold; padding:2px 15px 2px 0; }
+.info-table td { padding:2px 0; }
+
+/* Shopping cart total summary row expandable to details */
+tr.summary-total { cursor:pointer; }
+tr.summary-total td {}
+tr.summary-total .summary-collapse { float:left; text-align:right;  cursor:pointer; }
+tr.show-details .summary-collapse { background-position:0 -52px; }
+tr.show-details td {}
+tr.summary-details td { font-size:11px; background-color:#dae1e4; color:#626465; }
+tr.summary-details-first td { border-top:1px solid #d2d8db; }
+tr.summary-details-excluded { font-style:italic; }
+
+/* Shopping cart tax info */
+.cart-tax-info { display:block; }
+.cart-tax-info,
+.cart-tax-info .cart-price { padding-right:20px; }
+.cart-tax-total { display:block; padding-right:20px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_collapse.gif) 100% 5px no-repeat; cursor:pointer; }
+.cart-tax-info .price,
+.cart-tax-total .price { display:inline !important; font-weight:normal !important; }
+.cart-tax-total-expanded { background-position:100% -52px; }
+
+/* Class: std - styles for admin-controlled content */
+.std { width:980px; margin:0 auto }
+
+.std .subtitle { padding:0; }
+.std ol.ol { list-style:decimal outside; padding-left:1.5em; }
+.std ul.disc { list-style:disc outside; padding-left:18px; margin:0 0 10px; }
+.std dl dt { font-weight:bold; }
+.std dl dd { margin:0 0 10px; }
+/*.std ul,
+.std ol,
+.std dl,
+.std p,
+.std address,
+.std blockquote { margin:0 0 1em; padding:0; }
+.std ul { list-style:disc outside; padding-left:1.5em; }
+.std ol { list-style:decimal outside; padding-left:1.5em; }
+.std ul ul { list-style-type:circle; }
+.std ul ul,
+.std ol ol,
+.std ul ol,
+.std ol ul { margin:.5em 0; }
+.std dt { font-weight:bold; }
+.std dd { padding:0 0 0 1.5em; }
+.std blockquote { font-style:italic; padding:0 0 0 1.5em; }
+.std address { font-style:normal; }
+.std b,
+.std strong { font-weight:bold; }
+.std i,
+.std em { font-style:italic; }*/
+
+/* Misc */
+.links li { display:inline; }
+.links li.first { padding-left:0 !important; }
+.links li.last { background:none !important; padding-right:0 !important; }
+
+.link-cart { color:#000 !important; font-weight:bold; }
+.link-wishlist { color:#000 !important; font-weight:bold; }
+.link-reorder { font-weight:bold; color:#000 !important; }
+.link-compare { font-weight:bold; }
+.link-print { /*background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_print.gif) 0 2px no-repeat; padding:2px 0 2px 25px;*/ font-weight:bold; color:#000; float:right }
+.link-rss { line-height:14px; white-space:nowrap; }
+.btn-remove  { display:block; width:11px; height:11px; font-size:0; line-height:0; /*background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/btn_remove.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden;*/ }
+.btn-remove2 { display:block; width:16px; height:16px; font-size:0; line-height:0; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/btn_trash.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
+.btn-edit    { display:block; width:11px; height:11px; font-size:0; line-height:0; /*background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/btn_edit.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden;*/ }
+
+.cards-list dt { margin:5px 0 0; }
+.cards-list .offset { padding:2px 0 2px 20px; }
+
+.separator { margin:0 3px; }
+
+.divider { clear:both; display:block; font-size:0; line-height:0; height:1px; margin:10px 0; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_divider1.gif) 0 50% repeat-x; text-indent:-999em; overflow:hidden; }
+
+/* Noscript Notice */
+.noscript { border:1px solid #ddd; border-width:0 0 1px; background:#ffff90; font-size:12px; line-height:1.25; text-align:center; color:#2f2f2f; }
+.noscript .noscript-inner { width:950px; margin:0 auto; padding:12px 0 12px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_notice.gif) 20px 50% no-repeat; }
+.noscript p { margin:0; }
+
+/* Demo Notice */
+.demo-notice { margin:0; padding:6px 10px; background:#d75f07; font-size:12px; line-height:1.15; text-align:center; color:#fff; }
+/* ======================================================================================= */
+
+
+/* Header ================================================================================ */
+.logo { float:left; }
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.header-container {  
+width: 100%;
+position: relative; 
+height: 114px;
+background:#fff;
+}
+/*--------*/
+
+.header { width:100%; margin:0 auto; padding:0; /*text-align:right;*/ position:relative; z-index:10; }
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.header h1.logo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -96px;
+  width: 192px;
+  height: 61px;
+}
+
+.header h1.logo a {
+  display: block;
+  width: 192px;
+  height: 61px;
+  text-indent: -9999px;
+  font-size: 0;
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/logo.png');
+}
+
+/*.header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
+.header h1.logo { margin:0; }*/
+
+/*--------*/
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.header .quick-access { 
+background: #F2EFEA;
+border-bottom: 1px solid #F2EFEA;
+}
+.header .quick-access .inside {
+  width: 980px;
+  margin: 0 auto;
+  line-height: 26px;
+  height:24px;
+  padding: 0 10px;
+}
+.header .quick-access ul li,
+.header .quick-access .left .languages,
+.header .quick-access .left .store-select {
+  float: left;
+}
+
+.header .quick-access .left .languages,
+.header .quick-access .left .languages a,
+.header .quick-access .left .store-select a {
+  color: #ababab;
+  text-decoration: none;
+}
+
+.header .quick-access .left .languages a:hover,
+.header .quick-access .left .store-select a:hover {
+  color: black;
+}
+
+.header .quick-access .left .languages .active {
+  font-weight: bold;
+}
+
+.header .quick-access .left .store-select {
+  margin-left: 19px;
+}
+
+.header .quick-access ul li a {
+  color: #ababab;
+  text-decoration: none;
+}
+
+.header .quick-access ul li a:hover {
+  color: black;
+}
+
+.header .quick-access ul li {
+  margin-left: 15px;
+}
+
+.header .quick-access ul li form label {
+  float: left;
+  margin-right: 3px;
+}
+
+.header .country_selector {
+  color: #ABABAB;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.header .country_selector a {
+  font-weight: 400;
+}
+
+.header-container .header .quick-access form {
+  margin: 0;
+}
+
+.header-container .header .quick-access .search-bar,
+.header-container .header .quick-access form {
+  display: block;
+}
+
+.header-container .header .quick-access p.text {
+  display: block !important;
+  margin:0;
+}
+
+.header-container .header .quick-access label { margin:7px 0 0; }
+
+.header-container .header .quick-access label,
+.header-container .header .quick-access .search-field,
+.header-container .header .quick-access .submit {
+  float: left;
+  line-height: 12px;
+  display: block;
+}
+
+.header-container .header .quick-access span.search-field {
+	max-width:100px!important;
+	
+}
+
+.header-container .header .quick-access .submit {
+  display: block;
+  width: 15px;
+  height: 12px;
+  line-height:12px;
+  border: none;
+  background: none;
+  color: #ababab;
+  margin:4px 0 0;
+}
+
+.header-container .header .quick-access .search-field {
+  overflow: hidden;
+}
+
+.header-container .header .quick-access .search-bar:hover .submit,
+.header-container .header .quick-access .search-bar:hover label {
+  color: black;
+  cursor: pointer;
+}
+/*---------*/
+
+.header .welcome-msg { margin:0; color:#fff; text-align:right; }
+.header .form-search { position:absolute; top:0; right:29px; width:315px; height:30px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_form-search.gif) 0 0 no-repeat; padding:1px 0 0 16px; }
+.header .form-search label { float:left; width:24px; height:21px; text-align:left; text-indent:-999em; overflow:hidden; }
+.header .form-search input.input-text { float:left; border-color:#5c7989; width:209px; margin-right:4px; }
+.header .form-search button.button { float:left; }
+.header .form-search button.button span { border:0; height:21px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/btn_search.gif) 0 0 no-repeat; padding:0 0 0 3px; font:bold 11px/21px Tahoma, Verdana, Arial, sans-serif; }
+.header .form-search button.button span span { background-position:100% 0; padding:0 6px 0 3px; }
+.header .form-search .search-autocomplete { z-index:999; left:40px !important; top:22px !important; }
+.header .form-search .search-autocomplete ul { border:1px solid #5c7989; background-color:#f9f5f0; }
+.header .form-search .search-autocomplete li { text-align:left; border-bottom:1px solid #f4eee7; padding:2px 8px 1px 8px; cursor:pointer; }
+.header .form-search .search-autocomplete li .amount { float:right; font-weight:bold; }
+.header .form-search .search-autocomplete li.odd { background-color:#fffefb; }
+.header .form-search .search-autocomplete li.selected { background-color:#f7e8dd; }
+.header .form-language { clear:both; padding:5px 0 0; text-align:right; }
+.header .form-language label { font-weight:bold; padding-right:5px; color:#a7c6dd; vertical-align:middle; }
+.header .form-language select { padding:0; }
+.header .form-language select.flags option { background-position:4px 50%; background-repeat:no-repeat; padding-left:25px; }
+.header .links { float:right; margin:0; }
+.header .links li { float:left; font-size:11px;padding:0; }
+.header .links a { color:#ebbc58; }
+.header-container .top-container { clear:both; padding:5px 10px 0 12px; text-align:right; }
+.header-container .top-container a { font-size:11px; color:#ebbc58; }
+
+/********** < Navigation */
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.navigation {
+  width: 980px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.nav-container {
+  border-top: solid 6px black;
+}
+
+.nav-container #nav {  
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+}
+
+.nav-container .inside {
+  margin-top: 3px;
+  margin-bottom:0;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+                   
+.nav-container #nav {
+  display: inline-block;
+  width: auto;
+  margin: 6px auto;
+  padding: 0 17px;
+}
+
+/*--------*/
+
+
+/* All Levels */ /* Style consistent throughout all nav levels */
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.nav-container #nav li {
+  float: left;
+}
+
+/*--------*/
+
+#nav li.over { z-index:998; }
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.nav-container #nav li a {
+  color: #000;
+  font:normal 14px/22px Georgia, "Times New Roman", Times, serif;
+  text-decoration: none;
+  margin:0 16px;
+}
+
+.nav-container #nav li a:hover {
+  color: #666;
+}
+
+.nav-container #nav li.active a {
+  font-style: italic;
+}
+
+body.cms-shop .nav-container #nav li.shop a,
+body.cms-shop .footer-container .footer .nav li.shop a,
+body.catalog-category-view .nav-container #nav li.shop a,
+body.catalog-category-view .footer-container .footer .nav li.shop a,
+body.catalog-product-view .nav-container #nav li.shop a,
+body.catalog-product-view .footer-container .footer .nav li.shop a {
+  font-style: italic;
+}
+
+body.cms-collection .nav-container #nav li.collection a,
+body.cms-collection .footer-container .footer .nav li.collection a,
+body.cms-collection-men-women .nav-container #nav li.collection a,
+body.cms-collection-men-women .footer-container .footer .nav li.collection a,
+body.cms-collection-kids-baby .nav-container #nav li.collection a,
+body.cms-collection-kids-baby .footer-container .footer .nav li.collection a {
+  font-style: italic;
+}
+
+body.cms-special-edition .nav-container #nav li.special a,
+body.cms-special-edition .footer-container .footer .nav li.special a {
+  font-style: italic;
+}
+
+body.cms-culture .nav-container #nav li.culture a,
+body.cms-culture .footer-container .footer .nav li.culture a {
+  font-style: italic;
+}
+
+body.cms-basics-of .nav-container #nav li.basics a,
+body.cms-basics-of .footer-container .footer .nav li.basics a {
+  font-style: italic;
+}
+
+
+#nav span { display:block; cursor:pointer; white-space:nowrap; }
+#nav li ul span {white-space:normal; }
+#nav ul li.parent a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_nav2.gif) 100% 100% no-repeat; }
+#nav ul li.parent li a { background-image:none; }
+
+/* 0 Level */
+#nav li { float:left; }
+#nav li.active a {  }
+#nav a { float:left; padding:0; }
+#nav li.over a,
+#nav a:hover { color:#666; }
+
+/* 1st Level */
+#nav ul li,
+#nav ul li.active { float:none; margin:0; padding-bottom:1px; }
+#nav ul li.last { background:#ecf3f6; padding-bottom:0; }
+
+#nav ul a,
+#nav ul a:hover { float:none; padding:0; background:none; }
+#nav ul li a { font-weight:normal !important; }
+
+/* 2nd Level */
+#nav ul,
+#nav div { position:absolute; width:15em; top:27px; left:-10000px; border:1px solid #899ba5; }
+#nav div ul { position:static; width:auto; border:none; }
+
+/* 3rd+ Level */
+#nav ul ul,
+#nav ul div { top:5px; }
+
+#nav ul li a { background:#ecf3f6; }
+#nav ul li a:hover { background:#d5e4eb; }
+#nav ul li a,
+#nav ul li a:hover { color:#2f2f2f !important; }
+#nav ul span,
+#nav ul li.last li span { padding:3px 15px 4px 15px; }
+
+/* Show menu */
+#nav li ul.shown-sub,
+#nav li div.shown-sub { left:0; z-index:999; }
+#nav li .shown-sub ul.shown-sub,
+#nav li .shown-sub li div.shown-sub { left:100px; }
+/********** Navigation > */
+/* ======================================================================================= */
+
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+
+.cms-home .main-container .main {
+  margin-top: 10px!important;
+}
+
+
+.cms-home .main-container {
+    margin-bottom: 60px;
+}
+
+/* HOMEPAGE MODULES */
+.cms-home .main-container .homepage-slideshow {
+  margin: 0 auto;
+}
+
+.cms-home .main-container .homepage-slideshow,
+.cms-home .main-container .homepage-slideshow .slide {
+  width: 980px;
+  height: 530px;
+}
+
+.cms-home .main-container .homepage-slideshow .slide a {
+  position:absolute;
+  right:0;
+  display:block;	
+  text-indent:-999em;
+  width: 980px;
+  height: 530px;
+}
+
+/*.cms-home .main-container .homepage-slideshow .slide a.adults { width:100px; height:50px; top:120px; right:825px; }
+.cms-home .main-container .homepage-slideshow .slide a.kids { width:100px; height:50px; top:120px; right:715px; }
+.cms-home .main-container .homepage-slideshow .slide a.se { width:215px; height:80px; top:258px; right:23px; }
+.cms-home .main-container .homepage-slideshow .slide a.basics { width:350px; height:105px; top:454px; right:320px; }
+.cms-home .main-container .homepage-slideshow .slide a.socks { width:270px; height:370px; top:205px; right:525px; }*/
+
+.cms-home .main-container .new-arrivals {
+  width: 980px;
+  margin: 30px auto 30px;
+  
+  border-top: solid 6px black;
+}
+
+.cms-home .main-container .new-arrivals .inside {
+  position: relative;
+  width: 980px;
+  height: 230px;
+}
+
+.cms-home .main-container .new-arrivals .header h1 {
+  font-family: Baskerville, Times New Roman, Times, serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 58px;
+}
+
+.cms-home .main-container .new-arrivals .slides {
+  position: absolute;
+  width: 980px;
+  left: 0px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide-group {
+  padding: 0 32px;
+}
+
+.cms-home .main-container .new-arrivals .inside .previous,
+.cms-home .main-container .new-arrivals .inside .next {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;  
+  line-height: 213px;
+  z-index: 1000;
+}
+
+.cms-home .main-container .new-arrivals .inside .previous a:active img {
+  margin-right: 5px;
+}
+
+.cms-home .main-container .new-arrivals .inside .next a:active img {
+  margin-left:  5px;
+}
+
+.cms-home .main-container .new-arrivals .inside .previous {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/css/images/new-arrivals-left-gradient.png');
+}
+
+.cms-home .main-container .new-arrivals .inside .next {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/css/images/new-arrivals-right-gradient.png');
+}
+
+.cms-home .main-container .new-arrivals .inside .next {
+  left: auto;
+  right: 0;
+}
+
+.cms-home .main-container .new-arrivals .inside .previous img,
+.cms-home .main-container .new-arrivals .inside .next img {
+  vertical-align: middle;
+}
+
+.cms-home .main-container .new-arrivals .slide-group {
+  width: 916px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide {
+  width: 163px;
+  margin: auto;
+  float: left;
+  margin: 0 10px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide a img {
+  display: block;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide span.category-name {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 10px;
+  display: block;
+  text-transform: uppercase;
+  color: #ababab;
+  text-decoration: none;
+  border-bottom: solid 1px #d5d5d5; 
+  line-height: 25px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide:hover,
+.cms-home .main-container .new-arrivals .slides .slide:hover span.category-name,
+.cms-home .main-container .new-arrivals .slides .slide:hover span.title,
+.cms-home .main-container .new-arrivals .slides .slide:hover span.price {
+  color: #666;
+}
+
+
+
+.cms-home .main-container .new-arrivals {
+  width: 980px;
+  margin: 10px auto 20px;
+  
+  border-top: solid 6px black;
+}
+
+.cms-home .main-container .new-arrivals .inside {
+  position: relative;
+  width: 980px;
+  height: 230px;
+}
+
+.cms-home .main-container .new-arrivals .header h1 {
+  font-family: Baskerville, Times New Roman, Times, serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: normal;
+  
+  line-height: 58px;
+}
+
+.cms-home .main-container .new-arrivals .slides {
+  position: absolute;
+  width: 980px;
+  left: 0px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide-group {
+  padding: 0 32px;
+}
+
+.cms-home .main-container .new-arrivals .inside .previous,
+.cms-home .main-container .new-arrivals .inside .next {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 32px;  
+  line-height: 213px;
+  
+  z-index: 1000;
+}
+
+.cms-home .main-container .new-arrivals .inside .previous a:active img {
+  margin-right: 5px;
+}
+
+.cms-home .main-container .new-arrivals .inside .next a:active img {
+  margin-left:  5px;
+}
+
+.cms-home .main-container .new-arrivals .inside .previous {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/css/images/new-arrivals-left-gradient.png');
+}
+
+.cms-home .main-container .new-arrivals .inside .next {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/css/images/new-arrivals-right-gradient.png');
+}
+
+.cms-home .main-container .new-arrivals .inside .next {
+  left: auto;
+  right: 0;
+}
+
+.cms-home .main-container .new-arrivals .inside .previous img,
+.cms-home .main-container .new-arrivals .inside .next img {
+  vertical-align: middle;
+}
+
+.cms-home .main-container .new-arrivals .slide-group {
+  width: 916px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide {
+  width: 163px;
+  margin: auto;
+  float: left;
+  
+  margin: 0 10px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide a img {
+  display: block;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide span.category-name {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 10px;
+  display: block;
+  text-transform: uppercase;
+  
+  color: #ababab;
+  text-decoration: none;
+  
+  border-bottom: solid 1px #d5d5d5;
+  
+  line-height: 25px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide:hover,
+.cms-home .main-container .new-arrivals .slides .slide:hover span.category-name,
+.cms-home .main-container .new-arrivals .slides .slide:hover span.title,
+.cms-home .main-container .new-arrivals .slides .slide:hover span.price {
+  color: #666;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide span.category-name {
+  font-weight: normal;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide:hover span.category-name {
+  border-bottom: solid 1px #666;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ababab;
+  
+  line-height: 20px;
+  padding-top: 2px;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide span.title span.color {
+  font-weight: normal;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide .price {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 11px;
+  display: block;
+  font-weight: normal;
+  line-height: 15px;
+}
+
+
+/* bumping up that font size! */
+.cms-home .main-container .new-arrivals .slides .slide a span.category-name {
+  font-size: 11px;
+  line-height: 22px;
+  display: block;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide a span.title {
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 6px;
+  display: block;
+}
+
+.cms-home .main-container .new-arrivals .slides .slide a span.price {
+  font-size: 12px;
+  line-height: auto;
+}
+/* ending bumping up that font size! */
+
+
+
+.cms-home .main-container .featured-tiles {
+  width: 980px;
+  margin: 0 auto;
+  padding: 0 10px 10px;
+}
+
+.cms-home .main-container .featured-tiles a {
+  display: block;
+  width: 320px;
+  height: 158px;
+  
+  float: left;
+  
+  margin: 0 5px;
+  
+  border-top: solid 6px black;
+  padding-top: 5px;
+}
+
+
+.cms-home .main-container .featured-tiles.bot a {
+  border-top: 0;
+  padding-top:0;
+}
+
+
+
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+
+/* fixed elements */
+ .main-container.fixedElems {}
+
+ .main-container.fixedElems .category-list {
+  padding-bottom: 109px;
+}
+
+ .main-container.fixedElems .sub-category-list {
+  width: 980px;
+  padding: 0 10px;
+  
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  z-index: 100;
+  
+  margin-left: -490px;
+  
+  background: white;
+  
+
+  border-top: solid 5px black;
+  padding-top: 10px;
+}
+
+ .main-container.fixedElems .sub-category-list {
+  top: 0px;
+  padding-bottom: 10px;
+  
+  border-bottom: solid 1px #ccc;
+}
+/* end fixed elements */
+
+ .category-list-container {
+	margin: 0 auto;
+ 	padding: 0 10px;
+ 	width: 980px;
+}
+
+ .main-container .category-list {
+  line-height: 30px;
+/*  margin: auto;*/
+  position:relative;  
+  border-bottom: solid 5px black;
+ /* width: 980px;*/
+}
+
+.catalog-category-view .main-container .category-list {
+	margin-bottom:105px;	
+}
+
+ .main-container .category-list ul li {
+  float: left;
+  margin:0 10px 0 0;
+}
+
+.main-container .category-list ul li.level0.last {
+  /*float: right;*/
+  margin:0;
+}
+
+ .main-container .category-list ul li.active a span {
+  color: black;
+  background: #f2efea;
+}
+
+ .main-container .category-list ul li a:hover span {
+  color: #666;
+}
+
+ .main-container .category-list ul li a  {
+	text-decoration:none; 
+ }
+
+ .main-container .category-list ul li a span {
+  display: block;
+  padding:0 10px;
+  text-decoration: none;
+  
+  font-family:"Avant Garde Gothic ITCW01Bk";
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ababab;
+  letter-spacing: 0.1em;
+}
+
+.main-container .category-list ul li.level0 img {
+  display:none!important;
+  visibility:hidden!important;
+}
+
+
+
+/* SUBCAT NAV*/
+.main-container .category-list ul li.level0 ul.level0 {
+  display:none;
+}
+
+.catalog-product-view .main-container .category-list ul li.level0 ul.level0,
+.catalog-product-view .main-container .category-list ul li.level0.active ul.level0  {
+  display:none!important;
+}
+
+.main-container .category-list ul li.level0.active ul.level0 {
+  display:block!important;
+  height:72px;
+  width:980px;
+  float:left;
+  position:absolute;
+  top:35px;
+  left:0px;
+  background:#fff;
+}
+
+.main-container.fixedElems  .category-list ul li.level0.active ul.level0 {
+
+  width: 980px;
+    padding: 0 10px;
+  display:block;
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  z-index: 100;
+  
+  margin-left: -490px; 
+
+  border-top: solid 5px black;
+  padding:0 0 50px;
+  
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/subcat-bg.png') bottom repeat-x;
+}
+
+.main-container.fixedElems  .category-list {
+ border-bottom:0;
+ margin-bottom:0;
+}
+
+
+.main-container .category-list ul li.level0.active ul.level0 li,
+.main-container .category-list ul li.level0.active ul.level0 li img {
+	display:block!important;
+	visibility:visible!important;
+	height:72px!important;
+}
+
+.main-container .category-list ul li.level0.active ul.level0 li {
+	margin:0;
+	width:75px;
+	background:#fff;	
+}
+
+.main-container .category-list ul li.level0.active ul.level0 li.last {
+	width:80px;
+}
+
+.main-container .category-list ul li.level0.active ul.level0 li.last img {
+	padding:0 5px 0 3px;
+}
+
+.main-container .category-list ul li.level0.active ul.level0 li a img {
+	display:block;
+	margin:0 auto 5px;
+	border-bottom: solid 1px #bbb;
+	padding:0 2px 0 1px;
+}
+
+.main-container .category-list ul li.level0.active ul.level0 li a span {
+  display: none;
+  line-height: 1.3em;
+  font-weight: bold;
+  font-size:11px;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #bbb;
+  background: white;
+  text-transform:none;
+  letter-spacing:-.015em;
+  padding:0 3px;
+}
+
+.main-container .category-list ul li.level0.active ul.level0 li.active a span {
+  display: block;
+  color: black !important;
+}
+
+.main-container .category-list ul li.level0.active ul.level0 li a:hover img {
+  border-bottom: solid 1px #666;
+}
+
+.main-container .category-list ul li.level0.active ul.level0 li a:hover span {
+  display: block;
+  color: #666;
+}
+
+.cms-catalog .main-container .sub-category-list ul li a.active img {
+  border-bottom: solid 1px black;
+}
+
+
+
+
+/* Sidebar =============================================================================== */
+.block { border:1px solid #c4c1bc; margin:0 0 15px; }
+.block .block-title {  border-bottom:1px solid #ddd; padding:2px 9px; }
+.block .block-title strong { display:block; font:bold 12px/16px Arial, Helvetica, sans-serif; min-height:16px; padding:1px 0 1px; text-transform:uppercase; color:#e26703; }
+.block .block-title strong span {}
+.block .block-title a { text-decoration:none !important; }
+.block .block-subtitle { margin:0; padding:5px 9px; font-size:1em; font-weight:bold; color:#0a263c; }
+.block .block-content { background:#f8f7f5; }
+.block .block-content li.item { padding:7px 9px; }
+.block .block-content .product-name { color:#1e7ec8; }
+.block .btn-remove,
+.block .btn-edit { float:right; margin:1px 0 2px 5px; }
+.block .actions { /*background:#dee5e8 url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_block-actions.gif) 0 0 repeat-x;*/ padding:6px 9px; text-align:right; }
+.block .actions a { float:left; }
+.block .actions button.button { float:right; }
+.block .empty { margin:0; padding:5px 9px; }
+
+.block li.odd { background-color:#f4f3f3; }
+.block li.even { background-color:#fafafa; }
+
+/* Mini Blocks */
+.block-cart,
+.block-wishlist,
+.block-subscribe,
+.block-compare,
+.block-reorder,
+.block-poll,
+.block-viewed,
+.block-compared,
+.block-related,
+.block-tags,
+.block-login { font-size:11px; line-height:1.25; }
+.block-cart .block-title strong,
+.block-wishlist .block-title strong,
+.block-subscribe .block-title strong,
+.block-compare .block-title strong,
+.block-reorder .block-title strong,
+.block-poll .block-title strong,
+.block-viewed .block-title strong,
+.block-compared .block-title strong,
+.block-related .block-title strong,
+.block-tags .block-title strong,
+.block-login .block-title strong {  background-position:0 0; background-repeat:no-repeat; padding-left:21px; }
+
+/* Mini Products List */
+.mini-products-list .product-image { float:left; width:50px; border:1px solid #a9a9a9; }
+.mini-products-list .product-details { margin-left:60px; }
+
+/* Block: Account */
+.block-account { border-color:#bbb; margin-left: 10px; }
+.block-account .block-title { background:#fc9d36 url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_block-title-account.gif) 0 100% repeat-x; border:0; padding:3px 10px; }
+.block-account .block-title strong { font-size:13px; color:#fff; }
+.block-account .block-content { background:#fbfaf6; padding:7px 10px 7px; }
+.block-account .block-content li a { display:block; border-bottom:1px solid #ddd; padding:3px 0; color:#5f5d5c; text-decoration:none !important; }
+.block-account .block-content li a:hover { color:#ea7900; }
+.block-account .block-content li.last a { border-bottom:0; }
+.block-account .block-content li.current { border-bottom:1px solid #ddd; padding:3px 0; color:#ea7900; }
+.block-account .block-content li.current.last { border-bottom:0; }
+
+/* Block: Currency Switcher */
+.block-currency { border:0; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_block-currency.gif) 0 0 no-repeat; padding:7px 12px 10px; height:51px; }
+.block-currency .block-title { background:none; border:0; padding:0; margin:0 0 5px; }
+.block-currency .block-title strong { font:bold 13px/21px Arial, Helvetica, sans-serif; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-currency.gif) 0 50% no-repeat; padding:0 0 0 21px; text-transform:none; color:#fff; }
+.block-currency .block-content { background:none; padding:0; }
+.block-currency .block-content select { width:100%; padding:0; }
+
+/* Block: Layered Navigation */
+.block-layered-nav { border:0; }
+.block-layered-nav .block-title { padding:0; height:32px; width:100%; margin-top:40px; border-bottom:2px solid #000;  }
+.block-layered-nav .block-subtitle { line-height:1.35;  padding:3px 9px; border:1px solid #b9ccdd; border-width:1px 0; text-transform:uppercase; color:#1f5070; }
+.block-layered-nav .block-content { background:#fff; }
+.block-layered-nav dt {  text-align:center; padding:8px 0 6px; }
+.block-layered-nav dd { padding:0 12px 12px; border-bottom:1px solid #999; }
+.block-layered-nav dd a { text-decoration:none; }
+.block-layered-nav dd.last { background:none; border:none; }
+.block-layered-nav .currently li { background:#fff; padding:4px 6px 4px 10px; }
+.block-layered-nav .currently .label { font-weight:bold; padding-left:18px; text-transform:uppercase; }
+.block-layered-nav .currently .btn-remove { margin:3px 0 0; }
+.block-layered-nav .actions { font-size:11px; padding:4px 9px; background:#cad6e4; border:1px solid #dee5e8; border-width:1px 0; text-align:right; }
+.block-layered-nav .actions a { float:none; }
+
+
+
+/* SEARCH RESULTS */
+.catalogsearch-result-index .main {
+	 width: 980px;
+	  padding: 0 10px;	
+	margin:0 auto 50px;
+}
+
+.catalogsearch-result-index .col-main {
+	 width: 980px;
+	  padding: 0 10px;	
+	margin:0 auto;
+}
+
+.catalogsearch-result-index .col-main .product-listing {
+    margin: auto auto 10px;
+    min-height: 250px;
+    padding: 20px 10px 0;
+    width: 980px;
+}
+
+.catalogsearch-result-index .col-main .product-listing .product {
+    float: left;
+    margin: 0 0 50px 40px;
+    width: 215px;
+}
+
+.catalogsearch-result-index .col-main .product-listing .product.beginning {
+	margin:0 0 50xp 0;
+}
+
+.catalogsearch-result-index .col-main .page-title {
+	border-bottom: 2px solid #000;
+    border-top: 1px solid #CCCCCC;
+    line-height: 34px;
+    margin-bottom: 30px;
+    margin-top: 37px;
+    text-transform: uppercase;
+}
+
+.catalogsearch-result-index .col-main .page-title h1 {
+    font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 15px !important;
+    font-weight: 100 !important;
+    line-height: 34px !important;
+    text-align: center;
+}
+
+.catalogsearch-result-index .col-left .block-layered-nav li, .catalogsearch-result-index .col-left .block-layered-nav dt, .catalogsearch-result-index .col-left .block-layered-nav strong {
+	text-align: left;
+}
+
+.block-layered-nav .block-title strong span {
+    color: #000000;
+    font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 12px !important;
+    font-weight: 100 !important;
+    line-height: 32px !important;
+}
+
+
+
+/* Block: Cart */
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+/* Rich Cart */
+ .rich-cart-container {
+  background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/richcart-bg.png') 0 0 repeat;
+  position: absolute;
+   top: 0px;
+  display:none;
+  left: 0px;
+  
+  width: 100%;
+  z-index: 1000;
+}
+
+ .rich-cart {
+  width: 980px;
+  margin: auto;
+  
+  padding:0 10px 75px;
+  
+  position: relative;
+}
+
+ .rich-cart .section {
+  float: left;
+}
+
+ .rich-cart .section .header {
+  line-height: 26px;
+  border-bottom: solid 1px black;
+  text-align: left;
+  display: block;
+  
+  margin-top:0;
+}
+
+ .rich-cart .section .content {
+  text-align: left;
+}
+
+ .rich-cart .items {
+  width: 700px;
+}
+
+ .rich-cart .items .header {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+ .rich-cart .items .content {
+  padding-top: 8px;
+  min-height:79px;
+}
+
+ .rich-cart .items .item {
+  float: left;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  position: relative;
+}
+
+ .rich-cart .items .item .tooltip {
+  background: #bbb;
+  color: white;
+  
+  width: 184px;
+  
+  position: absolute;
+  padding: 8px;
+  
+  display: none;
+  
+  z-index: 9999;
+}
+
+ .rich-cart .items .item .tooltip:after {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/rich-cart-tooltip-arrow.png');
+  
+  content: '';
+  display: block;
+  width:  16px;
+  height: 29px;
+  
+  position: absolute;
+  top: 7px;
+  left: -12px;
+}
+
+ .rich-cart .items .hover .tooltip {
+  display: block;
+}
+
+ .rich-cart .items .item .tooltip .title,
+ .rich-cart .items .item .tooltip .color {
+  font-size: 11px;
+  color: white;
+  line-height: 12px;
+}
+
+ .rich-cart .items .item .tooltip .title {
+  font-weight: bold;
+}
+
+ .rich-cart .items .item .tooltip .price-box {
+  position: absolute;
+  bottom: 7px;
+  right:  8px;
+  
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 16px;
+  margin:0;
+}
+
+.rich-cart .items .item .tooltip .price-box span.qty,
+.rich-cart .items .item .tooltip .price-box span.price {
+  float:left;
+  display:block;
+  position:relative!important;
+  color:#fff;
+  padding:0 0 0 5px;
+  font-weight: 100;
+ }
+
+.rich-cart .items .item .tooltip .price-box span.qty {
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:10px;
+ padding-top:5px;	
+}	
+	
+.rich-cart .items .item .tooltip .sizes {
+	padding-top:5px;
+}
+
+ .rich-cart .items .item .tooltip .sizes .label {
+  margin-right: 10px;
+  float:left;
+  line-height:24px;
+}
+
+.rich-cart .items .item .tooltip .sizes .size-badge {
+  display:block;
+  width:24px;
+  height:24px;
+  background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/size-bg.png') -1px -1px no-repeat;
+  float:left;
+  font:normal 10px/24px Georgia, "Times New Roman", Times, serif;
+  text-align:center;
+}
+
+ .rich-cart .total {
+  width: 140px;
+}
+
+ .rich-cart .total .header {
+ 	font-size: 11px;
+    font-weight: bold;
+  
+}
+
+ .rich-cart .total .content {
+  font-size: 20px;
+  font-family: Georgia, Times, Times New Roman, serif;
+  color: black;
+  
+  padding-top: 12px;
+}
+
+ .rich-cart .shopping-bag {
+  position: relative;
+  width: 140px;
+}
+
+ .rich-cart .shopping-bag .header {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+ .rich-cart .shopping-bag .content {
+  padding-top: 17px;
+}
+
+ .rich-cart .shopping-bag .close {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/rich-cart-close.png');
+  width: 10px;
+  height: 10px;
+  display: block;
+
+  text-indent: -9999em;
+  font-size: 0;
+  z-index:999;
+}
+
+ .rich-cart .view-shopping-bag {
+  position: absolute;
+  bottom: 5px;
+  right: 0px;
+  
+    font-family: Georgia,Times,Times New Roman,serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+	text-decoration:none;
+}
+
+ .rich-cart button.checkout {
+  display:block;
+  width:140px;
+  height:27px;
+  text-indent:-9999em;
+  overflow:hidden;
+  background:#fff url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/checkout.png') center center no-repeat;
+  border:0;
+  cursor:pointer;
+ }
+ 
+.rich-cart p.empty {
+	padding:12px 0 0;
+	color:#000;	
+}
+
+
+.block-cart .block-title { /*border-bottom:0;*/ }
+.block-cart .block-title strong {   }
+.block-cart .summary { background:#fff; padding:2px 8px 8px; margin:-1px 0 0; position:relative; z-index:1; }
+.block-cart .amount { margin:0; }
+.block-cart .amount a { font-weight:bold; }
+.block-cart .subtotal { margin:5px 0 0; padding:2px 0; background:#fbebd9; text-align:center; }
+.block-cart .subtotal .price { font-weight:bold; }
+.block-cart .actions { border-bottom:1px solid #c2c2c2; }
+.block-cart .actions .paypal-logo { float:left; width:100%; margin:3px 0 0; text-align:right; }
+.block-cart .actions .paypal-logo .paypal-or { clear:both; display:block; padding:0 55px 8px 0; }
+
+/* Block: Wishlist */
+.block-wishlist .block-title strong { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-wishlist.gif); }
+.block-wishlist .actions { text-align:right; }
+.block-wishlist .actions a { float:none; }
+
+/* Block: Related */
+.block-related .block-title strong { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-related.gif); background-position:0 1px; }
+.block-related input.checkbox { float:left; }
+.block-related .product { margin-left:20px; }
+
+/* Block: Compare Products */
+.block-compare .block-title strong { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-list.gif); background-position:0 1px; }
+.block-compare button.button span { border-color:#406a83; background:#618499; }
+.page-popup .link-print { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_print.gif) 0 2px no-repeat; padding:2px 0 2px 25px; font-weight:bold; color:#1e7ec8; }
+.compare-table { border:0; }
+.compare-table thead tr.first th,
+.compare-table thead tr.first td { border:0; background:none; padding:0; font-size:0; line-height:0; }
+.compare-table .btn-remove { float:right; background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/btn_remove2.gif); width:72px; height:15px; }
+.compare-table tbody th { background:#d9e5ee url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_th-v.gif) 100% 0 repeat-y; }
+.compare-table tbody th,
+.compare-table tbody td { padding:10px; border:0; border-top:1px solid #ccc; border-left:1px solid #ccc; }
+.compare-table tbody td.last { border-right:1px solid #ccc; }
+.compare-table tbody tr.last th,
+.compare-table tbody tr.last td { border-bottom:1px solid #ccc !important; }
+.compare-table tr.add-to-row td { background:#fffada; text-align:center; }
+.compare-table tr.first td { text-align:center; }
+.compare-table tr.first td .product-name { font-size:13px; font-weight:bold; margin:0 0 5px; color:#203548; }
+.compare-table tr.first td .product-name a { color:#203548; }
+.compare-table tr.first td .ratings { width:69px; margin:0 auto; }
+.compare-table tr.first td p,
+.compare-table tr.add-to-row td p { margin:0; }
+
+/* Block: Recently Viewed */
+.block-viewed .block-title strong {  }
+
+/* Block: Recently Compared */
+.block-compared .block-title strong { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-list.gif); background-position:0 1px; }
+
+/* Block: Poll */
+.block-poll .block-title strong { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-poll.gif); }
+.block-poll .block-subtitle { font-size:12px; }
+.block-poll label { color:#777; font-weight:bold; }
+.block-poll input.radio { float:left; margin:1px -18px 0 0; }
+.block-poll .label { display:block; margin-left:18px; }
+.block-poll li { padding:3px 9px; }
+.block-poll .actions { margin:5px 0 0; }
+.block-poll button.button span { border-color:#406a83; background:#618499; }
+.block-poll .answer { font-weight:bold; }
+.block-poll .votes { float:right; margin-left:10px; }
+
+/* Block: Tags */
+.block-tags .block-title strong { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-tags.gif); }
+.block-tags .block-content .tags-list { background:none; border:0; font-size:12px; }
+.block-tags .block-content a { color:#1b2d3b; }
+.block-tags .actions { text-align:right; }
+.block-tags .actions a { float:none; }
+
+/* Block: Subscribe */
+.block-subscribe .block-content { padding:5px 10px; }
+.block-subscribe .block-title strong { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-subscribe.gif); }
+.block-subscribe label { font-weight:bold; color:#666; }
+.block-subscribe input.input-text { display:block; width:167px; margin:3px 0; }
+.block-subscribe .actions { background:none; padding:0; margin:3px 0 0; text-align:left; }
+.block-subscribe .actions button.button { float:none; }
+.block-subscribe .actions button.button span { border-color:#406a83; background:#618499; }
+
+/* Block: Reorder */
+.block-reorder .block-title strong { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_block-list.gif); }
+.block-reorder input.checkbox { float:left; margin:2px -20px 0 0; }
+.block-reorder .product-name { margin-left:20px; }
+.block-reorder .validation-advice { margin:3px 9px 7px; }
+
+
+/* Block: Account */
+.block-account { border: 0; margin-top: 39px; margin-left: 0; }
+.block-account .block-title { background:#fff; border: 0; padding: 0; text-align: left; }
+.block-account .block-title strong {  color: #000000; font-family: "Avant Garde Gothic ITCW01Bk"; font-size: 12px !important; font-weight: 100 !important; letter-spacing: 0.1em; line-height: 32px !important; }
+.block-account .block-content { background:#fff; border-top: 2px solid #000; padding: 0; margin: 0; }
+.block-account .block-content li a { display:block; border-bottom:1px solid #ddd; padding:10px 0; color:#666; text-decoration:none !important; text-align: left; }
+.block-account .block-content li a:hover { color:#333; }
+.block-account .block-content li.last a { border-bottom:0; }
+.block-account .block-content li.current { border-bottom: 1px solid #ddd; padding:10px 0; color:#000; text-align: left; }
+.block-account .block-content li.current.last { border-bottom:0; }
+.wrapper .my-account { padding-left: 39px; }
+
+/* Block: Banner */
+.block-banner { border:0; }
+.block-banner .block-content { padding:0; text-align:center; }
+
+/* Block: Login */
+.block-login .block-title strong {  }
+.block-login .block-content { padding:5px 10px; }
+.block-login label { font-weight:bold; color:#666; }
+.block-login input.input-text { display:block; width:167px; margin:3px 0; }
+.block-login .actions { background:none; padding:0; margin:3px 0 0; }
+.block-login .actions button.button span { border-color:#406a83; background:#618499; }
+
+/* Paypal */
+.sidebar .paypal-logo { display:block; margin:10px 0; text-align:center; }
+.sidebar .paypal-logo a { float:none; }
+/* ======================================================================================= */
+
+
+/* Category Page ========================================================================= */
+.category-title { border:0; margin:0 0 7px; }
+.category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
+.category-image img {}
+.category-description { margin:0 0 10px; }
+.category-products {}
+
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+ .main-container .product-listing {
+  width: 980px;
+  margin: auto;
+  
+  padding-top: 20px;
+  margin-bottom: 10px;
+  
+  min-height:250px;
+}
+
+ .main-container .product-listing .product {
+  width: 215px;
+  margin: 0 20px;
+  
+  float: left;
+  opacity:0;
+}
+
+.main-container .product-listing .product:last-child {
+	margin-right:0;	
+}
+
+ .main-container .product-listing .product {
+  margin-bottom: 50px;
+}
+
+ .main-container .product-listing .product .title,
+ .main-container .product-listing .product .price {
+  display: block;
+}
+
+ .main-container .product-listing .product a {
+  color: #ababab;
+  text-decoration: none;
+}
+
+ .main-container .product-listing .product .title {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+ .main-container .product-listing .product .title .color {
+  font-weight: normal;
+}
+
+ .main-container .product-listing .product .price {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 11px;
+}
+
+ .main-container .product-listing .product {
+  position: relative;
+}
+
+.main-container .product-listing .product.beginning {
+  clear:both;
+  float:left;
+}
+
+
+ .main-container .product-listing .product .images {
+  width:  215px;
+  height: 230px;
+  
+  border-bottom: solid 1px #ababab;
+  margin-bottom: 7px;
+}
+
+ .main-container .product-listing .product img.alt,
+ .main-container .product-listing .product img.main {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+ .main-container .product-listing .product img.alt,
+ .main-container .product-listing .product .tooltip {
+  /*display: none;*/
+}
+
+ .main-container .product-listing .product:hover img.alt,
+ .main-container .product-listing .product:hover .tooltip {
+  display: block;
+}
+
+ .main-container .product-listing .product:hover span.title,
+ .main-container .product-listing .product:hover span.price {
+  color: black;
+}
+
+.main-container .product-listing .product span.price .price-box {
+  margin:0;
+}
+
+ .main-container .product-listing .product .tooltip {
+  position: absolute;
+  /*bottom: 46px;*/
+  top:100px;
+  left: 0px;
+ 
+  width: 215px;
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/catalog-item-overlay.png') 0 0 repeat-x;
+  
+  padding-top: 55px;
+  
+  display: none;
+}
+
+ .main-container .product-listing .product .tooltip .add-to-cart {
+  font-family:"Avant Garde Gothic ITCW01Md";
+  font-size: 13px;
+  font-weight: normal;
+  
+  text-transform: uppercase;
+  display: block;
+  
+  color: black;
+  
+  line-height: 24px;
+}
+
+.main-container .product-listing .product .tooltip button.btn-cart span {
+    background: url("https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/size-bg.png") no-repeat center top;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font: 10px/24px Georgia,"Times New Roman",Times,serif;
+    height: 26px;
+    margin: 0 5px 0;
+    padding: 0;
+    text-align: center;
+    width: 26px;
+}
+
+.main-container .product-listing .product .tooltip button.btn-cart:hover span { background-position:center bottom; }
+
+ .main-container .product-listing .product .tooltip .options {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+ .main-container .product-listing .product .tooltip .options a {
+  line-height: 28px;
+}
+
+ .main-container .product-listing .product .tooltip .options img {
+  border: none;
+}
+
+ .main-container .product-listing .product .tooltip p.meta {
+  font-size: 10px;
+  line-height: 14px;
+  color:#ABABAB;
+  padding-top:3px;
+}
+
+ .main-container .product-listing .swatch {
+  width: 155px;
+  height: 155px;
+  
+  margin: 5px;
+  
+  float: left;
+}
+
+ .main-container .product-listing .swatch a {
+  text-decoration: none;
+  width: 155px;
+  height: 155px;
+  display: block;
+  
+  position: relative;
+}
+
+ .main-container .product-listing .swatch.loading .rollover {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/css/images/loading.gif') center center no-repeat;
+}
+
+ .main-container .product-listing .swatch .rollover {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  
+  border: solid 10px black;
+  width:  135px;
+  height: 135px;
+  
+  display: none;
+}
+
+ .main-container .product-listing .swatch .tooltip {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  
+  z-index: 1000;
+  
+  line-height: 20px;
+
+  color: white;
+  
+  padding: 5px;
+  
+  display: none;
+  
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/css/images/tooltip-tip.png') left center no-repeat;
+  padding-left: 12px;
+}
+
+ .main-container .product-listing .swatch .tooltip .inside {
+  background: black;
+  line-height: 25px;
+  display: block;
+  padding: 0 5px;
+}
+
+ .main-container .product-listing .swatch a.active .rollover {
+  display: block;
+}
+
+ .main-container .product-listing .swatch a:hover .rollover,
+ .main-container .product-listing .swatch a:hover .tooltip {
+  display: block;
+}
+
+ .main-container .product-listing .swatch .products {
+  display: none;
+}
+
+ .main-container .swatch-listing {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+ .main-container .swatch-listing .swatch-row {
+  width: 980px;
+  margin: auto;
+}
+
+ .main-container .swatch-listing .products-container {
+  display: block;
+  background: #f2efea;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+ .main-container .swatch-listing .products-container .products {
+  width: 980px;
+  margin: auto;
+  
+  position: relative;
+}
+
+ .main-container .swatch-listing .products-container .products .header h2 {
+  font-family:"Avant Garde Gothic ITCW01Bk";
+  font-size: 13px;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 0.1em;
+  
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+ .main-container .swatch-listing .products-container .products .header a.close {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/css/images/rich-cart-close.png');
+  width: 10px;
+  height: 10px;
+  
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  
+  text-indent: -9999em;
+  font-size: 0;
+}
+
+
+
+
+
+/*----------*/
+
+
+/* View Type: Grid */
+.products-grid { border-bottom:1px solid #d9ddd3; position:relative; }
+.products-grid.last { border-bottom:0; }
+.products-grid li.item { float:left; width:138px; padding:12px 10px 80px; }
+.products-grid .product-image { display:block; width:135px; height:135px; margin:0 0 10px; }
+.products-grid .product-name { /*min-height:2.7em;*/ margin:0 0 5px; font-weight:bold; font-size:13px; color:#203548; }
+.products-grid .product-name a { color:#203548; }
+.products-grid .price-box { margin:5px 0; }
+.products-grid .availability { line-height:21px; }
+.products-grid .actions { position:absolute; bottom:12px; }
+.col2-left-layout .products-grid,
+.col2-right-layout .products-grid { width:632px; margin:0 auto; }
+.col1-layout .products-grid { width:790px; margin:0 auto; }
+
+/* View Type: List */
+.products-list li.item { border-bottom:1px solid #d9ddd3; padding:12px 10px; }
+.products-list li.item.last { border-bottom:0; }
+.products-list .product-image { float:left; width:135px; height:135px; margin:0 0 10px; }
+.products-list .product-shop { margin-left:150px; }
+.products-list .product-name { margin:0 0 5px; font-weight:bold; font-size:13px; color:#203548; }
+.products-list .product-name a { color:#203548; }
+.products-list .price-box { float:left; margin:3px 13px 5px 0; }
+.products-list .availability { float:left; margin:3px 0 0; }
+.products-list .desc { clear:both; padding:6px 0 0; margin:0 0 15px; line-height:1.35; }
+.products-list .desc .link-learn { font-size:11px; }
+.products-list .add-to-links { clear:both; }
+.products-list .add-to-links li { display:inline; }
+.products-list .add-to-links .separator { display:inline; margin:0 2px; }
+/* ======================================================================================= */
+
+
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+/* Product View */
+.catalog-product-view .main-container {
+  margin-bottom: 60px;
+}
+
+.catalog-product-view .main-container .category-list {
+  margin-bottom: 16px;
+}
+
+.catalog-product-view .product {
+  width: 980px;
+  margin: auto;
+  margin-bottom: 60px;
+  
+  position: relative;
+  /*overflow: hidden;*/
+}
+
+.catalog-product-view .return-link {
+  text-align: left;
+}
+
+.catalog-product-view .product .product-view {
+  margin-top: 0 !important;
+  width: 980px;
+  /*height: 444px;*/
+  float: left;
+}
+
+.catalog-product-view .product .also-available .content .column a,
+.catalog-product-view .product .also-available .content .column a img {
+  display: block;
+}
+
+.catalog-product-view .product .also-available .content .column {
+  float: left;
+}
+
+.catalog-product-view .return-link {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.catalog-product-view .return-link a {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 11px;
+  text-decoration: none;
+  color: #bbb;
+}
+
+.catalog-product-view .return-link a:hover {
+  color: #666;
+}
+
+.catalog-product-view .product .images {
+  width: 515px;
+  float: left;
+  display: block;
+  position: relative;
+}
+
+.catalog-product-view .product .images .inside {
+  width: 400px;
+  height:400px;
+  overflow:hidden;
+  float: left;
+}
+
+.catalog-product-view .product .images .inside.single {
+  margin:0 56px;
+}
+
+.catalog-product-view .product .images .pager {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+  border:none!important;
+}
+
+.catalog-product-view .product .images .pager a {
+  text-decoration: none;
+  color: #dbdbdb;
+  padding: 3px;
+}
+
+.catalog-product-view .product .images .pager a.activeSlide {
+  color: black;
+}
+
+.catalog-product-view .product .images .previous,
+.catalog-product-view .product .images .next {
+  width: 56px;
+  position: absolute;
+  height: 350px;
+  text-indent:-9999em;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.catalog-product-view .product .images .previous {
+ background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/previous-btn.png') center center no-repeat;
+ left: 0;
+ top: 0;
+}
+
+.catalog-product-view .product .images .next {
+ background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/next-btn.png') center center no-repeat;
+ right: 0;
+ top: 0;
+}
+
+.catalog-product-view .product .images .pagination {
+  display: block;
+  margin: 50px auto 0;
+  width: 200px;
+}
+
+.catalog-product-view .product .images .pagination li {
+  background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/pager_button.png') center center no-repeat;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 10px;
+  margin-right: 10px;
+  width: 10px;
+}
+
+.catalog-product-view .product .images .pagination li.last {
+  margin-right: 0;
+}
+
+.catalog-product-view .product .images .pagination li.selected {
+  background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/pager_button_selected.png') center center no-repeat;
+}
+
+.catalog-product-view .product .MagicZoomBigImageCont {
+  border: 1px solid #bbb;
+  box-shadow: 0 0 0 #000;
+  margin-top: 56px;
+}
+
+.catalog-product-view .product .MagicToolboxContainer {
+  margin: 50px auto 0;
+  position: relative;
+}
+
+.catalog-product-view .product .MagicToolboxSelectorsContainer {
+	margin: 50px auto 0 !important;
+	position: relative;
+  /*display: none;*/
+}
+
+.catalog-product-view .product .MagicToolboxSelectorsContainer a {
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/pager_button.png') center center no-repeat;
+  	cursor: pointer;
+  	display: block;
+	float: left;
+	height: 10px;
+	margin-left: 0;
+	margin-right: 10px;
+	width: 10px;
+}
+
+.catalog-product-view .product .MagicToolboxSelectorsContainer a.last {
+	margin-right: 0;
+}
+
+.catalog-product-view .product .MagicToolboxSelectorsContainer a.selected {
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/pager_button_selected.png') center center no-repeat;
+}
+
+.catalog-product-view .product .MagicToolboxSelectorsContainer a img {
+	display: none;
+}
+
+.catalog-product-view .product .MagicZoom > img {
+	position: relative;
+	z-index: 10;
+}
+
+.catalog-product-view .product .MagicZoom > img.tempimg {
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 5;
+}
+
+.catalog-product-view .product .information {
+  width: 450px;
+  float: right;
+  padding: 0;
+  text-align: left;
+}
+.catalog-product-view .product .information > .left,
+.catalog-product-view .product .information > .right { width:205px; }
+
+.catalog-product-view .product .information .title {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 22px;
+  line-height: 20px;
+  margin-top:64px;
+}
+
+.catalog-product-view .product .information .option {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-top:5px;
+}
+
+.catalog-product-view .product .information .price {
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 28px;
+  color: black;
+}
+
+.catalog-product-view .product .information .add-to-cart {
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	margin:10px 0 0;	
+}
+
+.catalog-product-view .product .information .add-to-cart fieldset.qty {
+	display:block;
+	width:48px;
+	margin:9px 0;
+	border-right:1px solid #ccc;	
+	padding-bottom:9px;
+}
+
+.catalog-product-view .product .information .add-to-cart fieldset.sz {
+	display:block;
+	margin:10px 0 0 0;
+	padding:0 0 0 8px;	
+}
+
+.catalog-product-view .product .information .add-to-cart fieldset.qty label {
+	width:38px;
+    font-family:Helvetica,Arial,  sans-serif;
+    font-weight:100;
+    font-size: 12px;
+    margin-bottom:9px;
+    text-transform: uppercase;
+  
+    color:#000;
+  
+}
+
+.catalog-product-view .product .information .add-to-cart fieldset.qty input {
+	border:0;
+	background:#ccc;
+	display:block;
+	width:22px!important;
+	height:22px;
+	color:#000;
+	text-align:center;
+	padding:0;
+	margin-right:1px;
+}
+
+.catalog-product-view .product .information .add-to-cart fieldset.qty .increment { display:block; width:14px; height:10px; overflow:hidden; text-indent:-9999px; line-height:0px; color:transparent; background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/increment.png); background-repeat:no-repeat; }
+.catalog-product-view .product .information .add-to-cart fieldset.qty .increase { background-position:0 0; margin-bottom:1px; }
+.catalog-product-view .product .information .add-to-cart fieldset.qty .increase:active { background-position:-14px 0; }
+.catalog-product-view .product .information .add-to-cart fieldset.qty .decrease { background-position:0 -11px; height:11px; }
+.catalog-product-view .product .information .add-to-cart fieldset.qty .decrease:active { background-position:-14px -11px; }
+
+.catalog-product-view .product .information .add-to-cart button.btn-cart span {
+  display:block;
+  width:26px;
+  height:25px;
+  background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/size-bg.png') center top no-repeat;
+  float:left;
+  font:normal 10px/24px Georgia, "Times New Roman", Times, serif;
+  text-align:center;
+  margin:0 10px 0 0;
+  padding: 1px 0 0 1px;
+  color:#fff;
+}
+
+.catalog-product-view .product .information .add-to-cart button.btn-cart.accessory { margin-top:16px; width:130px; float:right; }
+.catalog-product-view .product .information .add-to-cart button.btn-cart.accessory span { width:130px; height:15px; font-size:11px; line-height:15px; text-align:center; background:#000; padding:9px 0; }
+
+.catalog-product-view .product .information .add-to-cart button.btn-cart:hover span { background-position:center bottom; }
+
+.catalog-product-view .product .swatches { clear:both; margin:15px 0 0; padding:15px 0 0; border-top:1px solid #000; }
+.catalog-product-view .product .swatches.current { padding:16px 0 5px; }
+.catalog-product-view .product .swatches.available { padding:15px 0 21px; margin-top:4px; }
+.catalog-product-view .product .swatches li { display:block; width:20px; height:20px; margin-right:9px; float:left; }
+.catalog-product-view .product .swatches .colorname { font:normal 12px/20px Arial, Helvetica, sans-serif; text-transform:uppercase; color:#000; float:left; padding-left:4px; }
+
+
+.catalog-product-view .product .information .add-to-cart .header {
+  /*font-family:"Avant Garde Gothic ITCW01Md";
+  font-size: 13px;
+  margin-top: 10px;*/
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:100;
+  font-size:12px;
+  margin-bottom:8px;
+  z-index:0;
+  
+  text-transform: uppercase;
+
+}
+
+.catalog-product-view .product .information .add-to-cart .options {
+  margin-bottom: 15px;
+}
+
+.catalog-product-view .product .information .add-to-cart .options a {
+  margin-right: 2px;
+}
+
+.catalog-product-view .product .information .product-info {
+  margin:12px 0 25px;
+  border-bottom:1px solid #000;	
+}
+
+.catalog-product-view .product .information .product-info .actions { height:41px; padding-top:20px; }
+
+.catalog-product-view .product .information .product-info a {
+	display:block;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+.catalog-product-view .product .information .product-info #sizechart_link {
+	padding-top: 12px;
+}	
+
+.catalog-product-view .product .information .product-info a.trg:hover {
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/acc-open.gif') center right no-repeat;
+}
+
+.catalog-product-view .product .information .product-info a.selected:hover {
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/acc-close.gif') center right no-repeat;
+}
+
+
+.catalog-product-view .product .information .product-info a h2 {
+	 font-family: Helvetica, Arial, sans-serif;
+  font-weight:100;
+  font-size:11px;
+  margin:0;
+  padding:10px 0 7px;
+  
+  text-transform: uppercase;
+  color:#000;
+  border-top:1px solid #000;
+}
+
+.catalog-product-view .product .information .product-info a.selected h2 {
+	border-bottom:none!important;
+}
+
+.catalog-product-view .product .information p.size-chart a {
+  text-decoration: none;
+  line-height: 12px;
+  display: block;
+  text-indent:15px;
+  color: black;
+  font-size: 12px;
+}
+
+.catalog-product-view .product .information p.add-to-favorites a,
+.catalog-product-view .product .information p.share a {
+  text-decoration: none;
+  line-height: 12px;
+  display: block;
+  text-indent:15px;
+  color: #999;
+  font-size: 11px;
+  font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+.catalog-product-view .product .information p.size-chart a {
+  background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/size-chart.png') 0 1px no-repeat;
+ }
+ 
+ .catalog-product-view .product .information p.add-to-favorites a {
+  background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/add-to-favorites.png') 0 1px no-repeat;
+  float:left;
+ }
+
+ .catalog-product-view .product .information p.add-to-favorites a:hover {
+   background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/add-to-favorites-over.png') 0 1px no-repeat;
+ }
+ 
+ .catalog-product-view .product .information p.share a {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/share.png') 0 1px no-repeat;
+  text-indent:0;
+  float:right;
+  padding-left: 15px;
+ }
+
+ .catalog-product-view .product .information p.share a:hover {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/share-over.png') 0 1px no-repeat;
+ }
+
+
+ .catalog-product-view .product .information p.share a:hover {
+ 	
+ }
+
+ .catalog-product-view .product .information p.share a img {
+	padding:0 5px 0 0;	
+ }
+ 
+.catalog-product-view .product .information p.size-chart {
+  margin:12px 0 25px;	
+}
+
+.catalog-product-view .product .information .meta {
+  color: #34393c;
+  font-size: 11px;
+  line-height: 15px;
+  padding-bottom:20px;
+  /*border-bottom:1px solid #000;*/
+  /*height:80px;*/
+  }
+
+.catalog-product-view .product .information .special-links { padding:22px 0 0; font:normal 14px/18px Georgia, "Times New Roman", Times, serif; }
+.catalog-product-view .product .information .special-links p { /*margin:0 0 18px;*/ }
+.catalog-product-view .product .information .special-links a { text-decoration:none; }
+.catalog-product-view .product .information .special-links a img { float:left; padding-right:10px; }
+.catalog-product-view .product .information .special-links small { font-size:10px; line-height:18px; padding-left:2px; }
+
+/*.catalog-product-view .product .information .special-links a.itunes { display:none }*/
+
+.catalog-product-view .product .also-available {
+  width: 164px;
+  height: 444px;
+  overflow: hidden;
+  padding-left: 24px;
+  float: left;
+  
+  border-left: solid 1px #ccc;
+  
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  
+  background: #ffffff;
+}
+
+.catalog-product-view .product .also-available .header {
+  font-size: 11px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #34393c;
+}
+
+.catalog-product-view .product .also-available .column.first {
+  margin-left: 0;
+}
+
+.catalog-product-view .product .also-available .column {
+  margin-left: 10px;
+}
+
+.catalog-product-view .product .also-available .column a {
+  margin-bottom: 10px;
+}
+
+.catalog-product-view .product .also-available .column .item {
+  position: relative;
+}
+
+.catalog-product-view .product .also-available .column .item .tooltip {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  
+  width: 80px;
+  padding: 5px;
+  
+  height: 31px;
+  
+  background: #919191;
+  display: none;
+  
+  z-index: 9999;
+  
+  line-height: 15px;
+  
+  z-index: 9999;
+}
+
+.catalog-product-view .product .also-available .column .item a,
+.catalog-product-view .product .also-available .column .item a img {
+  position: relative;
+  z-index: 100;
+}
+
+.catalog-product-view .product .also-available .column .item.hover .tooltip {
+  display: block;
+}
+
+.catalog-product-view .product .also-available .column .item .tooltip .tip {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/css/images/product-tooltip-arrow.png');
+
+  display: block;
+  width: 17px;
+  height: 43px;
+  
+  position: absolute;
+  top: -2px;
+  left: -17px;
+}
+
+.catalog-product-view .product .also-available .column .item .tooltip p {
+  margin-bottom: 0px;
+}
+
+.catalog-product-view .product .also-available .column .item .tooltip span {
+  display: block;
+  font-size: 11px;
+  text-align: left;
+  
+  color: white;
+}
+
+.catalog-product-view .product .also-available .column .item .tooltip span.title {
+  font-weight: bold;
+}
+
+.catalog-product-view .even-more {
+  border-top: solid 5px black;
+  width: 980px;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.catalog-product-view .even-more .header {
+  text-align: left;
+  font-size: 11px;
+  color: #34393c;
+  text-transform: uppercase;
+  
+  margin-bottom: 25px;
+}
+
+.catalog-product-view .even-more .more-like-this {
+  width: 976px;
+  float: left;
+  margin:0 2px;
+ /* margin-right: 36px;*/
+}
+
+.catalog-product-view .even-more .wear-it-with {
+  float: left;
+  width: 354px;
+}
+
+.catalog-product-view .even-more .wear-it-with ul {
+  float: left;
+  width: 354px;
+  list-style:none;
+  
+}
+
+
+.catalog-product-view .even-more .section li.item {
+  width: 122px;
+  float: left;  
+}
+
+.catalog-product-view .even-more .section li.item a {
+ text-decoration:none;
+ display:block;  
+}
+
+.catalog-product-view .even-more .section li.item .title {
+  display: block;
+  text-align: center;
+  border-top: solid 1px #ccc;
+
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-size: 10px;
+  color: #bbbbbb;
+  
+  padding-top: 10px;
+}
+
+.catalog-product-view .even-more .section li.item:hover .title {
+  border-top: solid 1px #666!important;
+  color: #666;
+}
+
+.catalog-product-view .even-more .section li.item img {
+  
+}
+
+.catalog-product-view.product-the-basics-of-etiquette-volume-1 .even-more { border:0!important}
+
+/*----------*/
+
+
+/* Product View ========================================================================== */
+/* Rating */
+.no-rating { margin:0; }
+
+.ratings { font-size:11px; line-height:1.25; margin:7px 0; }
+.ratings strong { float:left; margin:1px 3px 0 0; }
+.ratings .rating-links { margin:0; }
+.ratings .rating-links .separator { margin:0 2px; }
+.ratings dt {}
+.ratings dd {}
+.rating-box { width:69px; height:13px; font-size:0; line-height:0; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_rating.gif) 0 0 repeat-x; text-indent:-999em; overflow:hidden; }
+.rating-box .rating { float:left; height:13px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_rating.gif) 0 100% repeat-x; }
+.ratings .rating-box { float:left; margin-right:3px; }
+.ratings .amount {}
+
+.ratings-table th,
+.ratings-table td { font-size:11px; line-height:1.15; padding:3px 0; }
+.ratings-table th { font-weight:bold; padding-right:8px; }
+
+/* Availability */
+.availability { margin:0; }
+.availability span { font-weight:bold; }
+.availability.in-stock span {}
+.availability.out-of-stock { padding:35px 0 0; }
+.availability.out-of-stock span { color:#d83820; }
+
+.availability-only { margin:10px 0 7px; line-height:16px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_availability_only.gif) 0 50% no-repeat; padding-left:15px; }
+.availability-only span,
+.availability-only a { border-bottom:1px dashed #751d02; color:#000; }
+.availability-only a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_availability_only_arrow.gif) 100% 0 no-repeat; cursor:pointer; padding-right:15px; text-decoration:none; }
+.availability-only .expanded { background-position:100% -15px; }
+.availability-only strong { color:#be2c00; }
+
+.availability-only-details { margin:0 0 7px; }
+.availability-only-details th { background:#d2d6d9; font-size:10px; padding:0 8px; }
+.availability-only-details td { background:#ebf0f3; border-bottom:1px solid #fff; font-size:11px; padding:2px 8px 1px; }
+.availability-only-details tr.odd td.last { color:#d95e00; font-weight:bold; }
+
+.product-view .product-shop .availability { font-size:11px; }
+.product-view .product-shop .availability span { font-weight:normal; }
+
+/* Email to a Friend */
+.email-friend { margin:0; }
+
+/* Alerts */
+.alert-price { margin:0; font-size:11px; }
+.alert-stock { margin:0; font-size:11px; }
+
+/********** < Product Prices */
+.price { white-space:nowrap !important; }
+
+.price-box { margin:10px 0 20px; }
+.price-box .price { font-weight:normal;  }
+
+/* Regular price */
+.regular-price {  }
+.regular-price .price {  }
+.block .regular-price,
+.block .regular-price .price {  }
+
+/* Old price */
+.old-price { margin:0; }
+.old-price .price-label { white-space:nowrap; color:#999; }
+.old-price .price { font-weight:bold; color:#c76200; text-decoration:line-through; }
+
+/* Special price */
+.special-price { margin:0; padding:3px 0; }
+.special-price .price-label { font-size:13px; font-weight:bold; white-space:nowrap; color:#cd5033; }
+.special-price .price { font-size:13px; font-weight:bold; color:#c76200; }
+
+/* Minimal price (as low as) */
+.minimal-price { margin:0; }
+.minimal-price .price-label { font-weight:bold; white-space:nowrap; }
+
+.minimal-price-link { display:block; }
+.minimal-price-link .label {color:#1e7ec8;}
+.minimal-price-link .price { font-weight:normal; color:#1e7ec8; }
+
+/* Excluding tax */
+.price-excluding-tax { display:block; color:#999; }
+.price-excluding-tax .label { white-space:nowrap; color:#999; }
+.price-excluding-tax .price { font-size:13px; font-weight:normal; color:#c76200; }
+
+/* Including tax */
+.price-including-tax { display:block; color:#999; }
+.price-including-tax .label { white-space:nowrap; color:#999; }
+.price-including-tax .price { font-size:13px; font-weight:bold; color:#c76200; }
+
+/* Configured price */
+.configured-price { margin:0; }
+.configured-price .price-label { font-weight:bold; white-space:nowrap; }
+.configured-price .price { font-weight:bold; }
+
+/* FPT */
+.weee { display:block; font-size:11px; color:#444; }
+.weee .price { font-size:11px; font-weight:normal; }
+
+/* Excl tax (for order tables) */
+.price-excl-tax  { display:block; }
+.price-excl-tax .label { display:block; white-space:nowrap; }
+.price-excl-tax .price { display:block; }
+
+/* Incl tax (for order tables) */
+.price-incl-tax { display:block; }
+.price-incl-tax .label { display:block; white-space:nowrap; }
+.price-incl-tax .price { display:block; font-weight:bold; }
+
+/* Price range */
+.price-from { margin:0; }
+.price-from .price-label { font-weight:bold; white-space:nowrap; }
+
+.price-to { margin:0; }
+.price-to .price-label { font-weight:bold; white-space:nowrap; }
+
+/* Price notice next to the options */
+.price-notice { padding-left:10px; color:#999; }
+.price-notice .price { font-weight:bold; color:#2f2f2f; }
+
+/* Price as configured */
+.price-as-configured { margin:0; }
+.price-as-configured .price-label { font-weight:bold; white-space:nowrap; }
+
+.price-box-bundle { padding:0 0 10px 0; }
+.price-box-bundle .price-box { margin:0 !important; padding:0 !important; }
+.price-box-bundle .price { color:#555; }
+/********** Product Prices > */
+
+/* Tier Prices */
+.tier-prices { margin:10px 0; padding:10px; background-color:#f4f7f7; border:1px solid #dadddd; }
+.tier-prices li { line-height:1.4; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_tier.gif) no-repeat 0 3px; padding:2px 0 2px 10px; color:#424242; }
+.tier-prices .benefit { font-style:italic; font-weight:bold; color:#2f2f2f; }
+.tier-prices .price { font-weight:bold; color:#2f2f2f; }
+
+.tier-prices-grouped li { padding:2px 0; color:#e26703; }
+.tier-prices-grouped li .price { font-weight:bold; }
+
+/* Add to Links */
+.add-to-links { font-size:11px; margin:5px 0 0; }
+.add-to-links .separator { display:none; }
+
+/* Add to Cart */
+.add-to-cart label { float:left; margin-right:5px; font-weight:bold; color:#666; }
+.add-to-cart .qty { float:left; margin-right:5px; }
+.add-to-cart button.button { float:left; }
+.add-to-cart .paypal-logo { clear:left; margin:0; text-align:right; }
+.add-to-cart .paypal-logo .paypal-or { clear:both; display:block; margin:5px 60px 5px 0; }
+.product-view .add-to-cart .paypal-logo { margin:0; }
+
+/* Add to Links + Add to Cart */
+.add-to-box { margin:10px 0; }
+.add-to-box .add-to-cart { float:left; }
+.add-to-box .or { float:left; font-weight:bold; margin:0 7px; color:#666; }
+.add-to-box .add-to-links { float:left; margin:0; font-size:12px !important; line-height:1.25 !important; text-align:left !important; }
+.add-to-box .add-to-links li { display:block !important; }
+.add-to-box .add-to-links li .separator { display:none !important; }
+
+
+.product-view { /*border:1px solid #c4c6c8;*/ }
+
+.product-essential { /*padding:25px; background:#fff url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_product-view.gif) 100% 0 no-repeat;*/ }
+.product-essential h2 { /*font:bold 13px/1.35 Arial, Helvetica, sans-serif;*/ }
+
+.product-collateral { background:#faf7ee url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_product_collateral.gif) 0 0 repeat-x; padding:25px; }
+.product-collateral h2 { font-weight:bold; font-size:15px; color:#e26703; border-bottom:1px solid #e5dcc3; padding:0 0 1px; margin:0 0 15px; }
+.product-collateral .box-collateral { margin:0 0 25px; }
+
+/* Product Images */
+.product-view .product-img-box { float:left; width:267px; }
+.col3-layout .product-view .product-img-box { float:none; margin:0 auto; }
+.product-view .product-img-box .product-image { margin:0 0 13px; }
+.product-view .product-img-box .product-image-zoom { position:relative; width:265px; height:265px; overflow:hidden; z-index:9; }
+.product-view .product-img-box .product-image-zoom img { position:absolute; left:0; top:0; cursor:move; }
+.product-view .product-img-box .zoom-notice { font-size:11px; margin:0 0 5px; text-align:center; }
+.product-view .product-img-box .zoom { position:relative; z-index:9; height:18px; margin:0 auto 13px; padding:0 28px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/slider_bg.gif) 50% 50% no-repeat; cursor:pointer; }
+.product-view .product-img-box .zoom.disabled { -moz-opacity:.3; -webkit-opacity:.3; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";/*IE8*/ opacity:.3; }
+.product-view .product-img-box .zoom #track { position:relative; height:18px; }
+.product-view .product-img-box .zoom #handle { position:absolute; left:0; top:-1px; width:9px; height:22px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/magnifier_handle.gif) 0 0 no-repeat;  }
+.product-view .product-img-box .zoom .btn-zoom-out { position:absolute; left:2px; top:0; }
+.product-view .product-img-box .zoom .btn-zoom-in { position:absolute; right:2px; top:0; }
+.product-view .product-img-box .more-views h2 { font-size:11px; border-bottom:1px solid #ccc; margin:0 0 8px; text-transform:uppercase; }
+.product-view .product-img-box .more-views ul { margin-left:-9px }
+.product-view .product-img-box .more-views li { float:left; margin:0 0 8px 9px; }
+.product-view .product-img-box .more-views li a { float:left; width:56px; height:56px; border:2px solid #ddd; overflow:hidden; }
+
+.product-image-popup { margin:0 auto; }
+.product-image-popup .buttons-set { float:right; clear:none; border:0; margin:0; padding:0; }
+.product-image-popup .nav { font-weight:bold; margin:0 100px; text-align:center; }
+.product-image-popup .image { display:block; margin:10px 0;  }
+.product-image-popup .image-label { font-size:13px; font-weight:bold; margin:0 0 10px; color:#2f2f2f; }
+
+/* Product Shop */
+.product-view .product-shop { float:right; width:330px; }
+.col1-layout .product-view .product-shop { float:right; width:545px; }
+.col3-layout .product-view .product-shop { float:none; width:auto; }
+.product-view .product-shop .product-name { margin:0 0 5px; }
+.product-view .product-shop .product-name h1 { margin:0; font:bold 15px/1.35 Arial, Helvetica, sans-serif; }
+.product-view .product-shop .availability { margin:10px 0; }
+.product-view .product-shop .short-description { margin:10px 0; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_divider1.gif) 0 0 repeat-x; padding:10px 0 0; }
+.product-view .product-shop .price-box { margin:10px 0; }
+.product-view .product-shop .add-to-links { margin:0; }
+.product-view .product-shop .add-to-links { font-size:12px; text-align:right; }
+.product-view .product-shop .add-to-links li,
+.product-view .product-shop .add-to-links li .separator { display:inline; }
+.product-view .product-shop .add-to-links a { color:#1E7EC8 !important; font-weight:normal !important; }
+
+/* Product Options */
+.product-options { margin:20px 0 0; padding:10px 15px 20px; position:relative; background-color:#f6f6f6; border:1px solid #e4e4e4; }
+.product-options dt { padding:10px 0 0; font-weight:normal; }
+.product-options dt label { font-weight:bold; color:#2f2f2f; }
+.product-options dt label.required em { color:#eb340a; margin-left:5px; }
+.product-options dd .qty-holder { display:block; padding:10px 0 0; }
+.product-options dd .qty-holder label { vertical-align:middle; }
+.product-options dt .qty-disabled { background:none; border:0; padding:3px; color:#2f2f2f; }
+.product-options dd { padding:5px 10px 15px; margin:0 0 5px; border-bottom:1px solid #e4e4e4; }
+.product-options dl.last dd.last { border-bottom:0; padding-bottom:5px; margin-bottom:0; }
+.product-options dd input.input-text { width:98%; }
+.product-options dd input.datetime-picker { width:150px; }
+.product-options dd .time-picker { display:-moz-inline-box; display:inline-block; padding:2px 0; vertical-align:middle; }
+.product-options dd textarea { width:98%; height:8em; }
+.product-options dd select { width:99%; }
+.product-options dd .multiselect option { border-bottom:1px dotted #d9e5ee; padding:2px 4px; }
+.product-options ul.options-list { margin-right:5px; }
+.product-options ul.options-list li { line-height:1.5; padding:2px 0; }
+.product-options ul.options-list input.radio { float:left; margin-top:3px; }
+.product-options ul.options-list input.checkbox { float:left; margin-top:3px; }
+.product-options ul.options-list .label { display:block; margin-left:18px; }
+.product-options ul.options-list label { font-weight:normal; }
+.product-options ul.validation-failed { padding:0 7px; }
+.product-options p.note { margin:0; font-size:11px; }
+.product-options p.required { position:absolute; right:20px; top:20px; }
+
+.product-options-bottom { background-color:#fffada; padding:15px 20px; border:1px solid #e4e4e4; border-top:0; }
+.product-options-bottom .tier-prices { margin:0; padding:0 0 10px; border:0; background:0; }
+.product-options-bottom .tier-prices li { background:0; padding:2px 0; color:#e26703; }
+.product-options-bottom .tier-prices .price,
+.product-options-bottom .tier-prices .benefit { color:#e26703; }
+.product-options-bottom .price-box { float:left; margin:0; padding:0; }
+.product-options-bottom .add-to-links { clear:both; padding:5px 0 0; text-align:right; }
+.col3-layout .product-options-bottom .price-box { float:none; padding:0 0 5px; }
+.product-options-bottom .price-label { float:left; padding-right:5px; }
+.product-options-bottom .price-tax { float:left; }
+.product-options-bottom .add-to-cart { float:right; }
+.product-shop .product-options-bottom { margin:0 0 10px; }
+.product-shop .product-options-bottom .price-box { float:none; margin:0 0 5px; }
+.product-shop .product-options-bottom .price-label { float:none; padding-right:0; }
+.product-shop .product-options-bottom .price-tax { float:none; }
+.product-shop .product-options-bottom .add-to-cart-box { clear:both; float:left; padding-top:12px; }
+.product-shop .product-options-bottom .add-to-links { clear:both; padding:5px 0 0; text-align:right; }
+
+/* Grouped Product */
+.product-view .grouped-items-table .price-box { margin:0; padding:0; }
+
+/* Block: Description */
+.product-view .box-description {}
+
+/* Block: Additional */
+.product-view .box-additional .data-table th,
+.product-view .box-additional .data-table td { line-height:1.25; }
+
+/* Block: Upsell */
+.product-view .box-up-sell h2 { border-bottom:0; padding:0; margin:0 0 8px; }
+.product-view .box-up-sell .products-grid { width:100%; border:1px solid #e5dcc3; }
+.product-view .box-up-sell .products-grid td { width:25%; background:#f6f2e7; border-right:1px solid #e5dcc3; border-bottom:1px solid #e5dcc3; padding:15px 10px 12px; line-height:1.6em; }
+.product-view .box-up-sell .products-grid tr.last td { border-bottom:0; }
+.product-view .box-up-sell .products-grid td.last { border-right:0; }
+.product-view .box-up-sell .products-grid td img { border:1px solid #e5dcc3; }
+.product-view .box-up-sell .products-grid .product-image { text-align:center; }
+.product-view .box-up-sell .products-grid td.empty { border-right:0; background:#f1ecdb; }
+.product-view .box-up-sell .products-grid .ratings .rating-box { float:none; display:block; margin:0 0 3px; }
+
+/* Block: Tags */
+.product-view .box-tags { margin:0; }
+.product-view .box-tags h3 { font-size:13px; }
+.product-view .box-tags .product-tags { display:block; margin:0 0 15px; }
+.product-view .box-tags .product-tags li { display:inline; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_pipe3.gif) 100% 4px no-repeat; padding:0 7px 0 4px; }
+.product-view .box-tags .product-tags li.first { padding-left:0; }
+.product-view .box-tags .product-tags li.last { background:none; padding-right:0; }
+.product-view .box-tags .form-add label { display:block; font-size:13px; font-weight:bold; margin:0 0 5px; color:#0a263c;}
+.product-view .box-tags .form-add .input-box { float:left; width:305px; margin:0 5px 0 0; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_tag_add.gif) 0 2px no-repeat; padding:0 0 0 23px; }
+.product-view .box-tags .form-add input.input-text { width:299px; }
+.product-view .box-tags .form-add button.button span { border-color:#406a83; background:#618499; }
+.product-view .box-tags .note { margin:3px 0 0; padding:0 0 0 23px; font-size:11px; }
+
+/* Block: Reviews */
+.product-view .box-reviews dl { margin:15px 0; }
+.product-view .box-reviews dt a,
+.product-view .box-reviews dt span { font-weight:bold; }
+.product-view .box-reviews dd { margin:0 0 15px; }
+.product-view .box-reviews dd small { font-style:italic; }
+.product-view .box-reviews .form-add { margin:15px 0 0; }
+.product-view .box-reviews .form-add h3 { font-size:13px; font-weight:normal; }
+.product-view .box-reviews .form-add h3 span { font-weight:bold; }
+.product-view .box-reviews .form-add h4 { font-size:12px; }
+.product-view .box-reviews .form-add .data-table td { text-align:center; }
+.product-view .box-reviews .form-add .form-list { margin:15px 0 0; }
+.product-view .box-reviews .form-add .form-list .input-box { width:360px; }
+.product-view .box-reviews .form-add .form-list input.input-text,
+.product-view .box-reviews .form-add .form-list textarea { width:354px; }
+
+/* Send a Friend */
+.send-friend .form-list { width:615px; overflow:hidden; }
+.send-friend .form-list li { margin-right:-15px; }
+.send-friend .form-list li p { margin:0 15px 0 0; }
+.send-friend .form-list .field { width:315px; }
+.send-friend .form-list .input-box { width:300px; }
+.send-friend .form-list input.input-text,
+.send-friend .form-list textarea { width:294px; }
+.send-friend .form-list li.wide .input-box { width:612px; }
+.send-friend .form-list li.wide textarea { width:609px; }
+.send-friend .buttons-set .limit { float:right; margin:0 7px 0 0; font-size:11px; line-height:21px; }
+/* ======================================================================================= */
+
+
+/* Content Styles ================================================================= */
+.product-name { margin:0; font-size:1em; font-weight:normal; }
+.product-name a { color:#1e7ec8; }
+
+/* Product Tags */
+.tags-list { display:block; font-size:13px; border:1px solid #c1c4bc; background:#f8f7f5; padding:10px; }
+.tags-list li { display:inline !important; margin:0 4px 0 0; }
+.tags-list li a { color:#1b2d3b; }
+
+/* Advanced Search */
+.advanced-search .form-list label { width:160px; padding-right:10px; }
+.advanced-search .form-list .input-box,
+.advanced-search .form-list .input-range { float:left; clear:none; }
+.advanced-search-amount { margin:0 0 10px; }
+.advanced-search-summary { margin:10px 0; border:1px solid #e9d7c9; background:#fff6f1; padding:10px; }
+.advanced-search-summary ul { float:left; width:49%; }
+.advanced-search-summary strong { color:#E17C24; padding-left:15px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_search_criteria.gif) 0 3px no-repeat; }
+.advanced-search-summary p { clear:both; font-weight:bold; margin:0; }
+
+/* CMS Home Page */
+.cms-home .subtitle {}
+.cms-index-index .subtitle {}
+
+/* Sitemap */
+.page-sitemap .links { text-align:right; margin:0 8px -22px 0; }
+.page-sitemap .links a { text-decoration:none; position:relative; }
+.page-sitemap .links a:hover { text-decoration:underline; }
+.page-sitemap .sitemap { margin:12px; }
+.page-sitemap .sitemap a { color:#1b2d3b; }
+.page-sitemap .sitemap li { margin:3px 0; }
+.page-sitemap .sitemap li.level-0 { margin:10px 0 0; font-weight:bold; }
+.page-sitemap .sitemap li.level-0 a { color:#1e7ec8; }
+
+/* RSS */
+.rss-title h1 { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_rss-big.png) 0 4px no-repeat; padding-left:27px; }
+.rss-table .link-rss { display:block; line-height:1.55; background-position:0 4px; }
+/* ======================================================================================= */
+
+
+/* Shopping Cart ========================================================================= */
+.cart { width:980px; margin:0 auto 30px;}
+
+.cart .page-title {  
+	border-top: 1px solid #CCCCCC;
+	border-bottom:0 none;
+    line-height: 34px;
+    margin-top: 37px;
+	margin-bottom:0px!important;
+    text-transform: uppercase;
+}
+.cart .page-title h1 { 
+  	font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 15px !important;
+    font-weight: 100 !important;
+    line-height: 34px !important;
+    text-align: center;
+ }
+ 
+.cart #shopping-cart-table.data-table {
+	border:0;
+	border-top:5px solid #000;	
+}
+
+.cart #shopping-cart-table.data-table.data-table td.last { padding-right:0; }
+
+.cart #shopping-cart-table.data-table a.remove-link {
+	float:left;
+	display:block;
+}
+
+
+.cart #shopping-cart-table.data-table a.product-image {
+	float:right;
+	display:block;
+}
+
+.cart #shopping-cart-table.data-table a.remove-link {
+	line-height:110px;
+	text-decoration:none;
+	color:#999;
+	font-size:22px;
+		
+}
+.cart #shopping-cart-table.data-table span.size-badge {
+    display:block;
+    width:24px;
+    height:24px;
+    background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/size-bg.png') -1px -1px no-repeat;
+    float:left;
+    font:normal 10px/24px Georgia, "Times New Roman", Times, serif;
+    text-align:center;
+	margin-top:44px;
+	color:#fff;
+  
+}
+
+/* Checkout Types */
+.cart .page-title .checkout-types li { margin:0 0 5px; }
+.cart .title-buttons .checkout-types { float:right; }
+.cart .title-buttons .checkout-types li { float:left; margin:0 0 5px 5px; }
+.cart .checkout-types .paypal-or { margin:0 8px; line-height:2.3; }
+.cart .totals .checkout-types .paypal-or { clear:both; display:block; padding:8px 55px 0 0; line-height:1.0; font-size:11px; }
+
+/* Shopping Cart Table */
+.cart-table th { padding:2px 10px 2px 0!important; }
+.cart-table th.last { padding-right:0!important;}
+.cart-table td { padding:10px 10px 10px 0; }
+
+.cart-table .product-name,
+.cart-table .product-name a { font: normal 22px/26px Georgia, "Times New Roman", Times, serif; margin:26px 0 8px; width:350px; }
+.cart-table .product-name a { color:#000; text-decoration:none; }
+
+.cart-table .cart-price{ font: normal 20px/77px Georgia, "Times New Roman", Times, serif; margin:0; color:#000; position:relative; top:16px; }
+
+.cart-table input.qty{ 
+	background: #CCCCCC;
+    border: 0 none;
+    color: #000000;
+    display: block;
+    height: 22px;
+    padding: 0;
+    text-align: center;
+    width: 22px !important;
+	margin:44px auto 0; }
+
+.cart-table input[type=checkbox] {
+	margin-top:49px;	
+}
+
+.cart-table .item-msg { margin:5px 0; font-size:11px; font-weight:bold; color:#df280a; }
+.cart-table tfoot td { padding:5px 0; }
+.cart-table .btn-continue { float:right; }
+.cart-table .btn-continue span,
+.cart-table .btn-update span { border:0; background:#999; padding:2px 10px; margin-left:10px; margin-top:6px; }
+.cart-table .btn-continue span span,
+.cart-table .btn-update span span { padding:0; margin:0;}
+
+.cart-table tbody tr.first td, .cart-table tbody tr.last td, .cart-table tbody tr.odd td, .cart-table tbody tr.first.last.odd td  {  border-bottom:2px solid #f1f1f1 !important;} 
+
+/* Shopping Cart Collateral boxes */
+.cart .cart-collaterals { padding:25px 0 0; }
+.cart .cart-collaterals .col2-set { float:left; width:646px; }
+.cart .cart-collaterals .col2-set .col-2 { width:646px; }
+
+.cart .crosssell { border:1px solid #cec3b6; background:#fafaec; padding:12px 15px; }
+.cart .crosssell h2 { font-size:13px; font-weight:bold; }
+.cart .crosssell .product-image { float:left; width:75px; height:75px; border:1px solid #d0cdc9; }
+.cart .crosssell .product-details { margin-left:90px; }
+.cart .crosssell .product-name { font-weight:bold; }
+.cart .crosssell li.item { margin:12px 0; }
+.cart .crosssell .link-compare { font-weight:normal; }
+
+/* Discount Codes & Estimate Shipping and Tax Boxes */
+
+
+
+.cart .discount,
+.cart .shipping { border:1px solid #ccc; padding:12px 18px 15px; margin:0 0 18px;float:left; margin:0; width:274px; text-align:left; }
+.cart .shipping {float:right;}
+
+.cart .discount h2,
+.cart .shipping h2 {  color: #000000;   font: bold 13px/15px Helvetica,Arial,sans-serif;   margin: 0 0 24px; }
+.cart .discount button span,
+.cart .shipping button span { border:0; background:#999; }
+.cart .discount .buttons-set,
+.cart .shipping .buttons-set { margin:20px 0 0; border:0; padding:0; text-align:left; }
+.cart .discount .buttons-set button.button,
+.cart .shipping .buttons-set button.button { float:right; margin-left:0; }
+
+.cart .discount h2 { }
+.cart .discount .input-box,
+.cart .shipping-form .input-box { margin:18px 0 0; width:273px; }
+.cart .discount input.input-text,
+.cart .shipping-form input.input-text { width:263px; padding:5px; }
+
+.cart .shipping-form select { width:274px; padding:4px; }
+
+
+
+.cart .shipping h2 {  }
+.cart .shipping .sp-methods { margin:10px 0 0; padding:5px 0 0; }
+
+/* Shopping Cart Totals */
+.cart .totals { float:right; width:310px; background:#e3e3e3;  }
+.cart .totals table { width:100%; margin:0; }
+.cart .totals td { padding:1px 15px 1px 7px; border-bottom:2px solid #fff; line-height:32px; height:32px; }
+.cart .totals td.a-right { text-align:right; font:normal 16px/32px Georgia, "Times New Roman", Times, serif!important;color:#7f7f7f; padding-right:30px;}
+.cart .totals td.a-left { text-align:left; font:bold 13px/32px Helvetica, Arial, sans-serif;color:#7f7f7f; padding-left:30px;}
+
+.cart .totals td.a-right strong { color:#000; font-weight:normal!important;}
+.cart .totals td.a-left strong {  text-transform:uppercase;color:#000;}
+
+.cart .totals tr.last td {}
+.cart .totals tfoot th { }
+.cart .totals tfoot td { border-bottom:0!important; }
+.cart .totals tfoot th strong,
+.cart .totals tfoot td strong {  }
+.cart .totals .checkout-types { font-size:13px; padding:8px 15px 5px; text-align:right; }
+.cart .totals .checkout-types li { clear:both; margin:10px 0; }
+
+.cart .totals .checkout-types li a { display:block;color:#7f7f7f; text-decoration:none; font-size:11px; padding:0 8px 0 0; background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/checkout-arrow.gif') center right no-repeat; }
+
+
+/* Options Tool Tip */
+dl.item-options { width:360px; }
+.item-options dt { font-weight:bold; font-style:italic; }
+.item-options dd { text-transform:uppercase; margin:0 0 6px; width:360px; }
+.truncated { cursor:help; }
+.truncated a.dots { cursor:help; }
+.truncated a.details { cursor:help; }
+.truncated .truncated_full_value { position:relative; z-index:999; }
+.truncated .truncated_full_value dl { position:absolute; top:-99999em; left:-99999em; z-index:999; width:250px; padding:8px; border:1px solid #ddd; background-color:#f6f6f6; }
+.truncated .show dl { top:-20px; left:50%; }
+.col-left .truncated .show dl { left:15px; top:7px; }
+.col-right .truncated .show dl  { left:-240px; top:7px; }
+/* ======================================================================================= */
+
+
+/* Checkout ============================================================================== */
+/********** < Common Checkout Styles */
+/* Shipping and Payment methods */
+.checkout-onepage-index .main {
+	width:980px;
+	margin:0 auto 50px;	
+}
+
+.checkout-onepage-index .main .col-main {
+	width:662px;
+	margin:0 auto 50px;	
+}
+
+
+.checkout-onepage-index .main .page-title {
+    border-top: 1px solid #999;
+    line-height: 34px;
+    margin-top: 37px;
+	margin-bottom:0!important;
+	border-bottom:0!important;
+    text-transform: uppercase;
+}
+
+.checkout-onepage-index .main .page-title  h1 {
+ 	font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 15px !important;
+    font-weight: 100 !important;
+    line-height: 34px !important;
+    text-align: center;
+}
+
+.sp-methods { margin:0 0 8px; }
+.sp-methods dt { margin:13px 0 5px; font-weight:bold; }
+.sp-methods dd {}
+.sp-methods dd li {}
+.sp-methods label {  }
+.sp-methods .price { font-weight:bold; }
+.sp-methods .form-list {}
+.sp-methods .form-list li {}
+.sp-methods select.month { width:154px; margin-right:10px; }
+.sp-methods select.year { width:96px; }
+.sp-methods input.cvv { width:3em !important; }
+
+.sp-methods .checkmo-list li { margin:0 0 5px; }
+.sp-methods .checkmo-list label { width:135px; padding-right:10px; text-align:right; }
+.sp-methods .checkmo-list address { float:left; }
+
+.sp-methods .centinel-logos a { margin-right:3px; }
+.sp-methods .centinel-logos img { vertical-align:middle; }
+
+.sp-methods .release-amounts { margin:0.5em 0; }
+.sp-methods .release-amounts button { float:left; margin:5px 10px 0 0; }
+
+.please-wait { float:right; }
+.please-wait img { vertical-align:middle; }
+.cvv-what-is-this { font-size:11px; cursor:help; margin-left:10px; text-decoration:none; margin-top:6px; }
+
+/* Tooltip */
+.tool-tip { border:2px solid #000; background:#fff; padding:3px 10px 10px; position:absolute; z-index:9999; top:79px!important; left:175px!important; }
+.tool-tip .btn-close { margin:5px -5px 0 0; text-align:right; }
+.tool-tip .btn-close a { display:block; margin:0 0 0 auto; width:15px; height:15px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/btn_window_close.gif) 100% 0 no-repeat; text-align:left; text-indent:-999em; overflow:hidden; }
+.tool-tip .tool-tip-content {  }
+.tool-tip .tip {
+	position:absolute;
+	left:-7px;
+	top:190px;
+	display:block;
+	background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/tooltip-tip.gif) 0 0 no-repeat;
+	overflow:hidden;
+	width:7px;
+	height:8px;	
+}
+
+/* Gift Messages */
+.gift-messages h3 { font-size:12px; font-weight:bold; color:#e87403; }
+.gift-messages p.control { color:#8e8d8b; }
+.gift-messages-form { position:relative; }
+.gift-messages-form label { float:none !important; position:static !important; }
+.gift-messages-form h4 { font-size:12px; font-weight:bold; color:#e87403; }
+.gift-messages-form .whole-order { margin:0 0 25px; }
+.gift-messages-form .item { margin:0 0 10px; }
+.gift-messages-form .item .product-img-box { float:left; width:75px; }
+.gift-messages-form .item .product-image { margin:0 0 7px; }
+.gift-messages-form .item .number { margin:0; font-weight:bold; text-align:center; color:#8a8987; }
+.gift-messages-form .item .details { margin-left:90px; }
+.gift-messages-form .item .details .product-name { font-size:13px; font-weight:bold; margin:0 0 10px; }
+.gift-messages-form .item .details .form-list .field { width:255px; }
+.gift-messages-form .item .details .form-list .input-box { width:240px; }
+.gift-messages-form .item .details .form-list input.input-text { width:234px; }
+.gift-messages-form .item .details .form-list li.wide .input-box { width:500px; }
+.gift-messages-form .item .details .form-list li.wide textarea { width:494px; }
+
+.gift-message-link { font-size:11px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_collapse-gm.gif) 100% 6px no-repeat; padding-right:7px; }
+.gift-message-link.expanded { background-position:100% -40px; }
+.gift-message-row { background:#f2efe9; }
+.gift-message-row .btn-close { float:right; width:16px; height:16px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/btn_gm-close.gif) 0 0 no-repeat; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
+
+/* Checkout Agreements */
+.checkout-agreements li { margin:30px 0; }
+.checkout-agreements .agreement-content { padding:10px; border:1px solid #bbb6a5; }
+.checkout-agreements .agree { margin:0; padding:10px 0 10px 11px; }
+.checkout-agreements .agree input.checkbox { margin-right:6px; }
+.checkout-agreements .agree label { font-weight:normal; color:#999; }
+.checkout-agreements .agree .view-terms a { color:#999; }
+
+.opc .checkout-agreements {}
+.opc .checkout-agreements li { margin:20px 0 0; }
+.opc .checkout-agreements .agreement-content { border-color:#e4e4e4; border-width:2px 0; padding:5px; display:none; }
+.opc .checkout-agreements .agreement-content h3 { color:#000; font:100 12px/32px 'Avant Garde Gothic ITCW01Bk' !important; letter-spacing:0.1em; text-transform:uppercase; }
+.opc .checkout-agreements .agree { padding-left:6px; }
+
+/* Centinel */
+.centinel {}
+.centinel .authentication { border:1px solid #ddd; background:#fff; }
+.centinel .authentication iframe { width:99%; height:400px; background:transparent !important; margin:0 !important; padding:0 !important; border:0 !important; }
+
+.opc .centinel { border:1px solid #bbb6a5; border-width:0 1px 1px; padding:10px 30px; }
+
+/* Generic Info Set */
+.info-set { background:#fbfaf6 url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_checkout.gif) 0 0 repeat-x; border:1px solid #bbb6a5; margin:0 0 25px; padding:20px; }
+.info-set h2 { font-size:13px; font-weight:bold; margin:0 0 10px; }
+.info-set h3,
+.info-set h4 { font-size:13px; font-weight:bold; color:#E26703; }
+.info-set h2 a,
+.info-set h3 a,
+.info-set h4 a { font-weight:normal; }
+.info-set h2.legend { margin:-20px -20px 15px; padding:5px 10px; background:#f9f3e3; border-bottom:1px solid #bbafa0; position:relative; }
+.info-set h3.legend { margin:0 0 10px; color:#0a263c; }
+.info-set .divider { margin:0 -20px; padding:25px 0; position:relative; }
+.info-set .box { margin:0 0 15px; }
+.info-set .box h2 { color:#e26703; }
+.info-set .data-table .product-name { font-size:1em !important; font-weight:bold !important; color:#1e7ec8 !important; }
+.info-set .data-table .product-name a { font-weight:bold !important; }
+.info-set .data-table .item-options { margin:5px 0 0; }
+/********** Common Checkout Styles > */
+
+/* One Page Checkout */
+.block-progress { border:0; margin: 37px 0 0; }
+.block-progress .block-title { 
+	padding:0;
+    text-align: center;
+	border:0 none;
+ }
+.block-progress .block-title strong span { 
+	font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 12px !important;
+    font-weight: 100 !important;
+    line-height: 32px !important;
+	font-weight: 100 !important;
+	color:#000;
+	letter-spacing:0.1em;
+ }
+.block-progress .block-content { 
+	border-top:2px solid #000;
+	background:#fff;
+	width:153px; margin:0 auto;
+ }
+.block-progress dt { font-size:11px;  line-height:16px; border-top:1px solid #999; margin:0 0 0; padding:10px 0; color:#999; }
+.block-progress dt:first-child { border:0!important;} 
+.block-progress dd { padding:0 13px 8px; margin:-4px 0 6px; }
+.block-progress dt.complete { margin:0; background:#fff; }
+.block-progress dt.complete a { text-decoration:none; text-transform:uppercase; color:#999; }
+.block-progress dd.complete { color:#000;}
+.block-progress p { margin:0; }
+.block-progress .cards-list dt { background:none; border:0 none; color:inherit; font-size:12px; margin:5px 0; padding:0; }
+.block-progress .cards-list dd { border:0 none; margin:0; padding:0; }
+.block-progress .cards-list .info-table th { font-weight:normal; }
+
+.block-progress table { font-size:11px!important; }
+
+.opc .buttons-set { margin-top:0; padding-top:0em; float:right; width:200px; }
+.opc .buttons-set p.required { margin:0; padding:0 0 10px; }
+.opc .buttons-set .back-link small { display:none; }
+.opc .buttons-set .back-link a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_arrow-top.gif) 0 50% no-repeat; padding-left:16px; }
+.opc .buttons-set.disabled button.button { display:none; }
+.opc .buttons-set .please-wait { height:21px; line-height:21px; }
+.opc .ul { list-style:disc outside; padding-left:18px; }
+
+.opc { position:relative; margin-top:-10px; text-align:left; }
+.opc li.section {}
+
+.opc li.section:after,
+.opc .step:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.opc .step li#billing-new-address-form { margin:0 0 7px; }
+
+.opc p.back-link { clear:left; width:160px; margin-bottom:0; padding-top:18px;}
+
+.opc .step-title { border-top:2px solid #ccc; padding:9px 18px 0; text-align:right; margin-top:9px; }
+.opc .step-title .number { float:left; padding:0 4px; margin:0 5px 0 0; font:bold 15px/16px arial, helvetica, sans-serif; color:#000; }
+.opc .step-title h2 { float:left; margin:0; font:bold 15px/16px Arial, Helvetica, sans-serif; color:#000; }
+.opc .step-title a { display:none; font-size:11px; line-height:16px; text-decoration:none; color:#7f7f7f; width:100%; height:16px; }
+
+.opc .allow .step-title { border-top:2px solid #ccc; }
+.opc .allow .step-title .number {  }
+.opc .allow .step-title h2 { color:#000; }
+.opc .allow .step-title a { display:block; }
+
+.opc .active .step-title { border-top:2px solid #000; color:#000; cursor:default; }
+.opc .active .step-title .number {  }
+.opc .active .step-title h2 { color:#000; }
+/*.opc .active .step-title a { display:none; }*/
+
+.opc .step { padding:30px 0 10px 23px; position:relative; }
+.opc .step#checkout-step-shipping_method,
+.opc .step#checkout-step-payment { padding-top:20px; }
+.opc .step .tool-tip {  }
+
+#opc-login .buttons-set,
+.opc .buttons-set { border-top:0; margin-top:0; }
+
+.opc .buttons-set { margin-top:-26px; }
+
+#opc-login h3 { 
+	color: #000000;
+    font: bold 13px/15px Helvetica,Arial,sans-serif;
+    margin: 0 0 10px;
+    text-align: left;
+	border-bottom:1px solid #e4e4e4; padding-bottom:2px;
+}
+
+#opc-login h4 { font-size:1em; font-weight:bold; margin:0; color:#2f2f2f; }
+
+#opc-shipping_method .buttons-set { border-top:0; margin-top:0; }
+.opc .gift-messages-form { margin:0 -30px; background:#f6f1eb; border:1px solid #e9e4de; border-width:1px 0; padding:22px 24px 22px 30px; }
+.opc .gift-messages-form .inner-box { padding:5px; height:260px; overflow:auto; }
+
+.opc .form-list .field:first-child {
+	width: 310px;
+	margin-right:19px;
+}
+
+.opc .form-list .field {
+    width: 310px;
+	float:left;
+}
+
+.opc .form-list .input-box {
+    clear: both;
+    display: block;
+    width: 310px;
+}
+
+.opc .form-list .input-box input[type=text] {
+	width:300px;	
+}
+
+#opc-review .step { border:0; padding:0; }
+
+#opc-review .product-name { 
+	font:normal 16px/22px Georgia, "Times New Roman", Times, serif;
+	color:#666;
+	padding:4px 0 0;
+}
+
+#opc-review .color { 
+	font:normal 16px/22px Georgia, "Times New Roman", Times, serif;
+	color:#999;
+	padding:0 0 4px;
+	margin:0;
+}
+
+#opc-review .price { 
+	font:normal 16px/22px Georgia, "Times New Roman", Times, serif;
+	color:#7f7f7f;
+}
+
+#opc-review .qty { 
+	font:normal 16px/22px Georgia, "Times New Roman", Times, serif;
+	color:#666666;
+}
+
+#opc-review .item-options { margin:5px 0 0; }
+#opc-review .buttons-set { padding:0 0 20px 30px;   }
+#opc-review .buttons-set p { margin:0; line-height:40px; }
+#opc-review .buttons-set .please-wait { height:40px; line-height:40px; }
+
+
+
+#opc-review #checkout-review-table-wrapper .data-table  {
+	margin:20px 0;
+}
+
+#opc-review #checkout-review-table-wrapper .data-table thead th {
+	border-bottom:1px solid #999;
+}	
+
+#opc-review #checkout-review-table-wrapper .data-table thead th:first-child {
+	padding-left:22px;
+
+}
+
+#opc-review #checkout-review-table-wrapper .data-table thead th:last-child {
+	padding-right:22px;
+}
+
+#opc-review #checkout-review-table-wrapper .data-table tbody td {
+	border-bottom:1px solid #ccc;
+}
+
+#opc-review #checkout-review-table-wrapper .data-table tbody td:first-child {
+	padding-left:22px;
+}
+
+#opc-review #checkout-review-table-wrapper .data-table tbody td:last-child {
+	padding-right:22px;
+}
+
+#opc-review #checkout-review-table-wrapper .data-table tfoot {
+	font:bold 13px/22px Helvetica, Arial, sans-serif;
+	text-align:left;
+	padding-top:8px;
+}	
+#opc-review #checkout-review-table-wrapper .data-table tfoot tr td:first-child {
+	padding:0 0 0 388px;
+	font-weight:bold;
+}
+
+#opc-review #checkout-review-table-wrapper .data-table tfoot tr.last td,
+#opc-review #checkout-review-table-wrapper .data-table tfoot tr.last td .price  {
+	color:#000!important;
+	text-transform:uppercase;
+	padding-bottom:30px;
+}
+/*#opc-review #checkout-review-table-wrapper .data-table tfoot td.a-left {
+	text-align:right!important;
+}*/
+
+/* Multiple Addresses Checkout */
+.checkout-progress { padding:0 90px; margin:0 0 20px; }
+.checkout-progress li { float:left; width:19%; margin:0 3px 0 0; border-top:10px solid #999; padding:2px 0 0; font-weight:bold; text-align:center; color:#abb5ba; }
+.checkout-progress li.active { border-top-color:#e96200; color:#e96200; }
+
+.multiple-checkout h2 { font-size:13px; font-weight:bold; margin:0 0 10px; }
+.multiple-checkout h3,
+.multiple-checkout h4 { font-size:13px; font-weight:bold; color:#E26703; }
+.multiple-checkout h2 a,
+.multiple-checkout h3 a,
+.multiple-checkout h4 a { font-weight:normal; }
+.multiple-checkout .data-table .product-name { font-size:1em !important; font-weight:bold !important; color:#1e7ec8 !important; }
+.multiple-checkout .data-table .product-name a { font-weight:bold !important; }
+.multiple-checkout .data-table .item-options { margin:5px 0 0; }
+
+.multiple-checkout .gift-messages { margin:15px 0 0; }
+
+.multiple-checkout .tool-tip { top:50%; margin-top:-120px; right:20px; }
+
+.multiple-checkout .col2-set,
+.multiple-checkout .col3-set { background:#fbfaf6 url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_checkout.gif) 0 0 repeat-x; border:1px solid #bbb6a5; margin:0 0 25px; padding:20px; }
+.multiple-checkout .col2-set h2.legend { margin:-20px -20px 15px; padding:5px 10px; background:#f9f3e3; border-bottom:1px solid #bbafa0; position:relative; }
+.multiple-checkout .col2-set h3.legend { margin:0 0 10px; color:#0a263c; }
+.multiple-checkout .col2-set .divider { margin:0 -20px; padding:25px 0; position:relative; }
+.multiple-checkout .box { margin:0 0 15px; }
+.multiple-checkout .box h2 { color:#e26703; }
+
+.multiple-checkout .place-order .please-wait { float:right; padding:27px 7px 0 0; }
+.multiple-checkout .place-order .grand-total { float:right; height:71px; font-size:1.5em; padding:0 0 0 21px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_grand-total.gif) 0 0 no-repeat; overflow:hidden; }
+.multiple-checkout .place-order .grand-total .inner { float:left; height:57px; padding:14px 21px 0 0; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_grand-total.gif) 100% 0 no-repeat; }
+.multiple-checkout .place-order .grand-total .inner div { display:inline; }
+.multiple-checkout .place-order .grand-total big { display:inline; margin-right:12px; }
+.multiple-checkout .place-order .grand-total .price { color:#E26703; }
+.multiple-checkout .place-order .grand-total button.button span { font-size:16px; }
+.multiple-checkout .place-order .grand-total button.button span span { padding:0 45px 0 36px; }
+
+/* Step 1 */
+.multiple-checkout .title-buttons button.button span { border-color:#406a83; background:#618499; }
+#multiship-addresses-table td { padding:10px; }
+#multiship-addresses-table tfoot td { padding:5px 10px; }
+#multiship-addresses-table tfoot button.button span { border-color:#406a83; background:#618499; }
+
+/* Step 2 */
+.multiple-checkout .gift-messages-form .item .details .form-list { width:100%; overflow:hidden; }
+.multiple-checkout .gift-messages-form .item .details .form-list li { margin-right:-15px; }
+.multiple-checkout .gift-messages-form .item .details .form-list .field { width:230px; }
+.multiple-checkout .gift-messages-form .item .details .form-list .input-box { width:215px; }
+.multiple-checkout .gift-messages-form .item .details .form-list input.input-text { width:209px; }
+.multiple-checkout .gift-messages-form .item .details .form-list li.wide .input-box { width:445px; }
+.multiple-checkout .gift-messages-form .item .details .form-list li.wide textarea { width:439px; }
+.checkout-multishipping-shipping .box-sp-methods { border:1px solid #d9d2be; background:#f9f3e3; padding:13px; position:relative; }
+.checkout-multishipping-shipping .box-sp-methods .pointer { position:absolute; top:-20px; right:-40px; width:178px; height:41px; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_sp-methods.gif) 0 0 no-repeat; overflow:hidden; }
+
+/* Step 3 */
+.checkout-multishipping-billing .multiple-checkout { position:relative; }
+
+/* SUCCESS */
+.order-success {
+	width:662px;
+	margin:0 auto 50px;
+	color:	#ccc;
+}
+
+.order-success .page-title {
+    border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+    line-height: 34px;
+    margin-top: 37px;
+	margin-bottom:0!important;
+	border-bottom:0!important;
+    text-transform: uppercase;
+}
+
+.order-success .page-title  h1 {
+ 	font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 15px !important;
+    font-weight: 100 !important;
+    line-height: 34px !important;
+    text-align: center;
+}
+
+.order-success .buttons-set {
+	border-top:0;
+	text-align:center;	
+}
+
+.order-success .buttons-set button{
+	float:none;
+}	
+.order-success p {
+	color:#cccccc	
+}
+
+/* ======================================================================================= */
+
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.account-login,
+.account-create,
+.my-account {
+	width:646px;
+	margin:0 auto 50px;	
+}
+
+.account-login .col2-set .col-2,
+.account-login .col2-set .col-2 {
+	width:290px;	
+}
+
+.account-login .page-title,
+.account-create .page-title,
+.my-account .page-title,
+.customer-account-forgotpassword .page-title,
+.customer-account-logoutsuccess .page-title  {
+	text-align:left;
+	line-height:34px;
+	text-transform:uppercase;
+	margin-top:37px;
+	border-top: 1px solid #CCC;
+}
+
+.account-login .page-title h1,
+.account-create .page-title h1,
+.my-account .page-title h1,
+.customer-account-forgotpassword .page-title h1,
+.customer-account-logoutsuccess .page-title h1 {
+	font-family: "Avant Garde Gothic ITCW01Bk";
+	text-align:center;
+	font-weight:100;
+    font-size: 15px!important;
+	font-weight:100!important;
+	line-height:34px!important;
+}
+
+.account-login .form-list label,
+.account-create .form-list label  {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:11px;
+	text-transform:uppercase;
+	font-weight:100;	
+}	
+
+.account-login .form-list input[type=text],
+.account-login .form-list input[type=password],
+.account-create .form-list input[type=text],
+.account-create .form-list input[type=password],
+.my-account .form-list input[type=text],
+.my-account .form-list input[type=password] {
+	border:0!important;
+	/*background:#e3e3e3;*/
+	padding:5px;
+	width:280px;	
+}
+
+.account-create .form-list input[type=text],
+.account-create .form-list input[type=password],
+.my-account .form-list input[type=text],
+.my-account .form-list input[type=password] {
+	float:left;
+	width:300px;
+}
+
+.account-create .form-list .field,
+.account-create .form-list .input-box,
+.my-account .form-list .field,
+.my-account .form-list .input-box {
+    float: left;
+    width: 310px;
+}
+
+.account-create .form-list .field.name-firstname,
+.account-create .form-list .field.pass,
+.my-account .form-list .field.name-firstname,
+.my-account .form-list .field.pass {
+    width: 335px!important;
+}
+
+.account-create .form-list .control .input-box,
+.account-create .form-list .control label {
+	float:left;
+}
+
+.account-create .form-list .control label {
+	padding:4px 0 0;
+}
+
+/* Account Login/Create Pages ============================================================ */
+.account-login .content { min-height:90px; padding: 0 0 14px; text-align:left; color:#7f7f7f;  }
+.account-login .content h2 { 
+	font:bold 13px/15px Helvetica, Arial, sans-serif;
+	color:#000;
+	margin:0 0 10px 0;
+	text-align:left;
+ }
+ 
+ 
+.account-login .new-users h2 { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_page1.gif)}
+.account-login .registered-users h2 { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_page2.gif); }
+.account-login .buttons-set { border:0; margin-top:12px;}
+
+.account-create .buttons-set { margin-top:4px;}
+
+.account-login .buttons-set a { color:#999; padding-top:5px;}
+
+.customer-account-forgotpassword .col-main,
+.customer-account-logoutsuccess .col-main  {
+	margin: 0 auto 50px;
+    width: 646px;
+}	
+
+/* Account Login/Create Pages ============================================================ */
+
+
+/* My Account ============================================================================= */
+.my-account .title-buttons .link-rss { float:none; margin:0; }
+
+/********** < Dashboard */
+.dashboard .welcome-msg { margin:0 8em 1.5em 0; text-align:left; }
+.dashboard .welcome-msg p { margin:0; }
+.dashboard .welcome-msg p.hello { color:black; font-size:15px}
+.dashboard .col2-set { margin:0 0 15px; }
+
+/* General Box */
+.box-account { background:#fff; padding:15px 0; margin: 0 0 20px; }
+.box-account .box-head { border-bottom:1px solid #ccc; margin:0 0 10px; text-align:left; }
+.box-account .box-head h2 { float:left; margin:0; font-size:15px; font-weight:bold; color:#000; }
+.box-account .box-head a { float:right}
+
+.dashboard .box .box-title {  padding:0 0 2px; margin:0 0 8px; text-align:right; }
+.dashboard .box .box-title h3,
+.dashboard .box .box-title h4 { float:left; font-size:13px; font-weight:bold; margin:0; }
+.dashboard .box .box-title a { padding:0 15px 0 0; text-transform:uppercase; color:#999; text-decoration:none;}
+.dashboard .box .box-content { padding-bottom:14px }
+.dashboard .box .box-content p,
+.dashboard .box .box-content address { text-align:left }
+/* Block: Recent Orders */
+.dashboard .box-recent .box-head h2 {  }
+
+.dashboard .box-recent .data-table td.last {
+    border-right: 0 none;
+    padding-right: 6px!important;
+}
+
+/* Block: Account Information */
+.dashboard .box-info .box-head h2 {  }
+.dashboard .box-info h4 { font-size:11px; font-weight:bold; text-transform:uppercase; }
+
+/* Block: Reviews */
+.dashboard .box-reviews .box-head h2 { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_ma-reviews.gif); }
+.dashboard .box-reviews .number { float:left; font-size:10px; font-weight:bold; line-height:1; color:#fff; margin:3px -20px 0 0; padding:2px 3px; background:#0a263c; }
+.dashboard .box-reviews .details { margin-left:20px; }
+.dashboard .box-reviews li.item { margin:0 0 7px; }
+.dashboard .box-reviews li.item.last { margin:0; }
+.dashboard .box-reviews .ratings { margin:7px 0 0; }
+
+/* Block: Tags */
+.dashboard .box-tags .box-head h2 { background-image:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/i_ma-tags.gif); }
+.dashboard .box-tags .number { float:left; font-size:10px; font-weight:bold; line-height:1; color:#fff; margin:3px -20px 0 0; padding:2px 3px; background:#0a263c; }
+.dashboard .box-tags .details { margin-left:20px; }
+.dashboard .box-tags li.item { margin:0 0 7px; }
+.dashboard .box-tags li.item.last { margin:0; }
+.dashboard .box-tags .tags strong,
+.dashboard .box-tags .tags ul,
+.dashboard .box-tags .tags ul li { display:inline; }
+/********** Dashboard > */
+
+/* Address Book */
+.addresses-list h2 {  text-align:left;margin:0; font-size:15px; font-weight:bold; color:#000;  }
+.addresses-list h3 { font-weight:bold; font-size:13px; text-align:left; }
+.addresses-list address { margin:0 0 3px; text-align:left; }
+.addresses-list p { margin:0; text-align:left; }
+.addresses-list a { font-weight:bold; }
+.addresses-list .link-remove { color:#646464; }
+.addresses-list .separator { margin:0 3px; }
+.addresses-list li.item { padding:10px 13px 10px 0; margin:0 0 10px; }
+.addresses-list li.empty { background:none; border:0; padding:0; }
+.addresses-list li.empty p { font-weight:bold; }
+.addresses-list .addresses-additional li.item { background:none; border:0; padding:10px 0 0; }
+
+/* Order View */
+.sales-order-view .my-account .page-title h1 {
+    margin-right:240px;
+	margin-left:20px;
+}
+
+.order-info { border:1px solid #ccc; padding:4px 8px; margin:0 0 8px; }
+.order-info dt,
+.order-info dd,
+.order-info ul,
+.order-info li { display:inline; }
+.order-info .current { font-weight:bold; }
+.order-info li { margin:0 3px; }
+
+.order-date { margin:10px 0; }
+
+.order-info-box { background:#fff; border:1px solid #d0cbc1; padding:12px 15px; margin:0 0 15px; }
+.order-info-box h2 { font-weight:bold; font-size:13px; }
+.order-info-box .box-payment p { margin:0 0 3px; }
+.order-info-box .box-payment th { font-weight:bold; padding-right:7px; }
+
+.order-items { width:645px; overflow-x:auto; margin:0 0 0 0; }
+
+.order-items h2,
+.order-items h3 { clear:none; font-weight:bold; font-size:13px; padding:0; margin:0 0 5px; text-align:left;  }
+.order-items h2 .link-print { float:none; }
+.order-items .product-name { font-size:1em !important; font-weight:bold !important; }
+.order-items .link-print { font-weight:normal; }
+.order-items .order-links { text-align:right; float:right; }
+
+.order-items dl.item-options {
+    width: 262px;
+}
+.order-additional { margin:15px 0; }
+/* Order Gift Message */
+.gift-message dt strong { color:#666; }
+.gift-message dd { font-size:13px; margin:5px 0 0; }
+/* Order Comments */
+.order-about dt { font-weight:bold; }
+.order-about dd { font-size:13px; margin:0 0 7px; }
+
+.tracking-table { margin:0 0 15px; }
+.tracking-table th { font-weight:bold; white-space:nowrap; }
+
+.tracking-table-popup { width:100%; }
+.tracking-table-popup th { font-weight:bold; white-space:nowrap; }
+.tracking-table-popup th,
+.tracking-table-popup td { padding:1px 8px; }
+
+/* Order Print Pages */
+.page-print .print-head { margin:0 0 15px; }
+.page-print .print-head .logo { float:left; }
+.page-print .print-head address { float:left; margin-left:15px; }
+.page-print h1 { font-size:16px; font-weight:bold; }
+.page-print h2,
+.page-print h3 { font-size:13px; font-weight:bold; }
+.page-print h2.h2 { font-size:16px; font-weight:bold; }
+.page-print .order-date { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_divider1.gif) 0 100% repeat-x; padding:0 0 10px; margin:0 0 10px; }
+.page-print .col2-set { margin:0 0 10px; }
+/* Price Rewrites */
+.page-print .gift-message-link { display:none; }
+.page-print .price-excl-tax,
+.page-print .price-incl-tax { display:block; white-space:nowrap; }
+.page-print .cart-price,
+.page-print .price-excl-tax .label,
+.page-print .price-incl-tax .label,
+.page-print .price-excl-tax .price,
+.page-print .price-incl-tax .price { display:inline; }
+
+/* My Wishlist */
+.my-wishlist {
+	width:980px;
+	margin:0 auto;	
+}
+
+.my-wishlist .page-title {
+ 	border-top: 1px solid #CCCCCC;
+    line-height: 34px;
+    margin-bottom: 0 !important;
+    margin-top: 37px;
+    text-transform: uppercase;
+}
+
+.my-wishlist .page-title h1 {
+	font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 15px !important;
+    font-weight: 100 !important;
+    line-height: 34px !important;
+    text-align: center;
+}
+
+.my-wishlist .data-table {
+	border-top:5px solid #000;
+}
+
+.my-wishlist .data-table thead th {
+	padding:2px 0;	
+}
+
+.my-wishlist .data-table td { padding:10px 0;border-bottom: 1px solid #CCCCCC}
+
+.my-wishlist .data-table span.p-title { }
+
+.my-wishlist a.remove-link {
+    color: #999999;
+    font-size: 18px;
+    line-height: 85px;
+    text-decoration: none;
+	float:left;
+}
+.my-wishlist .product-image { display:block; width:85px; height:85px; margin:0 10px 5px; float: left;}
+.my-wishlist .product-name {  display:block;font: 22px/26px Georgia,"Times New Roman",Times,serif; margin: 24px 0 0; float: left;}
+.my-wishlist .product-name a {
+	color:#000;
+	text-decoration:none;
+}
+
+.my-wishlist textarea { display:block; width:240px; height:79px; }
+
+.my-wishlist input.qty {
+    background: none repeat scroll 0 0 #CCCCCC;
+    border: 0 none;
+    color: #000000;
+    display: block;
+    height: 22px;
+    margin: 28px auto 0;
+    padding: 0;
+    text-align: center;
+    width: 22px !important;
+}
+
+.my-wishlist .price {
+	color: #000000;
+    font: 20px/67px Georgia,"Times New Roman",Times,serif;
+}
+
+.my-wishlist .buttons-set { margin-top:2em; border:0; }
+.my-wishlist .buttons-set button.button { float:none; }
+.my-wishlist button.btn-cart { margin:24px 0 0; }
+.my-wishlist .buttons-set .btn-add span,
+.my-wishlist .buttons-set .btn-share span {  background:#000; }
+#wishlist-table .add-to-links { white-space:nowrap; }
+
+.my-wishlist .configured-price {
+	display:none;
+	visibility:hidden;
+	height:0;
+	width:0;
+}
+
+.fieldset .form-list.wl-share li.wide {
+    width:533px;
+	margin:0 auto 30px;
+}
+
+/* My Tags */
+.my-tag-edit { float:left; margin:0 0 10px; }
+.my-tag-edit .btn-remove { float:right; margin:4px 0 0 5px; }
+#my-tags-table { clear:both; }
+#my-tags-table td { padding:10px; }
+#my-tags-table .add-to-links { white-space:nowrap; }
+
+/* My Reviews */
+#my-reviews-table td { padding:10px; }
+
+.product-review .product-img-box { float:left; width:140px;  }
+.product-review .product-img-box .product-image { display:block; width:125px; height:125px; }
+.product-review .product-img-box .label { font-size:11px; margin:0 0 3px; }
+.product-review .product-img-box .ratings .rating-box { float:none; display:block; margin:0 0 3px; }
+.product-review .product-details { margin-left:150px; }
+.product-review .product-name { font-size:16px; font-weight:bold; margin:0 0 10px; }
+.product-review h3 { font-size:12px; margin:0 0 3px; color:#2f2f2f; }
+.product-review .ratings-table { margin:0 0 10px; }
+.product-review dt { font-weight:bold; }
+.product-review dd { font-size:13px; margin:5px 0 0; }
+
+/* Billing Agreements */
+.billing-agreements .info-box{ margin:15px 0; }
+.billing-agreements .form-list li select { float:left; }
+.billing-agreements .form-list li button.button { float:left; margin-left:10px; }
+.billing-agreements .table-caption { font-weight:bold; font-size:13px; }
+/* ======================================================================================= */
+
+
+/* Footer ================================================================================ */
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+.footer-container { 
+	width: 100%;
+	border-top: solid 1px #f5f3ef;
+	background: #f2efea;
+ }
+ 
+.footer { 
+	width: 980px;
+	margin: 0 auto;
+	padding: 37px 10px 0;
+	position: relative;
+}
+
+.footer-container .footer .masthead {
+	display: block;
+	background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/footer-masthead.png');
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	width: 44px;
+	height: 39px;
+	margin-left: -22px;
+}
+
+.footer-container .footer ul.nav {
+  width: 480px;
+  margin: 0 auto 23px;
+}
+
+.footer-container .footer ul.nav li {
+  float: left;
+}
+
+.footer-container .footer ul.nav li a {
+   font:normal 14px/22px Georgia, "Times New Roman", Times, serif;
+   color: black;
+   text-decoration: none;
+   margin:0 18px;
+}
+.footer-container .footer ul.nav li a:hover {
+color:#999;}
+
+/* TEMP FIX */
+.footer-container .footer ul.level0 {
+	display:none!important;
+}
+
+.footer-container .return-to-top {
+  position: absolute;
+  top: 38px;
+  right: 0px;
+  text-decoration: none;
+  color: #bbbbbb;
+  text-transform: uppercase;
+  font-size: 9px;
+  line-height: 25px;
+}
+
+.footer-container .return-to-top:hover {
+  color: black;
+}
+
+.footer-container .main-nav {
+  width: 980px;
+  border-top: solid 2px #797875;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #fff;
+}
+
+.footer-container .main-nav li.section {
+  float: left;
+  padding: 0 14px;
+ 
+  border-left: solid 1px #ffffff;
+}
+
+.footer-container .main-nav li.beginning {
+  border-left: none;
+}
+
+.footer-container .main-nav li.ending {
+  border-left: none;
+  float:right;
+}
+
+.footer-container .main-nav li.section li {
+  float: left;
+  line-height: 25px;
+}
+
+.footer-container .main-nav li.section li a {
+  color: #ababab;
+  text-decoration: none;
+}
+
+.footer-container .main-nav li.section li a:hover {
+	color:#000;
+}
+
+.footer-container .main-nav li.section li {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.footer-container .main-nav li.section li form label {
+  float: left;
+  margin-right: 3px;
+}
+
+.footer-container .main-nav li.section li form {
+  margin: 00;
+}
+
+.footer-container .main-nav li.section li .search-bar,
+.footer-container .main-nav li.section li form {
+  display: block;
+}
+
+.footer-container .main-nav li.section li p.text {
+  display: block !important;
+  margin:0;
+}
+
+.footer-container .main-nav li.section li label { margin:7px 0 0;}
+
+.footer-container .main-nav li.section li label,
+.footer-container .main-nav li.section li .search-field,
+.footer-container .main-nav li.section li .submit {
+  float: left;
+  line-height: 12px;
+  display: block;
+}
+
+.footer-container .main-nav li.section li span.search-field {
+	max-width:100px!important;
+}
+
+.footer-container .main-nav li.section li .submit {
+  display: block;
+  width: 15px;
+  height: 12px;
+  line-height:12px;
+  border: none;
+  background: none;
+  color: #ababab;
+  margin:4px 0 0;
+}
+
+.footer-container .main-nav li.section li .search-field {
+  overflow: hidden;
+}
+
+.footer-container .main-nav li.section li.search-bar-bot:hover .submit,
+.footer-container .main-nav li.section li.search-bar-bot:hover label {
+  color: black;
+  cursor: pointer;
+}
+
+.footer-container .lower-level {
+  margin-top: 36px;
+  padding-bottom: 22px;
+}
+
+
+
+.footer-container .social {
+  float: left;
+  width: 94px;
+}
+
+.footer-container .social li {
+  float: left;
+  width:28px;
+  height:28px;
+}
+
+.footer-container .social li.facebook {
+	margin:0 0 0 5px;	
+}
+
+.footer-container .social li.pinterest {
+	margin:0 0 0 5px;	
+}
+
+.footer-container .social li a {
+  display: block;
+  width:28px;
+  height:28px;
+  text-indent:-9999em;
+  overflow:hidden;
+}
+
+.footer-container .social li a:hover {
+	color:#000;
+}
+
+.footer-container .social li.facebook a {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/social/facebook.png') no-repeat 0 0;
+}
+	.footer-container .social li.facebook a:hover {
+	  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/social/facebook.png') no-repeat 0 -28px;
+	}
+	
+
+.footer-container .social li.twitter a {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/social/twitter.png') no-repeat 0 0;
+}
+	.footer-container .social li.twitter a:hover {
+	  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/social/twitter.png') no-repeat 0 -28px;
+	}
+	
+
+.footer-container .social li.pinterest a {
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/social/pinterest.png') no-repeat 0 0;
+}
+	.footer-container .social li.pinterest a:hover {
+	  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/social/pinterest.png') no-repeat 0 -28px;
+	}
+
+.footer-container .newsletter-signup {
+  width: 213px;
+  float: right;
+}
+
+.footer-container .newsletter-signup,
+.footer-container .newsletter-signup form {
+  height: 11px;
+  display: block;
+}
+
+.footer-container .newsletter-signup p {
+  margin: 0;
+}
+
+.footer-container .newsletter-signup p.text label {
+  float: left;
+  margin-right: 9px;
+}
+
+.footer-container .newsletter-signup p.text input,
+.header-container .header .quick-access #search,
+.footer-container .main-nav li.section li #search_bot {
+  width: 124px;
+  display: block;
+  float: left;
+  border: none;
+  background: none;
+  border-bottom: solid 1px #a7a6a5;
+  border-left: solid 1px #F5F3EF;
+  border-right: solid 1px #F5F3EF;
+  margin:5px 4px 0 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding:0;
+}
+
+.footer-container .newsletter-signup p.submit input {
+  display: block;
+  width: 11px;
+  height: 11px;
+  background: url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/footer-newsletter-submit.png');
+  border: none;
+  text-indent: -9999px;
+  font-size: 0;
+}
+/*--------*/
+
+
+.footer .store-switcher { display:inline; margin:0 5px 0 0; color:#fff; }
+.footer .store-switcher label { font-weight:bold; vertical-align:middle; }
+.footer .store-switcher select { padding:0; vertical-align:middle; }
+.footer a { color:#fff; text-decoration:none; }
+.footer a:hover { color:#000; }
+.footer .bugs { margin:13px 0 0; color:#ecf3f6; }
+.footer .bugs a { color:#ecf3f6; text-decoration:underline; }
+.footer .bugs a:hover { text-decoration:none; }
+.footer address { margin:0 0 20px; color:#ecf3f6; }
+.footer address a { color:#ecf3f6; text-decoration:underline; }
+.footer address a:hover { text-decoration:none; }
+/*.footer ul { display:inline; }*/
+.footer ul.links { display:block; }
+.footer li { /*display:inline; background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/bkg_pipe2.gif) 100% 60% no-repeat; padding:0 7px 0 4px;*/ }
+.footer li.last { /*background:none !important; padding-right:0 !important;*/ }
+.footer-container .bottom-container { margin:0 0 5px; }
+/* ======================================================================================= */
+
+/* Sample Data============================================================================ */
+.home-callout { margin-bottom:12px; }
+.home-callout img { display:block }
+.home-spot { float:left; width:470px; margin-left:20px; }
+.best-selling h3 { margin:12px 0 6px 0; color:#e25203; font-size:1.2em; }
+.best-selling table { border-top:1px solid #ccc; }
+.best-selling tr.odd { background:#eee url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/best_selling_tr_odd_bg.gif) 0 100% repeat-x; }
+.best-selling tr.even { background:#fff url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/best_selling_tr_even_bg.gif) 0 100% repeat-x; }
+.best-selling td { width:50%; border-bottom:1px solid #ccc; padding:8px 10px 8px 8px; font-size:11px; }
+.best-selling .product-img { float:left; border:2px solid #dcdcdc; }
+.best-selling .product-description { margin-left:107px; line-height:1.3em; }
+.best-selling a.product-name,
+.home-spot .best-selling a.product-name:hover { color:#203548; }
+/* ======================================================================================= */
+
+
+/* Clears ================================================================================ */
+.clearer:after,
+.header-container:after,
+.header-container .top-container:after,
+.header:after,
+.header .quick-access:after,
+#nav:after,
+.main:after,
+.footer:after,
+.footer-container .bottom-container:after,
+.col-main:after,
+.col2-set:after,
+.col3-set:after,
+.col3-layout .product-options-bottom .price-box:after,
+.col4-set:after,
+.search-autocomplete li:after,
+.block .block-content:after,
+.block .actions:after,
+.block li.item:after,
+.block-poll li:after,
+.block-layered-nav .currently li:after,
+.page-title:after,
+.products-grid:after,
+.products-list li.item:after,
+.box-account .box-head:after,
+.dashboard .box .box-title:after,
+.box-reviews li.item:after,
+.box-tags li.item:after,
+.pager:after,
+.sorter:after,
+.ratings:after,
+.add-to-box:after,
+.add-to-cart:after,
+.product-essential:after,
+.product-collateral:after,
+.product-view .product-img-box .more-views ul:after,
+.product-view .box-tags .form-add:after,
+.product-view .product-shop .short-description:after,
+.product-view .box-description:after,
+.product-options .options-list li:after,
+.product-options-bottom:after,
+.product-review:after,
+.cart:after,
+.cart-collaterals:after,
+.cart .crosssell li.item:after,
+.opc .step-title:after,
+.checkout-progress:after,
+.multiple-checkout .place-order:after,
+.group-select li:after,
+.form-list li:after,
+.form-list .field:after,
+.buttons-set:after,
+.page-print .print-head:after,
+.advanced-search-summary:after,
+.gift-messages-form .item:after,
+.send-friend .form-list li p:after { display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }
+/* ======================================================================================= */
+
+
+
+/* SWEDEN CUSTOM
+-------------------------------------------------------------------------------------------------------------------------------------------- <====  */
+
+
+.col-wrapper pre {
+	display:none;
+}	
+
+.product-listing.clearfix a.minimal-price-link {
+display:none;
+}
+
+/* 404 Page */
+#notfound {
+    width:470px;
+    height:275px;
+    margin:50px auto;
+    text-align:left;    
+}
+
+#notfound img {
+    float:left;    
+    margin:0 50px 0 0;
+}
+
+#notfound h2 {    
+    font-family: Baskerville, Times New Roman, Times, serif;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 40px;
+}
+
+#notfound h3 {
+    font-family: "Avant Garde Gothic ITCW01Bk";
+    font-size: 16px !important;
+    font-weight: 100 !important;
+    line-height: 22px !important;
+    text-align: left;
+    margin:15px 0 0;
+    text-transform:uppercase;    
+}
+
+#notfound p {
+    font: 12px/20px Georgia, "Times New Roman", Times, serif;
+    color:#000;    
+    margin:0;
+}
+
+#notfound p.top {
+    margin:10px 0 0;    
+}
+
+/* SIZE FIT OVERLAY */
+
+.catalog-product-view #sizeoverlay_screen {
+	background: #666;
+	display: none;
+	filter:(opacity=50);
+	height: 100%;
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+}
+
+.catalog-product-view #sizeoverlay_overlaycontainer {
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+}
+
+.catalog-product-view #sizeoverlay_overlaycontainer .floater {
+	float: left;
+	height: 50%;
+	margin-bottom: -196px;
+	width: 1px;
+}
+
+.catalog-product-view .tempoverlay {
+	background: #fff;
+	clear: both;
+	display: block;
+	height: 412px;
+	margin: 0 auto;
+	position: relative;
+	width: 690px;
+}
+
+.catalog-product-view .tempoverlay .close {
+	background: url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/sizechart-close.png) 0 0 no-repeat;
+	cursor: pointer;
+	display: block;
+	font-weight: strong;
+	height: 10px;
+	position: absolute;
+	right: 23px;
+	text-indent: -9999em;
+	top: 21px;
+	width: 10px;
+}
+
+.catalog-product-view .tempoverlay .tab_container {
+	border-bottom: 1px solid #808080;
+	position: relative;
+	width: 100%;
+}
+
+.catalog-product-view .tempoverlay .tabs {
+	display: inline-block;
+	margin: 22px auto -4px;
+}
+
+.catalog-product-view .tempoverlay .tabs li {
+	color: #000;
+	cursor: pointer;
+	float: left;
+	font-family: "Avant Garde Gothic ITCW01Bk";
+	font-size: 12px;
+	letter-spacing: 0.1em;
+	line-height: 1;
+	padding: 8px 5px 7px;
+	text-transform: uppercase;
+}
+
+.catalog-product-view .tempoverlay .tabs li.selected {
+	background: #f2efea;
+	cursor: default;
+}
+
+.catalog-product-view .tempoverlay .chart {
+	clear: both;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 19px 0;
+	position: relative;
+}
+
+.catalog-product-view .tempoverlay .chart.active {
+	display: inline-block;
+}
+
+.catalog-product-view .tempoverlay table {
+	border-top: 3px solid #000;
+	clear: left;
+	display: block;
+	float: left;
+	margin: 0 26px 38px 0;
+	padding: 1px 0;
+	position: relative;
+}
+
+.catalog-product-view .tempoverlay table.right {
+	clear: none;
+	float: left !important;
+	margin-right: 0;
+}
+
+.catalog-product-view .tempoverlay th {
+	border-bottom: 1px solid #404040;
+	color: #000;
+	font-weight: bold;
+	padding: 3px 17px;
+	text-transform: uppercase;
+}
+
+.catalog-product-view .tempoverlay th.side {
+	border-right: 1px solid #404040;
+	border-bottom: 1px solid #d9d9d9;
+	padding: 3px 5px 3px 0;
+}
+
+.catalog-product-view .tempoverlay th.side.last {
+	border-bottom: 1px solid #404040;
+}
+
+.catalog-product-view .tempoverlay th.title {
+	border-bottom: 0;
+	font-family: Georgia,"Times New Roman",Times,serif;
+	font-size: 13px;
+	font-weight: 400;
+	text-transform: none;
+	padding: 0 2px;
+}
+
+.catalog-product-view .tempoverlay td {
+	border-bottom: 1px solid #d9d9d9;
+	color: #000;
+	padding: 3px 17px;
+}
+
+.catalog-product-view .tempoverlay td.last {
+	border-bottom: 1px solid #404040;
+}
+
+.catalog-product-view .tempoverlay .kids td, .catalog-product-view .tempoverlay .kids th {
+	padding: 3px 12px;
+}
+
+/* COLLECTION */
+
+.cms-collection .col1-layout .col-main, .cms-collection .col1-layout .std,
+.cms-collection-men-women .col1-layout .col-main, .cms-collection-men-women .col1-layout .std,
+.cms-collection-kids-baby .col1-layout .col-main, .cms-collection-kids-baby .col1-layout .std {
+	width: 100%;
+}
+
+.cms-collection .return-link,
+.cms-collection-men-women .return-link,
+.cms-collection-kids-baby .return-link {
+	margin: 0 auto 20px;
+	position: relative;
+	width: 980px;	
+} 
+
+.cms-collection .return-link a,
+.cms-collection-men-women .return-link a,
+.cms-collection-kids-baby .return-link a {
+	color: #bbb;
+	font-family: Georgia,Times,Times New Roman,serif;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+.cms-collection .return-link a:hover,
+.cms-collection-men-women .return-link a:hover,
+.cms-collection-kids-baby .return-link a:hover {
+	color: #666;
+} 
+
+.collectionimg_container {
+	height: 530px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 10px;
+	position: relative;
+	width: 980px;
+}
+
+/*
+.collectionimg_container > img {
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+
+.collectionimg_container > img.active {
+	display: block;
+	z-index: 3;
+}
+*/
+
+.collectionimg_container .arrow {
+	display: block;
+	cursor: pointer;
+	height: 52px;
+	position: absolute;
+	width: 52px;
+	z-index: 50;
+	top: 239px;
+}
+
+.collectionimg_container .arrow.prev {
+	background: url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/collection/arrow_prev_indexed.png) 0 0 no-repeat;
+	left: 10px;
+}
+
+.collectionimg_container .arrow.next {
+	background:  url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/collection/arrow_next_indexed.png) 0 0 no-repeat;
+	right: 10px;
+}
+
+.collectionimg_container .option {
+	float: left;
+	margin-right: 10px;
+	width: 485px;
+}
+
+.collectionimg_container .option.last {
+	margin-right: 0;
+	float:right;
+}
+
+.collectionimg_container .col-land { position:relative; }
+
+	.collectionimg_container .col-land img { position:absolute; z-index:1; }
+	
+	.collectionimg_container .col-land img.rollover { position:absolute; z-index:2; display:none; }
+
+		
+.cms-about img { float:left; clear:left; margin:0 20px 10px 0; }
+
+.cms-contact .col-main { min-height:600px; }
+
+.cms-contact .col-main a h2,
+.cms-customer-service .col-main a h2 {
+	border-bottom:1px solid #000;
+	line-height:50px;
+	cursor:pointer;
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/acc-open.gif') center right no-repeat;
+	font-size:14px;
+	text-transform:uppercase;	
+}
+
+.cms-contact .col-main a.selected h2,
+.cms-customer-service .col-main a.selected h2 {
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/acc-close.gif') center right no-repeat;
+}
+
+.cms-contact .col-main .meta,
+.cms-customer-service .col-main .meta { margin-bottom:24px; height:auto; }
+
+.cms-contact .col-main .meta ul,
+.cms-customer-service .col-main .meta ul {
+	list-style:disc;
+	list-style-position:inside;
+	text-indent:24px;	
+}
+
+.text.mlistfoot {
+	position:relative;	
+}
+
+.text.mlistfoot #advice-required-entry-newsletter {
+	position:absolute;
+	top:-18px;
+	right:12px;	
+}
+
+.cms-basics-of .col-main,
+.cms-basics-of .col-main  {
+	width:980px!important;
+	margin:0 auto!important;	
+}
+
+	.cms-basics-of .col-main .std { margin:10px 0 40px; }
+
+/* Stockists CMS Page */
+.cms-stockists {}
+.cms-stockists .list-left { width:47%; float:left; }
+.cms-stockists .list-right { width:47%; float:right; }
+.cms-stockists .list-left h2,
+.cms-stockists .list-right h2 { line-height:50px; }
+.cms-stockists .accordion {}
+.cms-stockists .accordion_left {}
+.cms-stockists .accordion_right {}
+.cms-stockists .col-main a h3 {
+	border-bottom:1px solid #000;
+	line-height:50px;
+	cursor:pointer;
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/acc-open.gif') center right no-repeat;
+	font-size:14px;
+	font-weight:normal;
+	text-transform:uppercase;	
+}
+
+.cms-stockists .col-main a.selected h3 {
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/acc-close.gif') center right no-repeat;
+}
+
+/* Returns / RMA =============================================================================== */
+.returns {}
+.returns .block-account .block-content li.last a { color:#000; font-weight:bold; cursor:text; }
+.returns .col1-layout .col-main,
+.returns .col2-left-layout .col-main { width:646px; margin:0 auto; }
+.returns .page-title { border:1px solid #ccc; border-width:1px 0; line-height:34px; margin-top:37px; text-transform:uppercase; }
+.returns .page-title h1 { font:100 15px/34px "Avant Garde Gothic ITCW01Bk"; text-align:center; float:none; }
+.returns .fieldset { margin:25px auto 0; padding-bottom:25px; width:310px; }
+.returns .buttons-set { text-align:center; }
+.returns .buttons-set p.required { text-align:center; }
+.returns .buttons-set button.button { margin:0; float:none; }
+.link-awrma-newrma.button,
+.buttons-set.cancel .button { background:#000; color:#fff; font:11px/20px "Times New Roman", Times, serif; text-transform:uppercase; letter-spacing:0.05em; padding:4px 15px; display:block; text-decoration:none; width:145px; margin:10px auto 25px; }
+
+#my-rmas-table {}
+#my-rmas-table td { padding:3px 8px;}
+#my-rmas-table td > p { margin:10px auto 40px; width:225px; }
+#my-rmas-table td span.label { display:block; clear:both; float:left; width:50%; }
+#my-rmas-table td span.nobr { display:block; clear:both; padding:2px 0 0; margin-top:5px; border-top:1px solid #ccc; }
+#my-rmas-table td span.nobr a { color:#000; font-weight:normal; }
+.awrma-customer-rma-view .col1-layout .col-main { width:535px; margin:0 auto; }
+.awrma-customer-rma-view .subhead { font-size:13px; text-align:left; font-weight:bold; }
+.awrma-customer-rma-new .fieldset,
+.awrma-customer-rma-view .fieldset { width:auto; }
+.returns .fieldset .legend { margin:0 0 5px; }
+.awrma-customer-rma-view .fieldset.request-info { margin:0; padding:0 0 30px; }
+.awrma-customer-rma-view .form-list .fields { margin-bottom:5px; }
+.awrma-customer-rma-view .form-list .field { width:33%; text-align:left; }
+.awrma-customer-rma-view ul.awrma-comments-list { list-style:outside none; }
+.awrma-customer-rma-view ul.awrma-comments-list li > div { margin-left:0; }
+.awrma-customer-rma-view .fieldset.comment {}
+.awrma-customer-rma-view .page-title .messages { line-height:1em; text-align:center; }
+.awrma-customer-rma-view #awrma-comment-text { width:640px; height:45px; }
+
+.awrma-customer-rma-new .form-list li.fields .field { width:48%; }
+.awrma-customer-rma-new .form-list li.fields .field + .field { float:right; }
+.awrma-customer-rma-new .form-list li.fields .field .input-box { width:100%; }
+.awrma-customer-rma-new .form-list > li { margin:0; }
+.awrma-customer-rma-new .form-list > li + li { margin:35px 0 0; }
+.awrma-customer-rma-new .form-list li.wide .input-box { width:auto; }
+.awrma-customer-rma-new .form-list li.wide .input-box select { width:48%; }
+.awrma-customer-rma-new .form-list li.wide textarea { width:640px; }
+#awrma-items-ordered-table th:first-child,
+#awrma-items-ordered-table td:first-child { padding-left:0; }
+
+/* ======================================================================================= */
+
+/* Basics Of Etiquette Product */
+.category-basics-of {}
+body.catalog-product-view.category-basics-of .nav-container #nav li.shop a { font-style:normal; }
+body.catalog-product-view.category-basics-of .nav-container #nav li.basics a { font-style:italic; }
+.category-basics-of.catalog-product-view .return-link { visibility:hidden; }
+.product-the-basics-of-etiquette-volume-1 .catalog-product-view .even-more { border-top:0; }
+
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/* Widgets =============================================================================== */
+.widget { display:inline; }
+.widget .widget-title { clear:both; padding:15px 0 0; margin:0 0 7px; }
+.widget .widget-title h2 { font-size:15px; font-weight:bold; color:#e25203; }
+
+.widget .mini-products-images-list .product-image { display:block; width:76px; height:76px; border:1px solid #a9a9a9; margin:0 auto; }
+.widget .mini-products-images-list li.item { float:left; width:77px; height:77px; }
+
+/* Widget: Catalog New Proructs List */
+.widget-new-products { display:block; }
+.col-main .widget-new-products { margin:7px 0; }
+.widget-new-products .products-grid .product-image,
+.widget-new-products .products-list .product-image { width:85px; height:85px; }
+.widget-new-products .products-list .product-shop { margin-left:100px; }
+.sidebar .widget-new-products .block { font-size:11px; line-height:1.25; }
+.sidebar .widget-new-products .block-title strong { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_widget-new.gif) 0 1px no-repeat; padding-left:21px; color:#dc5033; }
+
+/* Widget: Recently Viewed Proructs */
+.widget-viewed { display:block; }
+.col-main .widget-viewed { margin:7px 0; }
+.widget-viewed .products-grid .product-image,
+.widget-viewed .products-list .product-image { width:85px; height:85px; }
+.widget-viewed .products-list .product-shop { margin-left:100px; }
+.sidebar .widget-viewed .block { font-size:11px; line-height:1.25; }
+.sidebar .widget-viewed .block-title strong { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_block-list.gif) 0 0 no-repeat; padding-left:21px; }
+
+/* Widget: Recently Compared Proructs */
+.widget-compared { display:block;}
+.col-main .widget-compared { margin:7px 0; }
+.widget-compared .products-grid .product-image,
+.widget-compared .products-list .product-image { width:85px; height:85px; }
+.widget-compared .products-list .product-shop { margin-left:100px; }
+.sidebar .widget-compared .block { font-size:11px; line-height:1.25; }
+.sidebar .widget-compared .block-title strong { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_block-list.gif) 0 0 no-repeat; padding-left:21px; }
+
+/* Widget: CMS Static Block */
+.widget-static-block {}
+.sidebar .widget-static-block { display:block; margin:0 0 15px; }
+
+/* Widgets: Links Common Styles */
+.top-container .widget a { padding:0 0 0 7px; }
+
+.bottom-container .widget a { padding:0 3px; }
+
+/* Widget: Catalog Product Link */
+.widget-product-link-inline { display:inline; }
+
+.col-main .widget-product-link { display:block; text-align:right; margin:7px 0; }
+.col-main .widget-product-link a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding-right:15px; }
+
+.sidebar .widget-product-link { display:block; margin:0 0 15px; padding:0 10px; }
+.sidebar .widget-product-link a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding:0 15px 0 0; }
+
+/* Widget: Catalog Category Link */
+.widget-category-link-inline { display:inline; }
+
+.col-main .widget-category-link { display:block; text-align:right; margin:7px 0; }
+.col-main .widget-category-link a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding-right:15px; }
+
+.sidebar .widget-category-link { display:block; margin:0 0 15px; padding:0 10px; }
+.sidebar .widget-category-link a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding:0 15px 0 0; }
+
+/* Widget: CMS Page Link */
+.widget-cms-link-inline { display:inline; }
+
+.col-main .widget-cms-link { display:block; text-align:right; margin:7px 0; }
+.col-main .widget-cms-link a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding-right:15px; }
+
+.sidebar .widget-cms-link { display:block; margin:0 0 15px; padding:0 10px; }
+.sidebar .widget-cms-link a { background:url(https://local.etiquetteclothiers.com/skin/frontend/default/etiquette/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding:0 15px 0 0; }
+/* ======================================================================================= */
+
+DIV.ajaxcartpro_progress{
+	border: 1px #999999 solid;
+	display: block;
+	position: fixed;
+	text-align: center;
+	padding: 10px;
+	background-color: #ffffff;
+	z-index: 9999;
+    color: black;
+	//position:absolute;
+	//top: expression(parseInt(document.documentElement.scrollTop, 10) +window.ACPTop+ "px");
+}
+
+DIV.ajaxcartpro_confirm{
+	border: 1px #999999 solid;
+	display: block;
+	position: fixed;
+	text-align: center !important;
+	padding: 10px;
+	background-color: #ffffff;
+	z-index: 9999;
+    color: black;
+    min-heigth:104px;
+    height:auto!important;
+
+	//position:absolute;
+	//top: expression(parseInt(document.documentElement.scrollTop, 10) +200+ "px");
+}
+
+
+
+#aw_acp_continue, #aw_acp_checkout{
+	padding:0;
+	line-height:24px;
+	height:24px;
+	margin:0px auto;
+	display:block;
+	font-family:Arial;
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration:none;
+}
+
+
+#aw_acp_continue{
+	color:#333;
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/default/ajaxcartpro/images/btn_continue_shopping.png');
+	width:144px;
+}
+
+
+#aw_acp_checkout{
+	color:#fff;
+	background:url('https://local.etiquetteclothiers.com/skin/frontend/default/default/ajaxcartpro/images/btn_view_cart.png');
+	width:164px;
+}
+
+#acp_configurable_block dt
+{
+    text-align: left;
+    padding-left: 10px;
+}
+
+#acp_configurable_block .price
+{
+    font-size: 14px;
+}
+
+#acp_configurable_block .product-name
+{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#acp-overlay
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#000;
+    -moz-opacity: 0.3;
+    opacity:.30;
+    filter: alpha(opacity=30);
+    z-index: 100;
+}
+#acp-overlay[id]{ /* IE6 and below Can't See This */
+    position:fixed;
+}
+
+#acp_product_options
+{
+    display: block;
+    width: 400px;
+    height: auto !important;
+    position: fixed;
+    z-index:150;
+    background-color: white;
+    padding: 10px;
+    //position:absolute;
+	//top: expression(parseInt(document.documentElement.scrollTop, 10) +window.ACPTop+ "px");
+}
+
+#product-options-wrapper
+{
+     margin:0;
+}
+

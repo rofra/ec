@@ -1,0 +1,76 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+  <div class="inside">
+    <div class="slides">
+      <div class="slide-group clearfix">
+<?php
+  // echo( "Mage::app()->getStore()->getId(): " . Mage::app()->getStore()->getId() );
+$products = Mage::getModel('catalog/resource_eav_mysql4_product_collection')
+    ->addStoreFilter( Mage::app()->getStore()->getId() )
+    ->addAttributeToFilter('type_id', array('eq' => 'configurable') )
+    ->addCategoryFilter(Mage::getModel('catalog/category')->load( '95') )
+    ->addAttributeToFilter('visibility', Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH ) ;
+//$products->setPage(1, 20);
+$products->getSelect()->order('cat_index_position', 'asc');
+//echo( $products->getSelect() );
+$cnt =0;
+$totalcnt = count( $products );
+foreach( $products as $p ) {
+	$config_product = Mage::getModel('catalog/product')->load( $p->getId() );
+	$url = $config_product->getProductUrlForCategory();
+	//	$url = str_replace( "loadranditems.php/", "", $url );
+	$image = Mage::helper('catalog/image')->init($config_product, 'small_image')->resize(163, 163);
+	$_categories = $config_product->getCategoryIds();
+	    $touse = $_categories[count( $_categories )-1];
+    if( $touse == 95 )
+	    $touse = $_categories[count( $_categories )-2];
+
+	$_category = Mage::getModel('catalog/category')->load($touse);
+
+?>
+        <div class="slide">
+          <a href="<?php echo $url?>">
+            <img src="<?php echo $image?>" width="163" height="163" alt="<?php echo $config_product->getShortDescription()?>">
+            <span class="category-name"><?php echo $_category->getName()?></span>
+            <span class="title"><?php echo $config_product->getShortDescription()?></span>
+	     <span class="price"><?php echo Mage::helper('core')->currency($config_product->getPrice(), true, true); ?></span>
+          </a>
+        </div><!-- end .slide -->
+	<?php $cnt++;
+	if( !( $cnt % 5 ) && $cnt != $totalcnt  ) { ?>
+      </div><!-- end .slide-group -->
+      <div class="slide-group clearfix">
+	<?php } ?>
+	<?php } ?>
+      </div><!-- end .slide-group -->
+
+
+
+    </div><!-- end .slides -->
+
+  </div><!-- end .inside -->

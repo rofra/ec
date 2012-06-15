@@ -1,0 +1,1 @@
+[03-Oct-2011 13:14:35] PHP Fatal error:  Call to undefined function get_header() in /home/devswe/public_html/etiq-blog/wp-content/themes/etiquette/index.php on line 7
