@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Etiquette_Checkout>
+      <active>true</active>
+      <codePool>local</codePool>
+      <depends>
+        <Mage_Checkout />
+      </depends>
+    </Etiquette_Checkout>
+  </modules>
+</config>
+
+

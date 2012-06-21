@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<config>
+  <modules>
+    <Etiquette_Checkout>
+      <version>0.1.0</version>
+    </Etiquette_Checkout>
+  </modules>
+
+  <frontend>
+    <routers>
+      <checkout>
+        <args>
+          <modules>
+            <Etiquette_Checkout before="Mage_Checkout">Etiquette_Checkout</Etiquette_Checkout>
+          </modules>
+        </args>
+      </checkout>
+    </routers>
+  </frontend>
+
+</config>
+

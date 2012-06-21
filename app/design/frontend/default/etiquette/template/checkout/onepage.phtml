@@ -30,6 +30,12 @@
 <script type="text/javascript" src="<?php echo $this->getJsUrl('varien/accordion.js') ?>"></script>
 <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/opcheckout.js') ?>"></script>
 <script type="text/javascript">countryRegions = <?php echo $this->helper('directory')->getRegionJson() ?></script>
+<script type="text/javascript">
+//<![CDATA[
+    var couponcodeadd = new CouponCodeAdd('<?php echo $this->getUrl('checkout/onepage/coupon') ?>');
+    var couponcoderemove = new CouponCodeRemove('<?php echo $this->getUrl('checkout/onepage/coupon') ?>');
+//]]>
+</script>
 <ol class="opc" id="checkoutSteps">
 <?php $i=0; foreach($this->getSteps() as $_stepId => $_stepInfo): ?>
 <?php if (!$this->getChild($_stepId) || !$this->getChild($_stepId)->isShow()): continue; endif; $i++ ?>
