@@ -46,8 +46,6 @@ class Mage_Catalog_Block_Product_View extends Mage_Catalog_Block_Product_Abstrac
         if ($headBlock) {
             $product = $this->getProduct();
             $title = $product->getMetaTitle();
-	    //	    file_put_contents( "/tmp/rc", "prodhmm?" . $title . "\n" , FILE_APPEND );
-
             if ($title) {
                 $headBlock->setTitle($title);
             }

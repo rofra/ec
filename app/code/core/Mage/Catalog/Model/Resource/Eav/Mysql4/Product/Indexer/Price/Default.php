@@ -513,9 +513,7 @@ class Mage_Catalog_Model_Resource_Eav_Mysql4_Product_Indexer_Price_Default
         $table  = $this->_getDefaultFinalPriceTable();
         $select = $write->select()
             ->from($table, $columns);
-// 	$h = fopen( "/tmp/rc", "a+" );
-// 	fwrite( $h, "HERE $select . ".$this->getIdxTable()." \n" );
-// 	fclose( $h );
+
         $query = $select->insertFromSelect($this->getIdxTable());
         $write->query($query);
 

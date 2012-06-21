@@ -133,7 +133,6 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
         if ($image) {
             $image = Mage::getStoreConfig('system/filesystem/media', $store) . '/sales/store/logo/' . $image;
             if (is_file($image)) {
-//	    file_put_contents( "/tmp/rc", $image );
                 $image = Zend_Pdf_Image::imageWithPath($image);
                 $page->drawImage($image, 25, 800, 125, 825); // 200x50
             }

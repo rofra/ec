@@ -193,32 +193,17 @@ class Mage_Tax_Model_Sales_Total_Quote_Subtotal extends Mage_Sales_Model_Quote_A
             $baseOrigPrice   = $item->getBaseOriginalPrice();
         }
 
-	//	     $h = fopen( "/tmp/rc", "a+" );
-	     //	       fwrite( $h, "here yay\n" );
-	// If USD and from NY Region, apply tax rate based on grand total -- rachel
-	if( Mage::app()->getStore()->getCurrentCurrencyCode() == "USD" && $request['region_id'] == "43") {
-	    //            if($item['discount_amount'] != 0) {
-	    //                $package_id = Mage::getModel('catalog/product')->load($item['product_id'])->getAttributeText('package_id');
-	    if($item->getProduct()->getTaxClassId() == 2 ) {
-		$price_minus_discount = $item['price'] - $item['discount_amount'];
-		//		                  fwrite( $h, "here yay" . $price_minus_discount. "\n" );
-		if($price_minus_discount < 110) { // && $price_minus_discount >= 55
-		    //		    fwrite( $h, "found something in the middle\n" );
-		    $rate = "0";
-		    $item->getProduct()->setTaxClassId('5');
-		}
-		// else if($price_minus_discount < 55) {
-		//     //		    fwrite( $h, "found something cheap\n" );
-		//     $rate = 0; 
-		//     $item->getProduct()->setTaxClassId('5');
-		// }
-		//                }
-		//            }
-	    }
-	}
+	     // If USD and from NY Region, apply tax rate based on grand total -- rachel
+	     if (Mage::app()->getStore()->getCurrentCurrencyCode() == "USD" && $request['region_id'] == "43") {
+	       if ($item->getProduct()->getTaxClassId() == 2) {
+		      $price_minus_discount = $item['price'] - $item['discount_amount'];
+		        if ($price_minus_discount < 110) {
+		          $rate = "0";
+		          $item->getProduct()->setTaxClassId('5');
+		        }
+	        }
+	      }
 
-	//      fwrite( $h, "here rate" . $rate. "\n" );
-	//      fclose( $h );
 	
         $item->setTaxPercent($rate);
         if ($this->_config->priceIncludesTax($this->_store)) {
@@ -268,19 +253,10 @@ class Mage_Tax_Model_Sales_Total_Quote_Subtotal extends Mage_Sales_Model_Quote_A
         } else {
             $tax            = $this->_calculator->calcTaxAmount($price, $rate, false);
             $baseTax        = $this->_calculator->calcTaxAmount($basePrice, $rate, false);
-        //     if( $request["region_id"] == 43 && $item->getProduct()->getTaxClassId() == 5)
-		// {
-		//     if( $basePrice < 55 )
-		// 	$tax = 0;
-		//     if( $basePrice < 55 )
-		// 	$baseTax = 0;
-		// }
-
-	    $taxPrice       = $price + $tax;
+            $taxPrice       = $price + $tax;
             $baseTaxPrice   = $basePrice + $baseTax;
             $taxSubtotal    = $taxPrice * $qty;
             $baseTaxSubtotal= $baseTaxPrice * $qty;
-	    //	    file_put_contents( "/tmp/rc", "taxprice ($taxSubtotal)\n", FILE_APPEND );
             if ($taxOnOrigPrice) {
                 $taxable        = $origPrice;
                 $baseTaxable    = $baseOrigPrice;
@@ -288,12 +264,12 @@ class Mage_Tax_Model_Sales_Total_Quote_Subtotal extends Mage_Sales_Model_Quote_A
                 $taxable        = $price;
                 $baseTaxable    = $basePrice;
             }
-            if( $request["region_id"] == 43 && $item->getProduct()->getTaxClassId() == 5 )
-		{
-		    $taxable            = $basePrice > 0?$price:0;// was 55
-		    $baseTaxable        = $basePrice > 0?$basePrice:0;// was 55
-		}
-	    $isPriceInclTax = false;
+            if ($request["region_id"] == 43 && $item->getProduct()->getTaxClassId() == 5)
+		        {
+		          $taxable            = $basePrice > 0 ? $price : 0;// was 55
+		          $baseTaxable        = $basePrice > 0 ? $basePrice : 0;// was 55
+		        }
+	          $isPriceInclTax = false;
         }
 
         if ($item->hasCustomPrice()) {
