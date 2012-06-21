@@ -106,12 +106,12 @@ if( $_SERVER["REMOTE_ADDR"] == "74.134.90.120" )
                         <?php if( strpos( $_SERVER['REQUEST_URI'], "/eu/" ) === false ) { ?>
                         US
                         <?php } else { ?>
-                        <a href="http://etiquetteclothiers.com/us/">US</a>
+                        <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>us">US</a>
                         <?php } ?>/
                         <?php if( strpos( $_SERVER['REQUEST_URI'], "/eu/" ) !== false ) { ?>
                         EU
                         <?php } else { ?>
-                        <a href="http://etiquetteclothiers.com/eu/">EU</a>
+                        <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>eu">EU</a>
                         <?php } ?>
                         </li>
                     </ul>

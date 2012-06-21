@@ -2,13 +2,13 @@
 
 //print_r( $_SERVER );
 //exit;
-if( $_SERVER["REQUEST_URI"] == "/" )
-{
-	$c = $_COOKIE["usingstore"];
-   if( !$c ) $c = "us";
-   Header( "Location: http://local.etiquetteclothiers.com/$c" );
-   exit;
-}
+// if( $_SERVER["REQUEST_URI"] == "/" )
+// {
+// 	$c = $_COOKIE["usingstore"];
+//    if( !$c ) $c = "us";
+//    Header( "Location: http://local.etiquetteclothiers.com/$c" );
+//    exit;
+// }
 
 /**
  * Magento
